@@ -1,0 +1,15 @@
+.worktrees/
+.superpowers/
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Local reference material
+DOCS/
+MEMORY/
+
+# Generated experiment artifacts
+data/generated/
+artifacts/
+results/
