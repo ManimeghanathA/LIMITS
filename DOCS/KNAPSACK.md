@@ -53,6 +53,22 @@ question + candidate paragraphs
 
 The top-10 prefilter exists because exact subset search over all 40 candidates would be too slow. This is a practical compromise, but it is also a possible bias source.
 
+The debug report confirms that this is currently the most important weakness:
+
+```text
+reports/baselines/knapsack_debug.md
+```
+
+Among incomplete knapsack selections, the current breakdown is:
+
+```text
+prefilter_failure: 28
+scoring_failure: 5
+distractor_failure: 5
+```
+
+So the next serious improvement is not only changing optimizer weights. The candidate pool has to preserve low-overlap but necessary evidence before the exact optimizer can select it.
+
 ## Tokenization
 
 The scorer lowercases text, extracts alphanumeric terms, and removes a small stopword list:
@@ -234,3 +250,23 @@ The next formula work should focus on:
 - budget-specific weakness.
 
 Only after this should we tune weights or add new features.
+
+## Debugging the Knapsack
+
+Use this command to regenerate the knapsack diagnostic report:
+
+```text
+python scripts/run_knapsack_debug.py
+```
+
+The report classifies each incomplete selection into:
+
+- `prefilter_failure`: at least one missing required evidence unit had no valid alternative inside the top candidate pool.
+- `scoring_failure`: the required evidence entered the candidate pool but the optimizer still skipped it.
+- `distractor_failure`: missing required evidence coincided with selected distractor chunks.
+
+This matters because each cause needs a different fix:
+
+- prefilter failures need better candidate ranking or a wider candidate pool,
+- scoring failures need better individual, pair, triple, or redundancy scoring,
+- distractor failures need contradiction/wrong-context features instead of raw lexical overlap.

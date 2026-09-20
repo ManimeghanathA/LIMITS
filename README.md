@@ -32,6 +32,8 @@ reports/baselines/baseline_summary.json
 reports/baselines/baseline_collage.png
 reports/baselines/failure_analysis.json
 reports/baselines/failure_analysis.md
+reports/baselines/knapsack_debug.json
+reports/baselines/knapsack_debug.md
 ```
 
 Current baseline summary:
@@ -54,7 +56,15 @@ cases with selected distractors: 49/120
 main weak category: three_hop
 ```
 
-Content 02 is intentionally harder and anti-lexical. It uses paraphrased evidence, low query-overlap required chunks, and high query-overlap distractors. This means the current knapsack is useful but not yet robust. The next improvement phase should focus on recovering missing evidence units and reducing distractor selection before adding new complexity.
+The knapsack debug report splits those incomplete cases by likely cause:
+
+```text
+prefilter_failure: 28
+scoring_failure: 5
+distractor_failure: 5
+```
+
+Content 02 is intentionally harder and anti-lexical. It uses paraphrased evidence, low query-overlap required chunks, and high query-overlap distractors. This means the current knapsack is useful but not yet robust. The next improvement phase should focus first on candidate ranking and required-evidence recall, because most failures happen before the exact optimizer gets a fair candidate pool.
 
 ## Current Project Direction
 
@@ -161,6 +171,7 @@ src/
   dataset_summary.py dataset health summaries
   evidence.py       evidence scoring helpers
   evaluator.py      method-agnostic selection evaluator and RL reward signal
+  knapsack_debug.py failure-cause diagnostics for the feature knapsack
   knapsack_features.py public feature builder and feature-based knapsack selector
   optimizer.py      current exact interaction optimizer wrapper
   oracle.py         exhaustive exact oracle for small candidate pools
@@ -171,6 +182,7 @@ src/
 scripts/
   run_baseline_benchmark.py
   run_failure_analysis.py
+  run_knapsack_debug.py
 
 tests/
   test_benchmark.py
@@ -178,6 +190,7 @@ tests/
   test_dataset_io.py
   test_dataset_summary.py
   test_evaluator.py
+  test_knapsack_debug.py
   test_selectors.py
   test_contracts.py
   test_evidence.py
