@@ -17,6 +17,12 @@ The current baseline report is generated from `content_01_aero_support` across a
 
 ![Baseline benchmark collage](reports/baselines/baseline_collage.png)
 
+Knapsack documentation:
+
+```text
+DOCS/KNAPSACK.md
+```
+
 Generated artifacts:
 
 ```text
@@ -24,6 +30,8 @@ reports/baselines/baseline_rows.json
 reports/baselines/baseline_rows.csv
 reports/baselines/baseline_summary.json
 reports/baselines/baseline_collage.png
+reports/baselines/failure_analysis.json
+reports/baselines/failure_analysis.md
 ```
 
 Current baseline summary:
@@ -36,6 +44,17 @@ Current baseline summary:
 | `feature_knapsack` | 0.675 | 0.817 | 0.933 | 0.658 | 0.647 | 0.733 |
 
 This benchmark is still an early comparison, but it now includes the first transparent feature-based knapsack. The current knapsack uses public text features only, prefilters to a small candidate pool, and then exactly optimizes individual, pairwise, and third-order interaction scores under the token budget.
+
+The first failure analysis shows:
+
+```text
+feature_knapsack complete cases: 49/60
+missing required evidence cases: 11/60
+cases with selected distractors: 37/60
+main weak category: three_hop
+```
+
+This means the current knapsack is useful but not yet robust. The next improvement phase should focus on reducing distractor selection and recovering missing evidence units before adding new complexity.
 
 ## Current Project Direction
 
@@ -144,6 +163,7 @@ src/
 
 scripts/
   run_baseline_benchmark.py
+  run_failure_analysis.py
 
 tests/
   test_benchmark.py
