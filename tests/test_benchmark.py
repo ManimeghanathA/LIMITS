@@ -15,7 +15,7 @@ def test_run_baseline_benchmark_returns_one_row_per_method_question_and_budget()
 
     rows = run_baseline_benchmark(contents)
 
-    expected_count = 15 * len(BUDGETS) * len(BASELINE_METHODS)
+    expected_count = sum(len(content.questions) for content in contents) * len(BUDGETS) * len(BASELINE_METHODS)
     assert len(rows) == expected_count
     assert {row.method for row in rows} == set(BASELINE_METHODS)
     assert all(row.token_used <= row.budget for row in rows)

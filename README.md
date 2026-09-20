@@ -13,7 +13,7 @@ The current focus is building the dataset, evaluator, baseline selectors, and fi
 
 ## Current Baseline Snapshot
 
-The current baseline report is generated from `content_01_aero_support` across all 15 questions and all four budgets.
+The current baseline report is generated from two content collections across 30 questions and all four budgets.
 
 ![Baseline benchmark collage](reports/baselines/baseline_collage.png)
 
@@ -38,23 +38,23 @@ Current baseline summary:
 
 | Method | Evidence F1 | Complete Hit Rate | Required Recall | Optional Support Recall | Budget Utilization | Avg Distractors |
 |---|---:|---:|---:|---:|---:|---:|
-| `budget_fill` | 0.169 | 0.417 | 0.574 | 0.183 | 0.947 | 0.883 |
-| `keyword_overlap` | 0.540 | 0.850 | 0.954 | 0.725 | 0.954 | 0.833 |
-| `random` | 0.170 | 0.333 | 0.461 | 0.367 | 0.950 | 0.517 |
-| `feature_knapsack` | 0.675 | 0.817 | 0.933 | 0.658 | 0.647 | 0.733 |
+| `budget_fill` | 0.143 | 0.400 | 0.487 | 0.267 | 0.956 | 0.508 |
+| `keyword_overlap` | 0.471 | 0.717 | 0.880 | 0.821 | 0.953 | 0.517 |
+| `random` | 0.148 | 0.233 | 0.421 | 0.388 | 0.948 | 0.383 |
+| `feature_knapsack` | 0.684 | 0.683 | 0.864 | 0.763 | 0.572 | 0.467 |
 
 This benchmark is still an early comparison, but it now includes the first transparent feature-based knapsack. The current knapsack uses public text features only, prefilters to a small candidate pool, and then exactly optimizes individual, pairwise, and third-order interaction scores under the token budget.
 
 The first failure analysis shows:
 
 ```text
-feature_knapsack complete cases: 49/60
-missing required evidence cases: 11/60
-cases with selected distractors: 37/60
+feature_knapsack complete cases: 82/120
+missing required evidence cases: 38/120
+cases with selected distractors: 49/120
 main weak category: three_hop
 ```
 
-This means the current knapsack is useful but not yet robust. The next improvement phase should focus on reducing distractor selection and recovering missing evidence units before adding new complexity.
+Content 02 is intentionally harder and anti-lexical. It uses paraphrased evidence, low query-overlap required chunks, and high query-overlap distractors. This means the current knapsack is useful but not yet robust. The next improvement phase should focus on recovering missing evidence units and reducing distractor selection before adding new complexity.
 
 ## Current Project Direction
 
@@ -82,16 +82,23 @@ The first validated content collection is stored in:
 data/limits_dataset.json
 ```
 
-It currently contains:
-
-- 1 content collection: `content_01_aero_support`
-- 40 candidate paragraphs
+- 2 content collections:
+  - `content_01_aero_support`
+  - `content_02_clinic_access`
+- 80 candidate paragraphs total
 - candidate pool larger than 1024 tokens
-- 15 questions total
-- 5 direct questions
-- 5 two-hop questions
-- 5 three-hop questions
+- 30 questions total
+- 10 direct questions
+- 10 two-hop questions
+- 10 three-hop questions
 - budget constraints: `128`, `256`, `512`, `1024`
+
+`content_02_clinic_access` is designed specifically to challenge lexical shortcuts:
+
+- required evidence chunks often use low query-word overlap,
+- distractors use many query words while stating the wrong fact,
+- multi-hop chains use indirect labels and aliases,
+- the current lexical knapsack fails visibly on several of these cases.
 
 Question category is metadata only. It helps us analyze results by difficulty, but it should not control what the model sees.
 
@@ -186,7 +193,7 @@ The full test suite currently passes:
 
 ```text
 python -m pytest -q
-56 passed
+71 passed
 ```
 
 ## Next Tasks
@@ -197,17 +204,13 @@ python -m pytest -q
    - tune redundancy and complementarity weights
    - inspect failures by question and budget
 
-2. Add benchmark failure analysis:
-   - per-question selected chunks
-   - missing required units
-   - selected distractors
-   - budget waste and underuse
-
-3. Add plots by category and budget:
+2. Add plots by category and budget:
    - direct vs two-hop vs three-hop
    - 128 vs 256 vs 512 vs 1024
 
-4. After the knapsack baseline is stable, start the RL environment:
+3. Add more anti-lexical contents after tuning against Content 02.
+
+4. After the knapsack baseline is stable across multiple contents, start the RL environment:
    - actions: `INCLUDE`, `SKIP`, `STOP`
    - state: query, current candidate, selected context summary, remaining budget
    - reward: evaluator-based final evidence quality under budget

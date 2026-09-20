@@ -1,7 +1,15 @@
 from pathlib import Path
+import re
 
 from src.dataset import BUDGETS, validate_content
 from src.dataset_io import load_content_collections
+
+
+STOPWORDS = {
+    "a", "an", "and", "are", "at", "be", "by", "for", "in", "is", "it",
+    "of", "on", "or", "the", "to", "what", "when", "where", "which",
+    "who", "why", "does", "do", "must", "should", "can"
+}
 
 
 def test_loads_and_validates_first_dataset_content() -> None:
@@ -9,7 +17,7 @@ def test_loads_and_validates_first_dataset_content() -> None:
 
     contents = load_content_collections(dataset_path)
 
-    assert len(contents) == 1
+    assert len(contents) >= 1
     content = contents[0]
     validate_content(content)
     assert content.id == "content_01_aero_support"
@@ -29,6 +37,46 @@ def test_first_dataset_content_has_required_question_categories() -> None:
     }
 
     assert category_counts == {"direct": 5, "two_hop": 5, "three_hop": 5}
+
+
+def test_dataset_contains_hard_second_content() -> None:
+    contents = load_content_collections(Path("data/limits_dataset.json"))
+    content = next(item for item in contents if item.id == "content_02_clinic_access")
+
+    validate_content(content)
+    assert len(content.paragraphs) >= 40
+    assert len(content.questions) == 15
+    assert sum(paragraph.tokens for paragraph in content.paragraphs) > 1024
+
+
+def test_second_content_is_anti_lexical() -> None:
+    content = next(
+        item for item in load_content_collections(Path("data/limits_dataset.json"))
+        if item.id == "content_02_clinic_access"
+    )
+    paragraph_by_id = {paragraph.id: paragraph for paragraph in content.paragraphs}
+
+    low_overlap_evidence_questions = 0
+    high_overlap_distractor_questions = 0
+    for question in content.questions:
+        query_terms = _terms(question.text)
+        evidence_ids = {
+            alternative
+            for unit in question.required_evidence_units
+            for alternative in unit.alternatives
+        }
+        distractor_ids = {
+            item
+            for group in question.distractor_groups
+            for item in group
+        } - evidence_ids
+        if any(_overlap_ratio(query_terms, paragraph_by_id[item].text) <= 0.2 for item in evidence_ids):
+            low_overlap_evidence_questions += 1
+        if any(_overlap_ratio(query_terms, paragraph_by_id[item].text) >= 0.45 for item in distractor_ids):
+            high_overlap_distractor_questions += 1
+
+    assert low_overlap_evidence_questions >= 10
+    assert high_overlap_distractor_questions >= 10
 
 
 def test_direct_dataset_questions_can_use_multi_paragraph_support_without_hop_synergy() -> None:
@@ -115,3 +163,16 @@ def test_multi_hop_budget_answers_are_scattered_in_candidate_order() -> None:
         for selection in question.budget_ground_truth[128]:
             positions = [position_by_id[evidence_id] for evidence_id in selection.selected]
             assert max(positions) - min(positions) >= 4
+
+
+def _terms(text: str) -> frozenset[str]:
+    return frozenset(
+        term for term in re.findall(r"[a-z0-9]+", text.lower())
+        if term not in STOPWORDS
+    )
+
+
+def _overlap_ratio(query_terms: frozenset[str], text: str) -> float:
+    if not query_terms:
+        return 0.0
+    return len(query_terms & _terms(text)) / len(query_terms)
