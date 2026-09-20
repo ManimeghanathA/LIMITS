@@ -44,8 +44,9 @@ The pipeline is:
 question + candidate paragraphs
   -> tokenize query and paragraphs
   -> compute public text features
-  -> rank candidates by individual score
-  -> keep top 10 candidates
+  -> choose lexical seed candidates
+  -> expand candidates using seed-linked paragraph overlap
+  -> keep 10 candidates
   -> build an InteractionUtility
   -> exact optimize the reduced pool under budget
   -> return selected chunk ids
@@ -53,7 +54,7 @@ question + candidate paragraphs
 
 The top-10 prefilter exists because exact subset search over all 40 candidates would be too slow. This is a practical compromise, but it is also a possible bias source.
 
-The debug report confirms that this is currently the most important weakness:
+The current seed-linked prefilter was added because earlier diagnostics showed that low-overlap bridge evidence was being removed before the optimizer could consider it.
 
 ```text
 reports/baselines/knapsack_debug.md
@@ -62,12 +63,11 @@ reports/baselines/knapsack_debug.md
 Among incomplete knapsack selections, the current breakdown is:
 
 ```text
-prefilter_failure: 28
-scoring_failure: 5
-distractor_failure: 5
+scoring_failure: 14
+distractor_failure: 10
 ```
 
-So the next serious improvement is not only changing optimizer weights. The candidate pool has to preserve low-overlap but necessary evidence before the exact optimizer can select it.
+The current debug report has no prefilter failures, which means the next serious improvement is scoring quality inside the reduced candidate pool and wrong-context/distractor handling.
 
 ## Tokenization
 
@@ -89,6 +89,7 @@ individual chunk value
 + pair synergy
 + triple synergy
 - redundancy penalty
+- selection penalty
 ```
 
 subject to:
@@ -107,26 +108,43 @@ U(S) =
   - redundancy_weight * sum pair_redundancy[i,j]
 ```
 
+The selection penalty is included inside the individual chunk score, so extra chunks must earn enough public-feature value to justify being selected.
+
 ## Individual Score
 
-Each chunk receives an individual score based on query-term overlap:
+Each chunk receives an individual score based on query-term overlap and seed linkage.
+
+First, lexical seed chunks are ranked by query overlap:
 
 ```text
 coverage = |query_terms ∩ paragraph_terms| / |query_terms|
 term_hits = |query_terms ∩ paragraph_terms|
 
-individual =
+lexical_score =
   3.0 * coverage
   + 0.15 * term_hits
 ```
 
-This means chunks that directly mention query terms rank higher.
+Then each non-seed chunk can receive value if it shares terms with one of the lexical seeds:
+
+```text
+seed_link =
+  max over lexical seeds:
+    |paragraph_terms ∩ seed_terms| / min(|paragraph_terms|, |seed_terms|)
+
+individual =
+  lexical_score
+  + 3.0 * seed_link
+  - 0.5 selection_penalty
+```
+
+This means chunks that directly mention query terms rank higher, while bridge chunks can still survive if they connect to a strong seed.
 
 Current risk:
 
 ```text
 Wrong but query-similar chunks can score highly.
-Low-overlap but necessary bridge chunks may be missed during prefiltering.
+Wrong chunks that share terms with a strong seed may also receive value.
 ```
 
 ## Pair Synergy
@@ -188,6 +206,12 @@ Valid alternatives and wrong similar distractors can both look redundant.
 The model does not yet know contradiction or factual correctness.
 ```
 
+The current redundancy weight is:
+
+```text
+redundancy_weight = 0.75
+```
+
 ## Exact Optimization
 
 After prefiltering to the top 10 candidates, the existing exact optimizer evaluates feasible subsets and returns the best one under budget.
@@ -204,21 +228,21 @@ This behavior is useful because the selector does not need to fill the budget if
 
 ## Current Benchmark Status
 
-On `content_01_aero_support`, the current report shows:
+Across the two current content collections, the current report shows:
 
 ```text
-feature_knapsack evidence F1:        0.675
-feature_knapsack complete hit rate:  0.817
-feature_knapsack required recall:    0.933
-feature_knapsack optional recall:    0.658
-feature_knapsack budget utilization: 0.647
+feature_knapsack evidence F1:        0.700
+feature_knapsack complete hit rate:  0.800
+feature_knapsack required recall:    0.921
+feature_knapsack optional recall:    0.821
+feature_knapsack budget utilization: 0.616
 ```
 
 The early interpretation:
 
 ```text
-The model is doing more than naive keyword selection because it gets higher evidence F1 while using less budget.
-But it is not proven robust yet.
+The model is now substantially stronger than keyword overlap on evidence F1, complete-hit rate, and required recall while using much less of the token budget.
+Its remaining weakness is distractor selection and fine-grained scoring inside hard candidate pools.
 ```
 
 ## Known Bias Risks
@@ -245,7 +269,6 @@ The next formula work should focus on:
 
 - failures where required units are missing,
 - cases where distractors are selected,
-- cases where prefiltering removes useful low-overlap chunks,
 - category-specific weakness,
 - budget-specific weakness.
 

@@ -42,29 +42,28 @@ Current baseline summary:
 |---|---:|---:|---:|---:|---:|---:|
 | `budget_fill` | 0.143 | 0.400 | 0.487 | 0.267 | 0.956 | 0.508 |
 | `keyword_overlap` | 0.471 | 0.717 | 0.880 | 0.821 | 0.953 | 0.517 |
-| `random` | 0.148 | 0.233 | 0.421 | 0.388 | 0.948 | 0.383 |
-| `feature_knapsack` | 0.684 | 0.683 | 0.864 | 0.763 | 0.572 | 0.467 |
+| `random` | 0.144 | 0.258 | 0.434 | 0.367 | 0.948 | 0.325 |
+| `feature_knapsack` | 0.700 | 0.800 | 0.921 | 0.821 | 0.616 | 0.550 |
 
 This benchmark is still an early comparison, but it now includes the first transparent feature-based knapsack. The current knapsack uses public text features only, prefilters to a small candidate pool, and then exactly optimizes individual, pairwise, and third-order interaction scores under the token budget.
 
 The first failure analysis shows:
 
 ```text
-feature_knapsack complete cases: 82/120
-missing required evidence cases: 38/120
-cases with selected distractors: 49/120
+feature_knapsack complete cases: 96/120
+missing required evidence cases: 24/120
+cases with selected distractors: 50/120
 main weak category: three_hop
 ```
 
 The knapsack debug report splits those incomplete cases by likely cause:
 
 ```text
-prefilter_failure: 28
-scoring_failure: 5
-distractor_failure: 5
+scoring_failure: 14
+distractor_failure: 10
 ```
 
-Content 02 is intentionally harder and anti-lexical. It uses paraphrased evidence, low query-overlap required chunks, and high query-overlap distractors. This means the current knapsack is useful but not yet robust. The next improvement phase should focus first on candidate ranking and required-evidence recall, because most failures happen before the exact optimizer gets a fair candidate pool.
+Content 02 is intentionally harder and anti-lexical. It uses paraphrased evidence, low query-overlap required chunks, and high query-overlap distractors. The current knapsack now uses seed-linked candidate expansion, so low-overlap bridge chunks can enter the optimizer. The remaining improvement phase should focus on scoring and wrong-context/distractor handling.
 
 ## Current Project Direction
 
@@ -206,7 +205,7 @@ The full test suite currently passes:
 
 ```text
 python -m pytest -q
-71 passed
+76 passed
 ```
 
 ## Next Tasks

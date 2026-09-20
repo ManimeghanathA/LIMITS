@@ -8,10 +8,10 @@
 
 ## Feature Knapsack Deep Analysis
 
-- Feature knapsack completed 82/120 method-question-budget cases.
-- It missed at least one required evidence unit in 38/120 cases.
-- It selected at least one distractor in 49/120 cases.
-- Average selected token count is 186.2, so it often stops below larger budgets.
+- Feature knapsack completed 96/120 method-question-budget cases.
+- It missed at least one required evidence unit in 24/120 cases.
+- It selected at least one distractor in 50/120 cases.
+- Average selected token count is 204.2, so it often stops below larger budgets.
 
 ### Bias Risks
 
@@ -30,13 +30,13 @@
 
 ## Worst Feature-Knapsack Cases
 
-- q07_two_hop budget 128: F1=0.000, complete=False, missing=['approver', 'storage', 'open_condition'], distractors=['p26'], selected=['p11', 'p23', 'p26', 'p40']
-- c_q01_direct budget 128: F1=0.000, complete=False, missing=['student_access', 'annex_alias'], distractors=['c04'], selected=['c04', 'c16', 'c24']
-- c_q01_direct budget 256: F1=0.000, complete=False, missing=['student_access', 'annex_alias'], distractors=['c04'], selected=['c04', 'c16', 'c24']
-- c_q01_direct budget 512: F1=0.000, complete=False, missing=['student_access', 'annex_alias'], distractors=['c04'], selected=['c04', 'c16', 'c24']
-- c_q01_direct budget 1024: F1=0.000, complete=False, missing=['student_access', 'annex_alias'], distractors=['c04'], selected=['c04', 'c16', 'c24']
+- c_q01_direct budget 128: F1=0.000, complete=False, missing=['student_access', 'annex_alias'], distractors=['c04'], selected=['c04', 'c13', 'c15', 'c24']
+- c_q01_direct budget 512: F1=0.308, complete=False, missing=['student_access'], distractors=['c04'], selected=['c02', 'c03', 'c04', 'c13', 'c15', 'c16', 'c21', 'c24', 'c35']
+- c_q01_direct budget 1024: F1=0.308, complete=False, missing=['student_access'], distractors=['c04'], selected=['c02', 'c03', 'c04', 'c13', 'c15', 'c16', 'c21', 'c24', 'c35']
+- c_q01_direct budget 256: F1=0.333, complete=False, missing=['student_access'], distractors=['c04'], selected=['c02', 'c03', 'c04', 'c13', 'c15', 'c16', 'c24', 'c35']
 - c_q13_three_hop budget 128: F1=0.400, complete=False, missing=['liaison', 'office'], distractors=[], selected=['c20', 'c33', 'c36', 'c40']
-- c_q15_three_hop budget 128: F1=0.400, complete=False, missing=['code', 'collector'], distractors=[], selected=['c20', 'c28', 'c29', 'c32']
-- c_q08_two_hop budget 512: F1=0.414, complete=False, missing=['collector'], distractors=[], selected=['c01', 'c05', 'c11', 'c12', 'c24', 'c27', 'c29', 'c30', 'c32', 'c35']
-- c_q08_two_hop budget 1024: F1=0.414, complete=False, missing=['collector'], distractors=[], selected=['c01', 'c05', 'c11', 'c12', 'c24', 'c27', 'c29', 'c30', 'c32', 'c35']
-- c_q08_two_hop budget 256: F1=0.480, complete=False, missing=['collector'], distractors=[], selected=['c01', 'c05', 'c12', 'c24', 'c29', 'c30', 'c32', 'c35']
+- c_q08_two_hop budget 256: F1=0.480, complete=False, missing=['collector'], distractors=[], selected=['c01', 'c05', 'c24', 'c27', 'c29', 'c30', 'c32', 'c35']
+- q07_two_hop budget 256: F1=0.571, complete=False, missing=['open_condition'], distractors=['p26'], selected=['p02', 'p03', 'p11', 'p14', 'p23', 'p26', 'p36', 'p40']
+- q13_three_hop budget 128: F1=0.600, complete=False, missing=['log', 'reviewer'], distractors=['p22'], selected=['p09', 'p10', 'p22', 'p37']
+- q10_two_hop budget 128: F1=0.600, complete=False, missing=['log_requirement'], distractors=[], selected=['p10', 'p12', 'p24', 'p37']
+- q03_direct budget 128: F1=0.667, complete=False, missing=['start_time'], distractors=[], selected=['p06', 'p18', 'p19', 'p32']

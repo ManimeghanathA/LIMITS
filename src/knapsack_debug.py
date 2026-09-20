@@ -11,6 +11,7 @@ from src.knapsack_features import (
     FeatureWeights,
     build_feature_utility,
     feature_based_knapsack_selector,
+    select_feature_candidates,
 )
 
 
@@ -118,15 +119,7 @@ def _debug_case(
     weights: FeatureWeights,
 ) -> KnapsackDebugCase:
     utility = build_feature_utility(question, paragraphs, weights)
-    ranked = sorted(
-        paragraphs,
-        key=lambda paragraph: (
-            -utility.individual.get(paragraph.id, 0.0),
-            paragraph.tokens,
-            paragraph.id,
-        ),
-    )
-    top = tuple(ranked[:max_candidates])
+    top = select_feature_candidates(question, paragraphs, max_candidates, weights)
     top_ids = frozenset(paragraph.id for paragraph in top)
     required_ids = frozenset(
         item for unit in question.required_evidence_units for item in unit.alternatives
