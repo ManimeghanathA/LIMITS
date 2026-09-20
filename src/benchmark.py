@@ -10,10 +10,11 @@ from PIL import Image, ImageDraw, ImageFont
 
 from src.dataset import BUDGETS, ContentCollection, Paragraph, Question
 from src.evaluator import evaluate_selection
+from src.knapsack_features import feature_based_knapsack_selector
 from src.selectors import budget_fill_selector, keyword_overlap_selector, random_selector
 
 
-BASELINE_METHODS = ("budget_fill", "keyword_overlap", "random")
+BASELINE_METHODS = ("budget_fill", "keyword_overlap", "random", "feature_knapsack")
 
 
 @dataclass(frozen=True)
@@ -175,6 +176,13 @@ def _select(
     if method == "random":
         seed = hash((question.id, budget, method)) & 0xFFFFFFFF
         return random_selector(paragraphs, budget, seed=seed)
+    if method == "feature_knapsack":
+        return feature_based_knapsack_selector(
+            question,
+            paragraphs,
+            budget,
+            max_candidates=10,
+        ).selected_ids
     raise ValueError(f"unknown method: {method}")
 
 
@@ -228,14 +236,14 @@ def _bar_panel(title: str, values: dict[str, float]) -> Image.Image:
     draw = ImageDraw.Draw(image)
     font = ImageFont.load_default()
     draw.text((18, 18), title, fill="#111111", font=font)
-    colors = {"budget_fill": "#4c78a8", "keyword_overlap": "#f58518", "random": "#54a24b"}
-    bar_width = 80
+    colors = _method_colors()
+    bar_width = 62
     base_y = 370
     max_height = 250
     for index, method in enumerate(BASELINE_METHODS):
         value = values.get(method, 0.0)
         height = int(max(0.0, min(value, 1.0)) * max_height)
-        x = 40 + index * 115
+        x = 28 + index * 90
         draw.rectangle((x, base_y - height, x + bar_width, base_y), fill=colors[method])
         draw.text((x, base_y + 12), method.replace("_", "\n"), fill="#111111", font=font)
         draw.text((x, base_y - height - 18), f"{value:.2f}", fill="#111111", font=font)
@@ -248,7 +256,7 @@ def _line_panel(title: str, rows: tuple[BenchmarkRow, ...], metric: str) -> Imag
     draw = ImageDraw.Draw(image)
     font = ImageFont.load_default()
     draw.text((18, 18), title, fill="#111111", font=font)
-    colors = {"budget_fill": "#4c78a8", "keyword_overlap": "#f58518", "random": "#54a24b"}
+    colors = _method_colors()
     left, top, right, bottom = 55, 70, 360, 370
     draw.rectangle((left, top, right, bottom), outline="#cccccc")
     x_by_budget = {
@@ -271,10 +279,19 @@ def _line_panel(title: str, rows: tuple[BenchmarkRow, ...], metric: str) -> Imag
         draw.line(points, fill=colors[method], width=3)
     legend_y = 395
     for index, method in enumerate(BASELINE_METHODS):
-        x = 20 + index * 125
+        x = 15 + index * 95
         draw.rectangle((x, legend_y, x + 10, legend_y + 10), fill=colors[method])
         draw.text((x + 14, legend_y - 2), method, fill="#111111", font=font)
     return image
+
+
+def _method_colors() -> dict[str, str]:
+    return {
+        "budget_fill": "#4c78a8",
+        "keyword_overlap": "#f58518",
+        "random": "#54a24b",
+        "feature_knapsack": "#b279a2",
+    }
 
 
 def _json_ready(item):

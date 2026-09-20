@@ -32,9 +32,10 @@ Current baseline summary:
 |---|---:|---:|---:|---:|---:|---:|
 | `budget_fill` | 0.169 | 0.417 | 0.574 | 0.183 | 0.947 | 0.883 |
 | `keyword_overlap` | 0.540 | 0.850 | 0.954 | 0.725 | 0.954 | 0.833 |
-| `random` | 0.188 | 0.317 | 0.508 | 0.450 | 0.950 | 0.633 |
+| `random` | 0.170 | 0.333 | 0.461 | 0.367 | 0.950 | 0.517 |
+| `feature_knapsack` | 0.675 | 0.817 | 0.933 | 0.658 | 0.647 | 0.733 |
 
-This benchmark is not the final knapsack comparison. It is the first sanity-check layer showing that the evaluator can distinguish weak selectors from a query-aware baseline.
+This benchmark is still an early comparison, but it now includes the first transparent feature-based knapsack. The current knapsack uses public text features only, prefilters to a small candidate pool, and then exactly optimizes individual, pairwise, and third-order interaction scores under the token budget.
 
 ## Current Project Direction
 
@@ -134,6 +135,7 @@ src/
   dataset_summary.py dataset health summaries
   evidence.py       evidence scoring helpers
   evaluator.py      method-agnostic selection evaluator and RL reward signal
+  knapsack_features.py public feature builder and feature-based knapsack selector
   optimizer.py      current exact interaction optimizer wrapper
   oracle.py         exhaustive exact oracle for small candidate pools
   selectors.py      simple baseline selectors
@@ -169,18 +171,23 @@ python -m pytest -q
 
 ## Next Tasks
 
-1. Build the feature-based knapsack input builder:
-   - individual chunk scores
-   - pairwise redundancy penalties
-   - pairwise complementarity
-   - third-order complementarity
-   - token costs
+1. Improve the feature-based knapsack scoring formula:
+   - reduce distractor inclusion
+   - improve complete-hit rate
+   - tune redundancy and complementarity weights
+   - inspect failures by question and budget
 
-2. Run the first feature-based knapsack baseline on `content_01_aero_support`.
+2. Add benchmark failure analysis:
+   - per-question selected chunks
+   - missing required units
+   - selected distractors
+   - budget waste and underuse
 
-3. Compare knapsack against the current simple baselines using the same evaluator and report format.
+3. Add plots by category and budget:
+   - direct vs two-hop vs three-hop
+   - 128 vs 256 vs 512 vs 1024
 
-4. After the evaluator and knapsack baseline are stable, start the RL environment:
+4. After the knapsack baseline is stable, start the RL environment:
    - actions: `INCLUDE`, `SKIP`, `STOP`
    - state: query, current candidate, selected context summary, remaining budget
    - reward: evaluator-based final evidence quality under budget

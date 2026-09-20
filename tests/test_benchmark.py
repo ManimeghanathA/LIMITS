@@ -43,3 +43,7 @@ def test_create_baseline_report_writes_json_csv_and_collage(tmp_path: Path) -> N
     assert report.rows_csv.exists()
     assert report.collage_png.exists()
     assert report.collage_png.stat().st_size > 0
+
+
+def test_feature_knapsack_is_included_as_a_benchmark_method() -> None:
+    assert "feature_knapsack" in BASELINE_METHODS
