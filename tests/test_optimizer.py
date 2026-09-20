@@ -1,6 +1,6 @@
-from limits.contracts import CandidateChunk, CandidateInput
-from limits.optimizer import optimize_interactions
-from limits.utility import InteractionUtility
+from src.contracts import CandidateChunk, CandidateInput
+from src.optimizer import optimize_interactions
+from src.utility import InteractionUtility
 
 
 def test_optimizer_selects_weak_items_that_unlock_third_order_synergy() -> None:

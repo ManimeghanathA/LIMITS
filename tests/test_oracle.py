@@ -1,5 +1,5 @@
-from limits.contracts import CandidateChunk, CandidateInput
-from limits.oracle import exhaustive_select
+from src.contracts import CandidateChunk, CandidateInput
+from src.oracle import exhaustive_select
 
 
 def test_oracle_finds_conditional_three_item_utility_under_budget() -> None:

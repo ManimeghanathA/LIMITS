@@ -9,5 +9,5 @@ description = "Learning to identify minimal information under a token limit"
 requires-python = ">=3.10"
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["."]
 testpaths = ["tests"]

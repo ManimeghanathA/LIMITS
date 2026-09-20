@@ -1,4 +1,4 @@
-from limits.synthetic import generate_example, permute_example
+from src.synthetic import generate_example, permute_example
 
 
 def test_generation_is_deterministic_for_a_seed() -> None:

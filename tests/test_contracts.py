@@ -1,6 +1,6 @@
 import pytest
 
-from limits.contracts import BenchmarkExample, CandidateChunk, CandidateInput, ExampleLabels
+from src.contracts import BenchmarkExample, CandidateChunk, CandidateInput, ExampleLabels
 
 
 def test_candidate_input_rejects_duplicate_chunk_ids() -> None:

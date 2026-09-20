@@ -1,6 +1,6 @@
 import pytest
 
-from limits.utility import InteractionUtility
+from src.utility import InteractionUtility
 
 
 def test_interaction_utility_combines_all_supported_orders() -> None:

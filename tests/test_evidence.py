@@ -1,6 +1,6 @@
 import pytest
 
-from limits.evidence import score_evidence
+from src.evidence import score_evidence
 
 
 def test_evidence_scoring_uses_best_of_multiple_valid_support_sets() -> None:
