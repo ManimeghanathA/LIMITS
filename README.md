@@ -9,7 +9,32 @@ The project is being built in two major stages:
 1. A strong feature-based knapsack baseline for token-constrained evidence selection.
 2. A sequential reinforcement learning selector that decides whether to include, skip, or stop while tracking remaining budget.
 
-The current focus is the dataset and validation layer. RL is intentionally not implemented yet.
+The current focus is building the dataset, evaluator, baseline selectors, and first benchmark pipeline. RL is intentionally not implemented yet.
+
+## Current Baseline Snapshot
+
+The current baseline report is generated from `content_01_aero_support` across all 15 questions and all four budgets.
+
+![Baseline benchmark collage](reports/baselines/baseline_collage.png)
+
+Generated artifacts:
+
+```text
+reports/baselines/baseline_rows.json
+reports/baselines/baseline_rows.csv
+reports/baselines/baseline_summary.json
+reports/baselines/baseline_collage.png
+```
+
+Current baseline summary:
+
+| Method | Evidence F1 | Complete Hit Rate | Required Recall | Optional Support Recall | Budget Utilization | Avg Distractors |
+|---|---:|---:|---:|---:|---:|---:|
+| `budget_fill` | 0.169 | 0.417 | 0.574 | 0.183 | 0.947 | 0.883 |
+| `keyword_overlap` | 0.540 | 0.850 | 0.954 | 0.725 | 0.954 | 0.833 |
+| `random` | 0.188 | 0.317 | 0.508 | 0.450 | 0.950 | 0.633 |
+
+This benchmark is not the final knapsack comparison. It is the first sanity-check layer showing that the evaluator can distinguish weak selectors from a query-aware baseline.
 
 ## Current Project Direction
 
@@ -102,18 +127,29 @@ The dataset validator currently checks:
 
 ```text
 src/
+  benchmark.py      baseline benchmark runner and report generation
   contracts.py      basic benchmark data contracts
   dataset.py        dataset dataclasses and validation
   dataset_io.py     JSON dataset loader
+  dataset_summary.py dataset health summaries
   evidence.py       evidence scoring helpers
+  evaluator.py      method-agnostic selection evaluator and RL reward signal
   optimizer.py      current exact interaction optimizer wrapper
   oracle.py         exhaustive exact oracle for small candidate pools
+  selectors.py      simple baseline selectors
   synthetic.py      small synthetic examples
   utility.py        interaction utility model
 
+scripts/
+  run_baseline_benchmark.py
+
 tests/
+  test_benchmark.py
   test_dataset.py
   test_dataset_io.py
+  test_dataset_summary.py
+  test_evaluator.py
+  test_selectors.py
   test_contracts.py
   test_evidence.py
   test_optimizer.py
@@ -128,39 +164,23 @@ The full test suite currently passes:
 
 ```text
 python -m pytest -q
-43 passed
+56 passed
 ```
 
 ## Next Tasks
 
-1. Build the evaluator:
-   - budget validity
-   - token usage
-   - required evidence unit recall
-   - evidence precision/F1
-   - complete-hit score
-   - optional support hit
-   - extra chunk count
-
-2. Build a dataset summary tool:
-   - content count
-   - paragraph count
-   - total tokens
-   - category counts
-   - average required/optional evidence units
-   - valid selections per budget
-   - budget growth behavior
-
-3. Build the feature-based knapsack input builder:
+1. Build the feature-based knapsack input builder:
    - individual chunk scores
    - pairwise redundancy penalties
    - pairwise complementarity
    - third-order complementarity
    - token costs
 
-4. Run the first knapsack baseline on `content_01_aero_support`.
+2. Run the first feature-based knapsack baseline on `content_01_aero_support`.
 
-5. After the evaluator and knapsack baseline are stable, start the RL environment:
+3. Compare knapsack against the current simple baselines using the same evaluator and report format.
+
+4. After the evaluator and knapsack baseline are stable, start the RL environment:
    - actions: `INCLUDE`, `SKIP`, `STOP`
    - state: query, current candidate, selected context summary, remaining budget
    - reward: evaluator-based final evidence quality under budget

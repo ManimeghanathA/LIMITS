@@ -1,0 +1,32 @@
+{
+  "row_count": 180,
+  "method_summaries": {
+    "budget_fill": {
+      "method": "budget_fill",
+      "average_evidence_f1": 0.1688838024888399,
+      "complete_hit_rate": 0.4166666666666667,
+      "average_required_recall": 0.5736111111111111,
+      "average_optional_support_recall": 0.18333333333333332,
+      "average_budget_utilization": 0.94677734375,
+      "average_distractor_count": 0.8833333333333333
+    },
+    "keyword_overlap": {
+      "method": "keyword_overlap",
+      "average_evidence_f1": 0.5396708718017741,
+      "complete_hit_rate": 0.85,
+      "average_required_recall": 0.9541666666666667,
+      "average_optional_support_recall": 0.725,
+      "average_budget_utilization": 0.9538411458333333,
+      "average_distractor_count": 0.8333333333333334
+    },
+    "random": {
+      "method": "random",
+      "average_evidence_f1": 0.18762219647010295,
+      "complete_hit_rate": 0.31666666666666665,
+      "average_required_recall": 0.5083333333333333,
+      "average_optional_support_recall": 0.45,
+      "average_budget_utilization": 0.9504231770833333,
+      "average_distractor_count": 0.6333333333333333
+    }
+  }
+}
