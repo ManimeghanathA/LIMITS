@@ -42,16 +42,16 @@ Current baseline summary:
 |---|---:|---:|---:|---:|---:|---:|
 | `budget_fill` | 0.143 | 0.400 | 0.487 | 0.267 | 0.956 | 0.508 |
 | `keyword_overlap` | 0.471 | 0.717 | 0.880 | 0.821 | 0.953 | 0.517 |
-| `random` | 0.144 | 0.258 | 0.434 | 0.367 | 0.948 | 0.325 |
-| `feature_knapsack` | 0.700 | 0.800 | 0.921 | 0.821 | 0.616 | 0.550 |
+| `random` | 0.158 | 0.283 | 0.474 | 0.379 | 0.951 | 0.375 |
+| `feature_knapsack` | 0.709 | 0.867 | 0.943 | 0.842 | 0.626 | 0.550 |
 
 This benchmark is still an early comparison, but it now includes the first transparent feature-based knapsack. The current knapsack uses public text features only, prefilters to a small candidate pool, and then exactly optimizes individual, pairwise, and third-order interaction scores under the token budget.
 
 The first failure analysis shows:
 
 ```text
-feature_knapsack complete cases: 96/120
-missing required evidence cases: 24/120
+feature_knapsack complete cases: 104/120
+missing required evidence cases: 16/120
 cases with selected distractors: 50/120
 main weak category: three_hop
 ```
@@ -59,11 +59,11 @@ main weak category: three_hop
 The knapsack debug report splits those incomplete cases by likely cause:
 
 ```text
-scoring_failure: 14
-distractor_failure: 10
+scoring_failure: 11
+distractor_failure: 5
 ```
 
-Content 02 is intentionally harder and anti-lexical. It uses paraphrased evidence, low query-overlap required chunks, and high query-overlap distractors. The current knapsack now uses seed-linked candidate expansion, so low-overlap bridge chunks can enter the optimizer. The remaining improvement phase should focus on scoring and wrong-context/distractor handling.
+Content 02 is intentionally harder and anti-lexical. It uses paraphrased evidence, low query-overlap required chunks, and high query-overlap distractors. The current knapsack now uses seed-linked candidate expansion and paragraph-link pair synergy, so low-overlap bridge chunks can enter the optimizer and connected evidence chains receive value. The remaining improvement phase should focus on wrong-context/distractor handling and the hardest 128-token tradeoffs.
 
 ## Current Project Direction
 
@@ -205,7 +205,7 @@ The full test suite currently passes:
 
 ```text
 python -m pytest -q
-76 passed
+78 passed
 ```
 
 ## Next Tasks

@@ -51,11 +51,21 @@ def test_feature_candidate_prefilter_keeps_bridge_evidence_with_low_query_overla
     assert "c02" in candidate_ids
 
 
-def test_feature_utility_values_seed_linked_bridge_evidence() -> None:
+def test_feature_utility_values_seed_linked_bridge_evidence_above_unlinked_chunks() -> None:
     contents = load_content_collections(Path("data/limits_dataset.json"))
     clinic = next(content for content in contents if content.id == "content_02_clinic_access")
     question = next(question for question in clinic.questions if question.id == "c_q01_direct")
 
     utility = build_feature_utility(question, clinic.paragraphs)
 
-    assert utility.individual["c02"] > 0
+    assert utility.individual["c02"] > utility.individual["c21"]
+
+
+def test_feature_utility_rewards_connected_bridge_pairs() -> None:
+    contents = load_content_collections(Path("data/limits_dataset.json"))
+    clinic = next(content for content in contents if content.id == "content_02_clinic_access")
+    question = next(question for question in clinic.questions if question.id == "c_q08_two_hop")
+
+    utility = build_feature_utility(question, clinic.paragraphs)
+
+    assert utility.pair_synergy[frozenset({"c30", "c31"})] > 0

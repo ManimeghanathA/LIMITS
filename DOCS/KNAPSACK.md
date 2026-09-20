@@ -135,7 +135,7 @@ seed_link =
 individual =
   lexical_score
   + 3.0 * seed_link
-  - 0.5 selection_penalty
+  - 0.8 selection_penalty
 ```
 
 This means chunks that directly mention query terms rank higher, while bridge chunks can still survive if they connect to a strong seed.
@@ -159,13 +159,25 @@ gain =
 pair_synergy = 2.0 * gain
 ```
 
-This is meant to reward complementary chunks.
+It also rewards paragraph-to-paragraph linkage:
+
+```text
+pair_link =
+  |paragraph_terms_i ∩ paragraph_terms_j|
+  / min(|paragraph_terms_i|, |paragraph_terms_j|)
+
+pair_synergy =
+  2.0 * query_complementarity_gain
+  + 1.2 * pair_link
+```
+
+This is meant to reward complementary chunks and bridge chunks that are connected to answer-bearing evidence even when they have weak direct query overlap.
 
 Current risk:
 
 ```text
 Complementarity is still measured lexically.
-It may reward two partial keyword chunks even if they do not logically connect.
+It may reward two chunks that share surface terms even if they do not logically connect.
 ```
 
 ## Triple Synergy
@@ -231,11 +243,11 @@ This behavior is useful because the selector does not need to fill the budget if
 Across the two current content collections, the current report shows:
 
 ```text
-feature_knapsack evidence F1:        0.700
-feature_knapsack complete hit rate:  0.800
-feature_knapsack required recall:    0.921
-feature_knapsack optional recall:    0.821
-feature_knapsack budget utilization: 0.616
+feature_knapsack evidence F1:        0.709
+feature_knapsack complete hit rate:  0.867
+feature_knapsack required recall:    0.943
+feature_knapsack optional recall:    0.842
+feature_knapsack budget utilization: 0.626
 ```
 
 The early interpretation:

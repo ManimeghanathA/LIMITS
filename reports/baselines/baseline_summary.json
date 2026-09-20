@@ -21,20 +21,20 @@
     },
     "random": {
       "method": "random",
-      "average_evidence_f1": 0.14377305287992187,
-      "complete_hit_rate": 0.25833333333333336,
-      "average_required_recall": 0.4340277777777778,
-      "average_optional_support_recall": 0.36666666666666664,
-      "average_budget_utilization": 0.9484212239583333,
-      "average_distractor_count": 0.325
+      "average_evidence_f1": 0.15816412294737076,
+      "complete_hit_rate": 0.2833333333333333,
+      "average_required_recall": 0.4736111111111111,
+      "average_optional_support_recall": 0.37916666666666665,
+      "average_budget_utilization": 0.9507161458333333,
+      "average_distractor_count": 0.375
     },
     "feature_knapsack": {
       "method": "feature_knapsack",
-      "average_evidence_f1": 0.6996298929828342,
-      "complete_hit_rate": 0.8,
-      "average_required_recall": 0.9208333333333333,
-      "average_optional_support_recall": 0.8208333333333333,
-      "average_budget_utilization": 0.6159993489583333,
+      "average_evidence_f1": 0.7092662832809892,
+      "complete_hit_rate": 0.8666666666666667,
+      "average_required_recall": 0.9430555555555555,
+      "average_optional_support_recall": 0.8416666666666667,
+      "average_budget_utilization": 0.6262858072916667,
       "average_distractor_count": 0.55
     }
   }

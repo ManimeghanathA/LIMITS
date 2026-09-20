@@ -47,3 +47,14 @@ def test_create_baseline_report_writes_json_csv_and_collage(tmp_path: Path) -> N
 
 def test_feature_knapsack_is_included_as_a_benchmark_method() -> None:
     assert "feature_knapsack" in BASELINE_METHODS
+
+
+def test_feature_knapsack_meets_current_strength_floor() -> None:
+    contents = load_content_collections(Path("data/limits_dataset.json"))
+
+    summary = aggregate_results(run_baseline_benchmark(contents))
+    knapsack = summary.method_summaries["feature_knapsack"]
+
+    assert knapsack.average_evidence_f1 >= 0.705
+    assert knapsack.complete_hit_rate >= 0.86
+    assert knapsack.average_required_recall >= 0.94

@@ -43,8 +43,9 @@ class FeatureWeights:
     individual_query_overlap: float = 3.0
     individual_term_hits: float = 0.15
     seed_linkage: float = 3.0
-    selection_penalty: float = 0.5
+    selection_penalty: float = 0.8
     pair_complementarity: float = 2.0
+    pair_linkage: float = 1.2
     triple_complementarity: float = 1.25
     redundancy: float = 1.5
     redundancy_weight: float = 0.75
@@ -220,8 +221,12 @@ def _pair_synergy(
         right_coverage = _coverage(query_terms, paragraph_terms[right])
         combined = _coverage(query_terms, paragraph_terms[left] | paragraph_terms[right])
         gain = combined - max(left_coverage, right_coverage)
-        if gain > 0:
-            values[frozenset({left, right})] = weights.pair_complementarity * gain
+        link = _seed_link_score(paragraph_terms[left], paragraph_terms[right])
+        score = weights.pair_complementarity * max(gain, 0.0)
+        if link > 0:
+            score += weights.pair_linkage * link
+        if score > 0:
+            values[frozenset({left, right})] = score
     return values
 
 
