@@ -1,7 +1,7 @@
 """LIMITS context-selection research toolkit."""
 
 from .contracts import BenchmarkExample, CandidateChunk, CandidateInput, ExampleLabels
-from .dataset import BUDGETS, BudgetSelection, ContentCollection, Paragraph, Question
+from .dataset import BUDGETS, BudgetSelection, ContentCollection, EvidenceUnit, Paragraph, Question
 
 __all__ = [
     "BUDGETS",
@@ -10,6 +10,7 @@ __all__ = [
     "CandidateChunk",
     "CandidateInput",
     "ContentCollection",
+    "EvidenceUnit",
     "ExampleLabels",
     "Paragraph",
     "Question",

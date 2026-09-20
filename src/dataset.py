@@ -36,22 +36,42 @@ class BudgetSelection:
 
 
 @dataclass(frozen=True)
+class EvidenceUnit:
+    name: str
+    alternatives: tuple[str, ...]
+
+    def __post_init__(self) -> None:
+        if not self.name.strip():
+            raise ValueError("evidence unit name must not be empty")
+        if not self.alternatives:
+            raise ValueError("evidence unit requires at least one alternative")
+        if len(self.alternatives) != len(set(self.alternatives)):
+            raise ValueError("evidence unit alternatives must be unique")
+
+
+@dataclass(frozen=True)
 class Question:
     id: str
     text: str
     answer: str
     category: str
-    valid_evidence_sets: tuple[tuple[str, ...], ...]
-    budget_ground_truth: Mapping[int, BudgetSelection]
+    required_evidence_units: tuple[EvidenceUnit, ...]
+    budget_ground_truth: Mapping[int, tuple[BudgetSelection, ...]]
+    optional_support_units: tuple[EvidenceUnit, ...] = ()
     redundancy_groups: tuple[tuple[str, ...], ...] = ()
+    distractor_groups: tuple[tuple[str, ...], ...] = ()
 
     def __post_init__(self) -> None:
         if not self.id.strip() or not self.text.strip() or not self.answer.strip():
             raise ValueError("question id, text, and answer must not be empty")
         if self.category not in CATEGORY_ORDER:
             raise ValueError(f"unknown question category: {self.category}")
-        if not self.valid_evidence_sets:
-            raise ValueError("a question requires at least one valid evidence set")
+        if not self.required_evidence_units:
+            raise ValueError("a question requires at least one required evidence unit")
+        if len({unit.name for unit in self.required_evidence_units}) != len(self.required_evidence_units):
+            raise ValueError("required evidence unit names must be unique")
+        if len({unit.name for unit in self.optional_support_units}) != len(self.optional_support_units):
+            raise ValueError("optional support unit names must be unique")
         object.__setattr__(
             self,
             "budget_ground_truth",
@@ -92,50 +112,55 @@ def validate_content(content: ContentCollection) -> None:
 
     known_ids = set(paragraph_by_id)
     for question in content.questions:
-        required_order = CATEGORY_ORDER[question.category]
-        for evidence in question.valid_evidence_sets:
-            if len(evidence) != required_order:
-                raise ValueError(
-                    f"{question.category} questions require evidence sets of size {required_order}"
-                )
-            if len(evidence) != len(set(evidence)):
-                raise ValueError(f"question {question.id} has repeated evidence ids")
-            unknown = set(evidence) - known_ids
+        for unit in question.required_evidence_units + question.optional_support_units:
+            unknown = set(unit.alternatives) - known_ids
             if unknown:
-                raise ValueError(f"question {question.id} references unknown evidence: {sorted(unknown)}")
-            evidence_cost = sum(paragraph_by_id[item].tokens for item in evidence)
-            if evidence_cost > min(BUDGETS):
                 raise ValueError(
-                    f"question {question.id} evidence does not fit budget 128"
+                    f"question {question.id} references unknown evidence: {sorted(unknown)}"
                 )
+
+        min_required_cost = sum(
+            min(paragraph_by_id[item].tokens for item in unit.alternatives)
+            for unit in question.required_evidence_units
+        )
+        if min_required_cost > min(BUDGETS):
+            raise ValueError(
+                f"question {question.id} evidence does not fit budget 128"
+            )
 
         if set(question.budget_ground_truth) != set(BUDGETS):
             raise ValueError(f"question {question.id} must define ground truth for all budgets")
 
-        valid_sets = tuple(frozenset(items) for items in question.valid_evidence_sets)
         for budget in BUDGETS:
-            selected = question.budget_ground_truth[budget].selected
-            unknown = set(selected) - known_ids
-            if unknown:
+            selections = question.budget_ground_truth[budget]
+            if not selections:
                 raise ValueError(
-                    f"question {question.id} budget {budget} selects unknown paragraphs: {sorted(unknown)}"
+                    f"question {question.id} budget {budget} requires at least one ground truth selection"
                 )
-            selected_cost = sum(paragraph_by_id[item].tokens for item in selected)
-            if selected_cost > budget:
-                raise ValueError(
-                    f"question {question.id} selection exceeds budget {budget}"
-                )
-            selected_set = frozenset(selected)
-            if not any(evidence <= selected_set for evidence in valid_sets):
-                raise ValueError(
-                    f"question {question.id} budget {budget} lacks complete evidence"
-                )
+            for selection in selections:
+                selected = selection.selected
+                unknown = set(selected) - known_ids
+                if unknown:
+                    raise ValueError(
+                        f"question {question.id} budget {budget} selects unknown paragraphs: {sorted(unknown)}"
+                    )
+                selected_cost = sum(paragraph_by_id[item].tokens for item in selected)
+                if selected_cost > budget:
+                    raise ValueError(
+                        f"question {question.id} selection exceeds budget {budget}"
+                    )
+                selected_set = frozenset(selected)
+                for unit in question.required_evidence_units:
+                    if selected_set.isdisjoint(unit.alternatives):
+                        raise ValueError(
+                            f"question {question.id} budget {budget} lacks required evidence"
+                        )
 
-        for group in question.redundancy_groups:
+        for group in question.redundancy_groups + question.distractor_groups:
             if len(group) < 2:
-                raise ValueError("redundancy groups require at least two paragraphs")
+                raise ValueError("evidence groups require at least two paragraphs")
             unknown = set(group) - known_ids
             if unknown:
                 raise ValueError(
-                    f"question {question.id} redundancy group references unknown paragraphs"
+                    f"question {question.id} evidence group references unknown paragraphs"
                 )
