@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LIMITS Knapsack Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">LIMITS</p>
+          <h1>Knapsack Context Selection</h1>
+          <p class="subcopy">Watch the current selector choose minimal useful context under a token budget.</p>
+        </div>
+        <nav class="tabs" aria-label="LIMITS modules">
+          <button class="tab active" type="button">Knapsack</button>
+          <button class="tab ghost" type="button" disabled>RL later</button>
+        </nav>
+      </header>
+
+      <section class="panel input-panel">
+        <div class="source-row" aria-label="content source">
+          <button class="source-button active" data-source="manual" type="button">Manual</button>
+          <button class="source-button" data-source="content1" type="button">Content 1</button>
+          <button class="source-button" data-source="content2" type="button">Content 2</button>
+        </div>
+
+        <label class="field-label" for="contentBox">Content</label>
+        <textarea id="contentBox" class="content-box" spellcheck="false" placeholder="Paste or write paragraphs here. Separate paragraphs with a blank line."></textarea>
+
+        <div id="questionPanel" class="question-panel disabled">
+          <div class="question-tools">
+            <label class="field-label" for="questionSelect">Question</label>
+            <select id="questionSelect" class="question-select" disabled>
+              <option value="manual">Manual question</option>
+            </select>
+          </div>
+          <textarea id="questionBox" class="question-box" placeholder="Enter a question after content is available." disabled></textarea>
+          <div class="run-row">
+            <div class="budget-group" aria-label="token budget">
+              <button class="budget-button" data-budget="128" type="button">128</button>
+              <button class="budget-button active" data-budget="256" type="button">256</button>
+              <button class="budget-button" data-budget="512" type="button">512</button>
+              <button class="budget-button" data-budget="1024" type="button">1024</button>
+            </div>
+            <button id="runButton" class="run-button" type="button" disabled>Run Knapsack</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="stage" class="stage hidden" aria-live="polite">
+        <div class="stage-header">
+          <p class="eyebrow">Computation Trace</p>
+          <h2 id="stageTitle">Waiting for a run</h2>
+          <p id="stageCopy">The animation will reveal candidate filtering, scoring, interactions, and final context.</p>
+        </div>
+
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+
+        <div id="paragraphRail" class="paragraph-rail"></div>
+
+        <div class="trace-grid">
+          <section class="trace-card wide">
+            <h3>Candidate Score Table</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Para</th>
+                    <th>Tokens</th>
+                    <th>Overlap</th>
+                    <th>Semantic</th>
+                    <th>Token Pressure</th>
+                    <th>Individual</th>
+                  </tr>
+                </thead>
+                <tbody id="scoreBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="trace-card">
+            <h3>Interactions</h3>
+            <div id="interactionList" class="interaction-list"></div>
+          </section>
+
+          <section class="trace-card wide">
+            <h3>Knapsack Table</h3>
+            <div class="table-wrap short">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Subset</th>
+                    <th>Tokens</th>
+                    <th>Utility</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="subsetBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="trace-card">
+            <h3>Final Utility</h3>
+            <div id="breakdown" class="breakdown"></div>
+          </section>
+        </div>
+
+        <section class="final-card">
+          <h3>Selected Context</h3>
+          <div id="finalContext" class="final-context"></div>
+        </section>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

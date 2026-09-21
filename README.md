@@ -38,6 +38,30 @@ reports/baselines/knapsack_inspection.json
 reports/baselines/knapsack_inspection.md
 ```
 
+## Knapsack Demo
+
+Run the current interactive knapsack demonstration with:
+
+```text
+python scripts/run_knapsack_demo.py
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8765/
+```
+
+The first run may take a moment because the fixed MiniLM embedding model is loaded before traces are computed.
+
+The demo currently supports:
+
+- `Manual`: paste your own paragraphs and write your own question.
+- `Content 1` and `Content 2`: load the dataset content directly into the large content box.
+- preset dataset questions, plus a manual question option for each content.
+- token budgets: `128`, `256`, `512`, and `1024`.
+- animated trace steps showing candidate prefiltering, feature-value table construction, interaction terms, exact subset search, and the final selected context.
+
 Current baseline summary:
 
 | Method | Evidence F1 | Complete Hit Rate | Required Recall | Optional Support Recall | Budget Utilization | Avg Distractors |
@@ -279,6 +303,7 @@ src/
   evaluator.py       method-agnostic selection evaluator and RL reward signal
   knapsack_debug.py  failure-cause diagnostics for the feature knapsack
   knapsack_features.py public feature builder and feature-based knapsack selector
+  knapsack_trace.py  demo-facing trace builder for transparent knapsack runs
   knapsack_inspector.py per-question score and candidate inspection report
   optimizer.py       current exact interaction optimizer wrapper
   oracle.py          exhaustive exact oracle for small candidate pools
@@ -290,6 +315,7 @@ src/
 scripts/
   run_baseline_benchmark.py
   run_failure_analysis.py
+  run_knapsack_demo.py
   run_knapsack_debug.py
   run_knapsack_inspection.py
 
@@ -301,6 +327,7 @@ tests/
   test_evaluator.py
   test_knapsack_debug.py
   test_knapsack_features.py
+  test_knapsack_trace.py
   test_knapsack_inspector.py
   test_semantic_knapsack_features.py
   test_selectors.py
@@ -310,6 +337,12 @@ tests/
   test_oracle.py
   test_synthetic.py
   test_utility.py
+
+web/
+  knapsack_demo/
+    index.html
+    styles.css
+    app.js
 ```
 
 ## Current Verification
