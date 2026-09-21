@@ -7,6 +7,10 @@ name = "limits-context-selection"
 version = "0.1.0"
 description = "Learning to identify minimal information under a token limit"
 requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "sentence-transformers>=5.0",
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

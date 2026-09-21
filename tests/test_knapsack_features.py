@@ -6,6 +6,14 @@ from src.knapsack_features import (
 )
 
 
+class StaticSemanticScorer:
+    def __init__(self, scores: dict[tuple[str, str], float] | None = None) -> None:
+        self.scores = scores or {}
+
+    def similarity(self, left: str, right: str) -> float:
+        return self.scores.get((left, right), self.scores.get((right, left), 0.0))
+
+
 def make_question() -> Question:
     return Question(
         id="q01",
@@ -44,14 +52,24 @@ def test_build_candidate_input_uses_public_question_and_paragraph_fields() -> No
 
 
 def test_feature_utility_scores_query_matching_chunk_above_unrelated_chunk() -> None:
-    utility = build_feature_utility(make_question(), make_paragraphs())
+    utility = build_feature_utility(
+        make_question(),
+        make_paragraphs(),
+        budget=128,
+        semantic_scorer=StaticSemanticScorer(),
+    )
 
     assert utility.individual["p01"] > utility.individual["p03"]
     assert utility.individual["p02"] > utility.individual["p03"]
 
 
 def test_feature_utility_adds_redundancy_for_overlapping_chunks() -> None:
-    utility = build_feature_utility(make_question(), make_paragraphs())
+    utility = build_feature_utility(
+        make_question(),
+        make_paragraphs(),
+        budget=128,
+        semantic_scorer=StaticSemanticScorer(),
+    )
 
     assert utility.pair_redundancy[frozenset({"p01", "p02"})] > 0
 
@@ -63,7 +81,12 @@ def test_feature_utility_adds_pair_synergy_for_complementary_query_coverage() ->
         Paragraph("p03", "unrelated lunch", 10),
     )
 
-    utility = build_feature_utility(make_question(), paragraphs)
+    utility = build_feature_utility(
+        make_question(),
+        paragraphs,
+        budget=128,
+        semantic_scorer=StaticSemanticScorer(),
+    )
 
     assert utility.pair_synergy[frozenset({"p01", "p02"})] > 0
     assert utility.pair_synergy.get(frozenset({"p01", "p03"}), 0.0) == 0.0
@@ -81,8 +104,17 @@ def test_feature_utility_does_not_depend_on_ground_truth_labels() -> None:
         budget_ground_truth=question.budget_ground_truth,
     )
 
-    assert build_feature_utility(question, make_paragraphs()) == build_feature_utility(
-        changed_labels, make_paragraphs()
+    scorer = StaticSemanticScorer()
+    assert build_feature_utility(
+        question,
+        make_paragraphs(),
+        budget=128,
+        semantic_scorer=scorer,
+    ) == build_feature_utility(
+        changed_labels,
+        make_paragraphs(),
+        budget=128,
+        semantic_scorer=scorer,
     )
 
 
@@ -92,6 +124,7 @@ def test_feature_based_knapsack_selector_returns_budget_valid_selection() -> Non
         make_paragraphs(),
         budget=40,
         max_candidates=4,
+        semantic_scorer=StaticSemanticScorer(),
     )
 
     assert result.total_tokens <= 40

@@ -181,7 +181,6 @@ def _select(
             question,
             paragraphs,
             budget,
-            max_candidates=10,
         ).selected_ids
     raise ValueError(f"unknown method: {method}")
 

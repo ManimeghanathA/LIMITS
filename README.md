@@ -9,7 +9,7 @@ The project is being built in two major stages:
 1. A strong feature-based knapsack baseline for token-constrained evidence selection.
 2. A sequential reinforcement learning selector that decides whether to include, skip, or stop while tracking remaining budget.
 
-The current focus is building the dataset, evaluator, baseline selectors, and first benchmark pipeline. RL is intentionally not implemented yet.
+The current focus is the dataset, evaluator, baseline selectors, and the strongest transparent knapsack we can build before moving to RL. RL is intentionally not implemented yet.
 
 ## Current Baseline Snapshot
 
@@ -44,10 +44,10 @@ Current baseline summary:
 |---|---:|---:|---:|---:|---:|---:|
 | `budget_fill` | 0.143 | 0.400 | 0.487 | 0.267 | 0.956 | 0.508 |
 | `keyword_overlap` | 0.471 | 0.717 | 0.880 | 0.821 | 0.953 | 0.517 |
-| `random` | 0.158 | 0.283 | 0.474 | 0.379 | 0.951 | 0.375 |
-| `feature_knapsack` | 0.709 | 0.867 | 0.943 | 0.842 | 0.626 | 0.550 |
+| `random` | 0.169 | 0.233 | 0.463 | 0.379 | 0.950 | 0.400 |
+| `feature_knapsack` | 0.713 | 0.867 | 0.935 | 0.850 | 0.632 | 0.617 |
 
-This benchmark is still an early comparison, but it now includes the first transparent feature-based knapsack. The current knapsack uses public text features only, prefilters to a small candidate pool, and then exactly optimizes individual, pairwise, and third-order interaction scores under the token budget.
+This benchmark now uses one canonical knapsack implementation: a fixed MiniLM embedding backend plus sparse lexical features, exact subset search, redundancy penalty, and explicit pair/triple interaction terms. The embedding backend is `sentence-transformers/all-MiniLM-L6-v2`; there is no lexical fallback because this is a benchmark, not a convenience demo.
 
 The first failure analysis shows:
 
@@ -58,14 +58,14 @@ cases with selected distractors: 50/120
 main weak category: three_hop
 ```
 
-The knapsack debug report splits those incomplete cases by likely cause:
+The current knapsack debug report splits incomplete cases by likely cause:
 
 ```text
-scoring_failure: 11
-distractor_failure: 5
+scoring_failure: 9
+distractor_failure: 7
 ```
 
-Content 02 is intentionally harder and anti-lexical. It uses paraphrased evidence, low query-overlap required chunks, and high query-overlap distractors. The current knapsack now uses seed-linked candidate expansion and paragraph-link pair synergy, so low-overlap bridge chunks can enter the optimizer and connected evidence chains receive value. The remaining improvement phase should focus on wrong-context/distractor handling and the hardest 128-token tradeoffs.
+There are currently no prefilter failures in the debug report. That means the candidate buffer is usually wide enough to contain the required evidence, and the next serious improvement is not more blind expansion. It is better scoring inside hard candidate pools, especially when wrong but query-similar distractors compete with true evidence.
 
 ## How The Knapsack Works
 
@@ -86,6 +86,7 @@ selected paragraph ids where total tokens <= budget
 The current implementation is in:
 
 ```text
+src/semantic_features.py
 src/knapsack_features.py
 src/utility.py
 src/oracle.py
@@ -93,94 +94,83 @@ src/oracle.py
 
 The strategy is:
 
-1. **Tokenize the query and paragraphs**
-   - Lowercase text.
-   - Extract alphanumeric terms.
-   - Remove small stopwords such as `the`, `is`, `of`, `where`, and `which`.
+1. **Compute public sparse and dense text features**
+   - Sparse features use normalized query/paragraph terms with stopword removal.
+   - Dense features use `sentence-transformers/all-MiniLM-L6-v2` cosine similarity through normalized embeddings.
+   - The selector fails clearly if the fixed embedding dependency is unavailable.
 
-2. **Compute lexical query importance**
-   - For each paragraph:
+2. **Build a 15-paragraph candidate pool**
+   - Keep the strongest sparse query-overlap candidates.
+   - Keep the strongest dense query-similarity candidates.
+   - Fill the remaining slots using hybrid individual score plus seed linkage.
+   - This prevents the benchmark from becoming lexical-only while still preserving useful keyword hints.
+
+3. **Compute individual importance**
+   - Each candidate receives value from sparse query coverage, sparse term hits, dense query similarity, sparse seed linkage, dense seed linkage, and budget-aware token cost:
      ```text
-     coverage = query_terms_in_paragraph / query_terms
-     term_hits = number of query terms found
-
-     lexical_score =
-       3.0 * coverage
-       + 0.15 * term_hits
+     individual =
+       3.0 * query_term_coverage
+       + 0.15 * query_term_hits
+       + 0.5 * dense_query_similarity
+       + 3.0 * best_sparse_seed_link
+       + 0.3 * best_dense_seed_link
+       - 1.0 * selection_penalty
+       - 1.0 * paragraph_tokens / budget
      ```
-   - This finds paragraphs that directly mention the question words.
+   - This allows bridge evidence to enter even when it has weak direct query wording.
 
-3. **Choose lexical seed paragraphs**
-   - Rank all paragraphs by lexical score.
-   - Keep the strongest few as seed evidence candidates.
-
-4. **Recover bridge evidence using seed linkage**
-   - Some necessary paragraphs do not use the same words as the query.
-   - So each paragraph also gets credit if it shares meaningful terms with a strong seed:
-     ```text
-     seed_link =
-       max shared_terms(paragraph, seed)
-       / min(paragraph_terms, seed_terms)
-
-     individual_importance =
-       lexical_score
-       + 3.0 * seed_link
-       - 0.8 selection_penalty
-     ```
-   - This is why a chunk like “Code M-14 batches are collected by Sima Chen” can be selected even if the query does not directly say “Sima Chen”.
-
-5. **Keep a small candidate pool**
-   - Exact subset optimization over all 40 paragraphs is expensive.
-   - So the selector keeps 10 candidates:
-     - lexical seeds first,
-     - then the best seed-linked candidates.
-
-6. **Build the utility function**
-   - The optimizer scores a selected subset `S` as:
-     ```text
-     U(S) =
-       sum individual_importance
-       + sum pair_synergy
-       + sum triple_synergy
-       - 0.75 * sum redundancy_penalty
-     ```
-
-7. **Pair synergy**
-   - A pair gets value if it covers more query terms together than alone.
-   - A pair also gets value if the two paragraphs are linked to each other:
+4. **Compute pair synergy**
+   - Pair synergy rewards query-term complementarity and sparse paragraph-to-paragraph linkage:
      ```text
      pair_synergy =
        2.0 * query_complementarity_gain
-       + 1.2 * paragraph_link
+       + 1.2 * sparse_paragraph_link
      ```
-   - This helps multi-hop chains where one paragraph points to another.
+   - Dense pair linkage is supported in the code but currently weighted as `0.0` because measured tuning showed it encouraged context bloat and more distractor selection.
 
-8. **Triple synergy**
-   - A triple gets value if three paragraphs together cover more query terms than the best pair.
-   - This is our explicit third-order synergy approximation.
-
-9. **Redundancy penalty**
-   - Similar paragraphs are penalized using Jaccard overlap.
-   - This discourages selecting repeated evidence.
-
-10. **Exact subset search**
-   - After the top-10 candidate pool is built, the optimizer tries every feasible subset.
-   - It rejects subsets whose total token count exceeds the budget.
-   - It chooses the subset with the highest utility.
-   - Tie-breaking prefers:
+5. **Compute third-order synergy**
+   - Triple synergy rewards cases where three paragraphs together cover query terms better than the best pair:
      ```text
-     higher score
-     lower token usage
-     stable sorted ids
+     triple_synergy = 1.25 * max(0, triple_coverage - best_pair_coverage)
      ```
+   - This is an explicit third-order interaction approximation, not hidden oracle reasoning.
 
-This means the knapsack is currently a **transparent exact optimizer over a reduced candidate pool**. The hard part is not the subset search; the hard part is estimating paragraph importance accurately without cheating.
+6. **Subtract redundancy**
+   - Redundancy is computed for every selected pair, so if one paragraph is redundant with two other selected paragraphs, both pair penalties are subtracted.
+   - The penalty combines sparse Jaccard overlap and dense paraphrase-like similarity above a threshold:
+     ```text
+     pair_redundancy =
+       1.5 * lexical_jaccard
+       + 0.75 * max(0, dense_similarity - 0.72) / (1 - 0.72)
 
-The new inspection report explains every question-budget decision:
+     final penalty = 0.75 * sum(pair_redundancy)
+     ```
+   - This catches exact repetition and some paraphrased duplication without requiring ground-truth redundancy labels at inference time.
+
+7. **Exact subset search**
+   - After the 15-candidate pool is built, the optimizer evaluates every feasible subset under the token budget.
+   - That is up to `2^15 = 32768` subsets per question-budget case.
+   - It chooses the subset with the highest utility and does not need to fill the whole budget.
+
+Current utility shape:
 
 ```text
-reports/baselines/knapsack_inspection.md
+U(S) =
+  sum individual[i]
+  + sum pair_synergy[i,j]
+  + sum triple_synergy[i,j,k]
+  - redundancy_weight * sum pair_redundancy[i,j]
 ```
+
+Tie-breaking prefers:
+
+```text
+higher score
+lower token usage
+stable sorted ids
+```
+
+We are not adding a manual contradiction penalty yet. The reason is simple: keyword-based contradiction guesses can punish true evidence unfairly. A real contradiction feature should come from an NLI model, cross-encoder, or another meaning-aware verifier, and should be added deliberately after this semantic baseline is stable.
 
 ## Current Project Direction
 
@@ -224,13 +214,13 @@ data/limits_dataset.json
 - required evidence chunks often use low query-word overlap,
 - distractors use many query words while stating the wrong fact,
 - multi-hop chains use indirect labels and aliases,
-- the current lexical knapsack fails visibly on several of these cases.
+- semantic similarity is helpful but still not enough to solve wrong-context distractors perfectly.
 
 Question category is metadata only. It helps us analyze results by difficulty, but it should not control what the model sees.
 
 ## Evidence Model
 
-The dataset now uses evidence units instead of one fixed ground-truth list.
+The dataset uses evidence units instead of one fixed ground-truth list.
 
 Each question can define:
 
@@ -280,21 +270,22 @@ The dataset validator currently checks:
 
 ```text
 src/
-  benchmark.py      baseline benchmark runner and report generation
-  contracts.py      basic benchmark data contracts
-  dataset.py        dataset dataclasses and validation
-  dataset_io.py     JSON dataset loader
+  benchmark.py       baseline benchmark runner and report generation
+  contracts.py       basic benchmark data contracts
+  dataset.py         dataset dataclasses and validation
+  dataset_io.py      JSON dataset loader
   dataset_summary.py dataset health summaries
-  evidence.py       evidence scoring helpers
-  evaluator.py      method-agnostic selection evaluator and RL reward signal
-  knapsack_debug.py failure-cause diagnostics for the feature knapsack
+  evidence.py        evidence scoring helpers
+  evaluator.py       method-agnostic selection evaluator and RL reward signal
+  knapsack_debug.py  failure-cause diagnostics for the feature knapsack
   knapsack_features.py public feature builder and feature-based knapsack selector
   knapsack_inspector.py per-question score and candidate inspection report
-  optimizer.py      current exact interaction optimizer wrapper
-  oracle.py         exhaustive exact oracle for small candidate pools
-  selectors.py      simple baseline selectors
-  synthetic.py      small synthetic examples
-  utility.py        interaction utility model
+  optimizer.py       current exact interaction optimizer wrapper
+  oracle.py          exhaustive exact oracle for small candidate pools
+  selectors.py       simple baseline selectors
+  semantic_features.py fixed MiniLM semantic similarity backend
+  synthetic.py       small synthetic examples
+  utility.py         interaction utility model
 
 scripts/
   run_baseline_benchmark.py
@@ -309,7 +300,9 @@ tests/
   test_dataset_summary.py
   test_evaluator.py
   test_knapsack_debug.py
+  test_knapsack_features.py
   test_knapsack_inspector.py
+  test_semantic_knapsack_features.py
   test_selectors.py
   test_contracts.py
   test_evidence.py
@@ -321,28 +314,28 @@ tests/
 
 ## Current Verification
 
-The full test suite currently passes:
+Run the full test suite with:
 
 ```text
 python -m pytest -q
-81 passed
+```
+
+The current codebase also regenerates the benchmark and diagnostic reports with:
+
+```text
+python scripts/run_baseline_benchmark.py
+python scripts/run_failure_analysis.py
+python scripts/run_knapsack_debug.py
+python scripts/run_knapsack_inspection.py
 ```
 
 ## Next Tasks
 
-1. Improve the feature-based knapsack scoring formula:
-   - reduce distractor inclusion
-   - improve complete-hit rate
-   - tune redundancy and complementarity weights
-   - inspect failures by question and budget
-
-2. Add plots by category and budget:
-   - direct vs two-hop vs three-hop
-   - 128 vs 256 vs 512 vs 1024
-
-3. Add more anti-lexical contents after tuning against Content 02.
-
-4. After the knapsack baseline is stable across multiple contents, start the RL environment:
+1. Inspect the remaining 16 incomplete knapsack cases question by question.
+2. Improve wrong-context handling without manual contradiction word assumptions.
+3. Expand the dataset beyond the current two contents so the formulas cannot overfit one authored style.
+4. Add a meaning-aware verifier only when it is clean enough to use both for knapsack analysis and later RL reward design.
+5. After the knapsack baseline is stable across multiple contents, start the RL environment:
    - actions: `INCLUDE`, `SKIP`, `STOP`
    - state: query, current candidate, selected context summary, remaining budget
    - reward: evaluator-based final evidence quality under budget

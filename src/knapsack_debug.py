@@ -64,7 +64,7 @@ class KnapsackDebugReportFiles:
 
 def debug_knapsack(
     contents: tuple[ContentCollection, ...],
-    max_candidates: int = 10,
+    max_candidates: int = 15,
     weights: FeatureWeights = FeatureWeights(),
 ) -> KnapsackDebugReport:
     cases = []
@@ -118,8 +118,8 @@ def _debug_case(
     max_candidates: int,
     weights: FeatureWeights,
 ) -> KnapsackDebugCase:
-    utility = build_feature_utility(question, paragraphs, weights)
-    top = select_feature_candidates(question, paragraphs, max_candidates, weights)
+    utility = build_feature_utility(question, paragraphs, budget, weights)
+    top = select_feature_candidates(question, paragraphs, budget, max_candidates, weights)
     top_ids = frozenset(paragraph.id for paragraph in top)
     required_ids = frozenset(
         item for unit in question.required_evidence_units for item in unit.alternatives

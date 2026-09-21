@@ -69,7 +69,7 @@ class KnapsackInspectionReportFiles:
 
 def inspect_knapsack(
     contents: tuple[ContentCollection, ...],
-    max_candidates: int = 10,
+    max_candidates: int = 15,
     weights: FeatureWeights = FeatureWeights(),
 ) -> KnapsackInspectionReport:
     cases: list[KnapsackInspectionCase] = []
@@ -119,9 +119,9 @@ def _inspect_case(
     max_candidates: int,
     weights: FeatureWeights,
 ) -> KnapsackInspectionCase:
-    candidates = select_feature_candidates(question, paragraphs, max_candidates, weights)
+    candidates = select_feature_candidates(question, paragraphs, budget, max_candidates, weights)
     public = build_candidate_input(question, candidates, budget)
-    utility = build_feature_utility(question, candidates, weights)
+    utility = build_feature_utility(question, candidates, budget, weights)
     result = feature_based_knapsack_selector(
         question,
         paragraphs,

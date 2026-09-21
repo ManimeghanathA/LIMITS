@@ -1,6 +1,6 @@
 # Feature-Based Knapsack Baseline
 
-This document explains the current knapsack baseline in LIMITS. It is intentionally transparent and will evolve as the scoring formula improves.
+This document explains the current knapsack baseline in LIMITS. It is intentionally transparent and should evolve as the scoring formula improves.
 
 ## Purpose
 
@@ -29,6 +29,7 @@ Those labels are only used by the evaluator after selection.
 The current selector is implemented in:
 
 ```text
+src/semantic_features.py
 src/knapsack_features.py
 ```
 
@@ -41,20 +42,24 @@ feature_based_knapsack_selector(...)
 The pipeline is:
 
 ```text
-question + candidate paragraphs
-  -> tokenize query and paragraphs
-  -> compute public text features
-  -> choose lexical seed candidates
-  -> expand candidates using seed-linked paragraph overlap
-  -> keep 10 candidates
+question + candidate paragraphs + token budget
+  -> compute sparse lexical features
+  -> compute fixed MiniLM dense similarities
+  -> build a mixed sparse+dense 15-candidate pool
   -> build an InteractionUtility
   -> exact optimize the reduced pool under budget
   -> return selected chunk ids
 ```
 
-The top-10 prefilter exists because exact subset search over all 40 candidates would be too slow. This is a practical compromise, but it is also a possible bias source.
+The embedding backend is fixed:
 
-The current seed-linked prefilter was added because earlier diagnostics showed that low-overlap bridge evidence was being removed before the optimizer could consider it.
+```text
+sentence-transformers/all-MiniLM-L6-v2
+```
+
+There is no fallback mode. If this dependency or model is unavailable, the benchmark should fail clearly rather than changing behavior silently.
+
+The 15-candidate prefilter exists because exact subset search over all 40 candidates is expensive. This remains a possible bias source, but the current debug report shows no prefilter failures, so the harder problem right now is scoring quality inside the candidate pool.
 
 ```text
 reports/baselines/knapsack_debug.md
@@ -63,22 +68,20 @@ reports/baselines/knapsack_debug.md
 Among incomplete knapsack selections, the current breakdown is:
 
 ```text
-scoring_failure: 11
-distractor_failure: 5
+scoring_failure: 9
+distractor_failure: 7
 ```
-
-The current debug report has no prefilter failures, which means the next serious improvement is scoring quality inside the reduced candidate pool and wrong-context/distractor handling.
 
 ## Tokenization
 
-The scorer lowercases text, extracts alphanumeric terms, and removes a small stopword list:
+The sparse scorer lowercases text, extracts alphanumeric terms, and removes a small stopword list:
 
 ```text
 a, an, and, are, at, be, by, for, in, is, it, of, on, or,
 the, to, what, when, where, which, who, why
 ```
 
-This is simple and inspectable, but it also means the current model is lexical. It does not yet understand synonyms, paraphrases, or deeper semantics.
+These sparse features are deliberately still present. The current benchmark is not dense-only; it combines keyword hints with semantic similarity.
 
 ## Utility Function
 
@@ -89,7 +92,6 @@ individual chunk value
 + pair synergy
 + triple synergy
 - redundancy penalty
-- selection penalty
 ```
 
 subject to:
@@ -108,44 +110,80 @@ U(S) =
   - redundancy_weight * sum pair_redundancy[i,j]
 ```
 
-The selection penalty is included inside the individual chunk score, so extra chunks must earn enough public-feature value to justify being selected.
+Current `redundancy_weight`:
+
+```text
+0.75
+```
+
+The exact optimizer does not force the selected context to fill the full budget. A paragraph must earn enough utility to justify its token cost and selection penalty.
 
 ## Individual Score
 
-Each chunk receives an individual score based on query-term overlap and seed linkage.
+Each chunk receives an individual score from sparse query evidence, dense query similarity, seed linkage, and token cost.
 
-First, lexical seed chunks are ranked by query overlap:
+Sparse query overlap:
 
 ```text
 coverage = |query_terms ∩ paragraph_terms| / |query_terms|
 term_hits = |query_terms ∩ paragraph_terms|
 
-lexical_score =
+sparse_query_score =
   3.0 * coverage
   + 0.15 * term_hits
 ```
 
-Then each non-seed chunk can receive value if it shares terms with one of the lexical seeds:
+Dense query similarity:
 
 ```text
-seed_link =
-  max over lexical seeds:
+dense_query_score = 0.5 * max(0, cosine(query_embedding, paragraph_embedding))
+```
+
+Budget-aware token penalty:
+
+```text
+token_penalty = 1.0 * paragraph_tokens / budget
+```
+
+Seed linkage:
+
+```text
+sparse_seed_link =
+  max over seeds:
     |paragraph_terms ∩ seed_terms| / min(|paragraph_terms|, |seed_terms|)
 
-individual =
-  lexical_score
-  + 3.0 * seed_link
-  - 0.8 selection_penalty
+dense_seed_link =
+  max over seeds:
+    cosine(seed_embedding, paragraph_embedding)
 ```
 
-This means chunks that directly mention query terms rank higher, while bridge chunks can still survive if they connect to a strong seed.
-
-Current risk:
+Final individual score:
 
 ```text
-Wrong but query-similar chunks can score highly.
-Wrong chunks that share terms with a strong seed may also receive value.
+individual =
+  sparse_query_score
+  + dense_query_score
+  + 3.0 * sparse_seed_link
+  + 0.3 * max(0, dense_seed_link)
+  - 1.0 * selection_penalty
+  - token_penalty
 ```
+
+This gives direct evidence a route through query relevance and gives bridge evidence a route through connection to strong seeds.
+
+## Candidate Pool
+
+The selector keeps up to 15 candidates before exact optimization.
+
+The pool is built from:
+
+```text
+up to 5 strongest sparse query-overlap candidates
+up to 5 strongest dense query-similarity candidates
+remaining candidates ranked by hybrid individual score
+```
+
+Duplicate candidates are not added twice, but overlap between sparse and dense top lists counts as representation from both signals. That prevents one scoring family from crowding out the other.
 
 ## Pair Synergy
 
@@ -155,30 +193,25 @@ For every pair, the system checks whether the pair covers more query terms than 
 gain =
   coverage(chunk_i ∪ chunk_j)
   - max(coverage(chunk_i), coverage(chunk_j))
-
-pair_synergy = 2.0 * gain
 ```
 
-It also rewards paragraph-to-paragraph linkage:
+It also rewards paragraph-to-paragraph sparse linkage:
 
 ```text
 pair_link =
   |paragraph_terms_i ∩ paragraph_terms_j|
   / min(|paragraph_terms_i|, |paragraph_terms_j|)
+```
 
+Current pair score:
+
+```text
 pair_synergy =
-  2.0 * query_complementarity_gain
+  2.0 * max(0, query_complementarity_gain)
   + 1.2 * pair_link
 ```
 
-This is meant to reward complementary chunks and bridge chunks that are connected to answer-bearing evidence even when they have weak direct query overlap.
-
-Current risk:
-
-```text
-Complementarity is still measured lexically.
-It may reward two chunks that share surface terms even if they do not logically connect.
-```
+Dense pair linkage exists in the code but is currently weighted as `0.0`. During tuning it increased context bloat and distractor selection, so it is disabled in the canonical formula for now.
 
 ## Triple Synergy
 
@@ -189,44 +222,71 @@ gain =
   coverage(chunk_i ∪ chunk_j ∪ chunk_k)
   - best_pair_coverage
 
-triple_synergy = 1.25 * gain
+triple_synergy = 1.25 * max(0, gain)
 ```
 
-This is the first transparent approximation of higher-order context synergy.
-
-Current risk:
-
-```text
-This is not true reasoning yet.
-It only measures extra query-term coverage from a three-chunk combination.
-```
+This is the current explicit third-order synergy approximation. It is useful for transparent optimization, but it is not the same as true logical reasoning.
 
 ## Redundancy Penalty
 
-For every pair, redundancy is estimated using Jaccard similarity over paragraph terms:
+Redundancy is computed for every pair of selected chunks. If paragraph `i` is redundant with both `j` and `k`, the selected subset receives both pair penalties:
 
 ```text
-redundancy = 1.5 * Jaccard(paragraph_terms_i, paragraph_terms_j)
+penalty(i,j) + penalty(i,k)
 ```
 
-The final utility subtracts this value.
-
-Current risk:
+Sparse redundancy:
 
 ```text
-Valid alternatives and wrong similar distractors can both look redundant.
-The model does not yet know contradiction or factual correctness.
+lexical_jaccard =
+  |paragraph_terms_i ∩ paragraph_terms_j|
+  / |paragraph_terms_i ∪ paragraph_terms_j|
 ```
 
-The current redundancy weight is:
+Dense redundancy only activates above a similarity threshold:
 
 ```text
-redundancy_weight = 0.75
+semantic_excess = max(0, dense_similarity - 0.72)
+semantic_penalty = semantic_excess / (1 - 0.72)
 ```
+
+Final pair redundancy:
+
+```text
+pair_redundancy =
+  1.5 * lexical_jaccard
+  + 0.75 * semantic_penalty
+```
+
+Final utility subtracts:
+
+```text
+0.75 * sum(pair_redundancy)
+```
+
+This handles exact overlap and some paraphrased duplication. It still cannot reliably distinguish a valid paraphrase from a semantically similar but wrong distractor; that requires a stronger verifier.
+
+## Contradiction Handling
+
+The current canonical knapsack does not use a manual contradiction penalty.
+
+Reason:
+
+```text
+Manual word rules can falsely mark true evidence as contradictory.
+```
+
+A better future path is to add a meaning-aware NLI or cross-encoder verifier. That can estimate whether two chunks support, contradict, or are unrelated to each other without relying on guessed words like "old", "new", "wrong", or "changed".
 
 ## Exact Optimization
 
-After prefiltering to the top 10 candidates, the existing exact optimizer evaluates feasible subsets and returns the best one under budget.
+After prefiltering to 15 candidates, the exact optimizer evaluates feasible subsets and returns the best one under budget.
+
+Maximum subset count:
+
+```text
+2^15 = 32768
+```
 
 Tie-breaking prefers:
 
@@ -236,55 +296,37 @@ lower token usage
 stable sorted ids
 ```
 
-This behavior is useful because the selector does not need to fill the budget if the scoring formula thinks extra chunks do not help.
+This behavior is important because the benchmark should select enough evidence, not simply fill the budget.
 
 ## Current Benchmark Status
 
 Across the two current content collections, the current report shows:
 
 ```text
-feature_knapsack evidence F1:        0.709
+feature_knapsack evidence F1:        0.713
 feature_knapsack complete hit rate:  0.867
-feature_knapsack required recall:    0.943
-feature_knapsack optional recall:    0.842
-feature_knapsack budget utilization: 0.626
+feature_knapsack required recall:    0.935
+feature_knapsack optional recall:    0.850
+feature_knapsack budget utilization: 0.632
+feature_knapsack avg distractors:    0.617
 ```
 
-The early interpretation:
+Interpretation:
 
 ```text
-The model is now substantially stronger than keyword overlap on evidence F1, complete-hit rate, and required recall while using much less of the token budget.
-Its remaining weakness is distractor selection and fine-grained scoring inside hard candidate pools.
+The model is much stronger than budget fill, random selection, and keyword overlap on evidence F1, complete-hit rate, and required recall while using less budget.
+The remaining weakness is not candidate recall. It is ranking true evidence above wrong but plausible distractors.
 ```
 
 ## Known Bias Risks
 
-- Lexical overlap bias.
-- Prefilter bias.
-- Short chunk bias.
-- Synthetic wording bias.
-- Distractor overlap bias.
-- No semantic paraphrase understanding.
-- No contradiction detection.
-- No learned notion of answerability.
-
-## Next Improvement Direction
-
-Before tuning blindly, use:
-
-```text
-reports/baselines/failure_analysis.md
-reports/baselines/failure_analysis.json
-```
-
-The next formula work should focus on:
-
-- failures where required units are missing,
-- cases where distractors are selected,
-- category-specific weakness,
-- budget-specific weakness.
-
-Only after this should we tune weights or add new features.
+- Lexical overlap bias: reduced by dense query/seed similarity, but not eliminated.
+- Prefilter bias: reduced by a 15-candidate sparse+dense pool, but still present.
+- Short chunk bias: token penalty is intentional, but can over-favor compact chunks.
+- Synthetic wording bias: still present until the dataset expands beyond two contents.
+- Distractor overlap bias: still the main hard failure type.
+- No contradiction detection: intentionally deferred until we use a real verifier.
+- No learned notion of answerability: this is where RL or a learned reranker may later help.
 
 ## Debugging the Knapsack
 
