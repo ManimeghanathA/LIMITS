@@ -29,6 +29,7 @@ def test_aggregate_results_reports_method_level_metrics() -> None:
     assert set(summary.method_summaries) == set(BASELINE_METHODS)
     for method_summary in summary.method_summaries.values():
         assert 0.0 <= method_summary.average_evidence_f1 <= 1.0
+        assert 0.0 <= method_summary.average_evidence_precision <= 1.0
         assert 0.0 <= method_summary.complete_hit_rate <= 1.0
         assert 0.0 <= method_summary.average_budget_utilization <= 1.0
 

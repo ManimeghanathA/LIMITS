@@ -68,7 +68,7 @@ reports/baselines/knapsack_debug.md
 Among incomplete knapsack selections, the current breakdown is:
 
 ```text
-scoring_failure: 9
+scoring_failure: 7
 distractor_failure: 7
 ```
 
@@ -208,7 +208,7 @@ Current pair score:
 ```text
 pair_synergy =
   2.0 * max(0, query_complementarity_gain)
-  + 1.2 * pair_link
+  + 1.3 * pair_link
 ```
 
 Dense pair linkage exists in the code but is currently weighted as `0.0`. During tuning it increased context bloat and distractor selection, so it is disabled in the canonical formula for now.
@@ -303,19 +303,19 @@ This behavior is important because the benchmark should select enough evidence, 
 Across the two current content collections, the current report shows:
 
 ```text
-feature_knapsack evidence F1:        0.713
-feature_knapsack complete hit rate:  0.867
-feature_knapsack required recall:    0.935
+feature_knapsack evidence F1:        0.710
+feature_knapsack complete hit rate:  0.883
+feature_knapsack required recall:    0.940
 feature_knapsack optional recall:    0.850
-feature_knapsack budget utilization: 0.632
+feature_knapsack budget utilization: 0.638
 feature_knapsack avg distractors:    0.617
 ```
 
 Interpretation:
 
 ```text
-The model is much stronger than budget fill, random selection, and keyword overlap on evidence F1, complete-hit rate, and required recall while using less budget.
-The remaining weakness is not candidate recall. It is ranking true evidence above wrong but plausible distractors.
+The model is much stronger than budget fill, random selection, and keyword overlap on complete-hit rate and required recall while using less budget.
+The latest tuning uses a balanced paragraph-chain link: it keeps F1 close to the older minimal selector while preserving the failure reduction and stronger multi-hop chain completion. The remaining weakness is still ranking true evidence above wrong but plausible distractors.
 ```
 
 ## Known Bias Risks

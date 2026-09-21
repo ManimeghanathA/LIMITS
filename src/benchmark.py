@@ -41,12 +41,16 @@ class BenchmarkRow:
 @dataclass(frozen=True)
 class MethodSummary:
     method: str
+    average_evidence_precision: float
     average_evidence_f1: float
     complete_hit_rate: float
     average_required_recall: float
     average_optional_support_recall: float
     average_budget_utilization: float
     average_distractor_count: float
+    average_extra_chunk_count: float
+    ground_truth_hit_rate: float
+    average_ground_truth_jaccard: float
 
 
 @dataclass(frozen=True)
@@ -108,6 +112,7 @@ def aggregate_results(rows: tuple[BenchmarkRow, ...]) -> BenchmarkSummary:
         method_rows = tuple(row for row in rows if row.method == method)
         method_summaries[method] = MethodSummary(
             method=method,
+            average_evidence_precision=_mean(row.evidence_precision for row in method_rows),
             average_evidence_f1=_mean(row.evidence_f1 for row in method_rows),
             complete_hit_rate=_mean(float(row.complete_hit) for row in method_rows),
             average_required_recall=_mean(row.required_unit_recall for row in method_rows),
@@ -118,6 +123,13 @@ def aggregate_results(rows: tuple[BenchmarkRow, ...]) -> BenchmarkSummary:
                 min(row.budget_utilization, 1.0) for row in method_rows
             ),
             average_distractor_count=_mean(row.distractor_count for row in method_rows),
+            average_extra_chunk_count=_mean(row.extra_chunk_count for row in method_rows),
+            ground_truth_hit_rate=_mean(
+                float(row.ground_truth_selection_hit) for row in method_rows
+            ),
+            average_ground_truth_jaccard=_mean(
+                row.best_ground_truth_jaccard for row in method_rows
+            ),
         )
     return BenchmarkSummary(row_count=len(rows), method_summaries=method_summaries)
 
@@ -198,6 +210,13 @@ def _write_csv(path: Path, rows: tuple[BenchmarkRow, ...]) -> None:
 def _write_collage(path: Path, rows: tuple[BenchmarkRow, ...], summary: BenchmarkSummary) -> None:
     panels = (
         _bar_panel(
+            "Evidence Precision",
+            {
+                method: item.average_evidence_precision
+                for method, item in summary.method_summaries.items()
+            },
+        ),
+        _bar_panel(
             "Complete Hit Rate",
             {method: item.complete_hit_rate for method, item in summary.method_summaries.items()},
         ),
@@ -207,6 +226,10 @@ def _write_collage(path: Path, rows: tuple[BenchmarkRow, ...], summary: Benchmar
         ),
         _line_panel("Evidence F1 vs Budget", rows, "evidence_f1"),
         _line_panel("Complete Hit vs Budget", rows, "complete_hit"),
+        _line_panel("Required Recall vs Budget", rows, "required_unit_recall"),
+        _line_panel("Precision vs Budget", rows, "evidence_precision"),
+        _line_panel("F1 vs Category", rows, "evidence_f1", x_field="category"),
+        _line_panel("Complete Hit vs Category", rows, "complete_hit", x_field="category"),
         _bar_panel(
             "Budget Utilization",
             {
@@ -221,16 +244,51 @@ def _write_collage(path: Path, rows: tuple[BenchmarkRow, ...], summary: Benchmar
                 for method, item in summary.method_summaries.items()
             },
         ),
+        _bar_panel(
+            "Ground Truth Jaccard",
+            {
+                method: item.average_ground_truth_jaccard
+                for method, item in summary.method_summaries.items()
+            },
+        ),
+        _bar_panel(
+            "Extra Chunk Count",
+            {
+                method: min(item.average_extra_chunk_count / 5, 1.0)
+                for method, item in summary.method_summaries.items()
+            },
+            value_labels={
+                method: item.average_extra_chunk_count
+                for method, item in summary.method_summaries.items()
+            },
+        ),
     )
-    width, height = 1200, 900
+    width, height = 1600, 1350
     image = Image.new("RGB", (width, height), "white")
-    positions = ((0, 0), (400, 0), (800, 0), (0, 450), (400, 450), (800, 450))
+    positions = (
+        (0, 0),
+        (400, 0),
+        (800, 0),
+        (1200, 0),
+        (0, 450),
+        (400, 450),
+        (800, 450),
+        (1200, 450),
+        (0, 900),
+        (400, 900),
+        (800, 900),
+        (1200, 900),
+    )
     for panel, position in zip(panels, positions):
         image.paste(panel, position)
     image.save(path)
 
 
-def _bar_panel(title: str, values: dict[str, float]) -> Image.Image:
+def _bar_panel(
+    title: str,
+    values: dict[str, float],
+    value_labels: dict[str, float] | None = None,
+) -> Image.Image:
     image = Image.new("RGB", (400, 450), "#ffffff")
     draw = ImageDraw.Draw(image)
     font = ImageFont.load_default()
@@ -245,12 +303,18 @@ def _bar_panel(title: str, values: dict[str, float]) -> Image.Image:
         x = 28 + index * 90
         draw.rectangle((x, base_y - height, x + bar_width, base_y), fill=colors[method])
         draw.text((x, base_y + 12), method.replace("_", "\n"), fill="#111111", font=font)
-        draw.text((x, base_y - height - 18), f"{value:.2f}", fill="#111111", font=font)
+        label_value = value if value_labels is None else value_labels.get(method, value)
+        draw.text((x, base_y - height - 18), f"{label_value:.2f}", fill="#111111", font=font)
     draw.line((30, base_y, 370, base_y), fill="#333333")
     return image
 
 
-def _line_panel(title: str, rows: tuple[BenchmarkRow, ...], metric: str) -> Image.Image:
+def _line_panel(
+    title: str,
+    rows: tuple[BenchmarkRow, ...],
+    metric: str,
+    x_field: str = "budget",
+) -> Image.Image:
     image = Image.new("RGB", (400, 450), "#ffffff")
     draw = ImageDraw.Draw(image)
     font = ImageFont.load_default()
@@ -258,20 +322,22 @@ def _line_panel(title: str, rows: tuple[BenchmarkRow, ...], metric: str) -> Imag
     colors = _method_colors()
     left, top, right, bottom = 55, 70, 360, 370
     draw.rectangle((left, top, right, bottom), outline="#cccccc")
-    x_by_budget = {
-        budget: left + int((right - left) * index / (len(BUDGETS) - 1))
-        for index, budget in enumerate(BUDGETS)
+    x_values = list(BUDGETS) if x_field == "budget" else ["direct", "two_hop", "three_hop"]
+    x_by_value = {
+        value: left + int((right - left) * index / (len(x_values) - 1))
+        for index, value in enumerate(x_values)
     }
-    for budget, x in x_by_budget.items():
-        draw.text((x - 16, bottom + 12), str(budget), fill="#111111", font=font)
+    for value, x in x_by_value.items():
+        label = str(value).replace("_", "\n")
+        draw.text((x - 18, bottom + 12), label, fill="#111111", font=font)
     for method in BASELINE_METHODS:
         points = []
-        for budget in BUDGETS:
+        for value in x_values:
             budget_rows = [
-                row for row in rows if row.method == method and row.budget == budget
+                row for row in rows if row.method == method and getattr(row, x_field) == value
             ]
             value = _mean(float(getattr(row, metric)) for row in budget_rows)
-            x = x_by_budget[budget]
+            x = x_by_value[x_values[len(points)]]
             y = bottom - int(max(0.0, min(value, 1.0)) * (bottom - top))
             points.append((x, y))
             draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill=colors[method])

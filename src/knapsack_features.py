@@ -49,7 +49,7 @@ class FeatureWeights:
     selection_penalty: float = 1.0
     budget_token_penalty: float = 1.0
     pair_complementarity: float = 2.0
-    pair_linkage: float = 1.2
+    pair_linkage: float = 1.3
     semantic_pair_linkage: float = 0.0
     triple_complementarity: float = 1.25
     redundancy: float = 1.5

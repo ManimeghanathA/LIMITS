@@ -1,7 +1,7 @@
 {
   "failure_cause_counts": {
     "distractor_failure": 7,
-    "scoring_failure": 9
+    "scoring_failure": 7
   },
   "cases": [
     {
@@ -3122,9 +3122,10 @@
       "category": "direct",
       "budget": 1024,
       "complete_hit": true,
-      "evidence_f1": 0.5333333333333333,
+      "evidence_f1": 0.5,
       "selected_ids": [
         "p04",
+        "p10",
         "p11",
         "p12",
         "p20",
@@ -3136,7 +3137,7 @@
         "p37",
         "p39"
       ],
-      "token_used": 319,
+      "token_used": 348,
       "missing_required_units": [],
       "selected_distractors": [
         "p20"
@@ -3219,7 +3220,7 @@
           "id": "p10",
           "tokens": 29,
           "individual_score": -0.5363583671549956,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -5250,13 +5251,14 @@
       "category": "two_hop",
       "budget": 1024,
       "complete_hit": true,
-      "evidence_f1": 0.625,
+      "evidence_f1": 0.5882352941176471,
       "selected_ids": [
         "p05",
         "p06",
         "p07",
         "p08",
         "p17",
+        "p18",
         "p19",
         "p30",
         "p31",
@@ -5264,7 +5266,7 @@
         "p33",
         "p34"
       ],
-      "token_used": 322,
+      "token_used": 352,
       "missing_required_units": [],
       "selected_distractors": [
         "p33",
@@ -5364,7 +5366,7 @@
           "id": "p18",
           "tokens": 30,
           "individual_score": -0.259272240102291,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -5598,7 +5600,7 @@
       "category": "two_hop",
       "budget": 256,
       "complete_hit": true,
-      "evidence_f1": 0.8333333333333333,
+      "evidence_f1": 0.7692307692307693,
       "selected_ids": [
         "p09",
         "p10",
@@ -5606,9 +5608,10 @@
         "p24",
         "p31",
         "p36",
-        "p38"
+        "p38",
+        "p39"
       ],
-      "token_used": 204,
+      "token_used": 232,
       "missing_required_units": [],
       "selected_distractors": [],
       "failure_cause": "none",
@@ -5697,7 +5700,7 @@
           "id": "p39",
           "tokens": 28,
           "individual_score": -0.33566465129454937,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -7193,7 +7196,7 @@
       "category": "three_hop",
       "budget": 512,
       "complete_hit": true,
-      "evidence_f1": 0.6,
+      "evidence_f1": 0.5714285714285715,
       "selected_ids": [
         "p02",
         "p03",
@@ -7208,9 +7211,10 @@
         "p26",
         "p27",
         "p37",
+        "p39",
         "p40"
       ],
-      "token_used": 409,
+      "token_used": 437,
       "missing_required_units": [],
       "selected_distractors": [
         "p14",
@@ -7262,7 +7266,7 @@
           "id": "p39",
           "tokens": 28,
           "individual_score": -0.7799470573663712,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -7387,7 +7391,7 @@
       "category": "three_hop",
       "budget": 1024,
       "complete_hit": true,
-      "evidence_f1": 0.6,
+      "evidence_f1": 0.5714285714285715,
       "selected_ids": [
         "p02",
         "p03",
@@ -7402,9 +7406,10 @@
         "p26",
         "p27",
         "p37",
+        "p39",
         "p40"
       ],
-      "token_used": 409,
+      "token_used": 437,
       "missing_required_units": [],
       "selected_distractors": [
         "p14",
@@ -7456,7 +7461,7 @@
           "id": "p39",
           "tokens": 28,
           "individual_score": -0.7526033073663712,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -7580,26 +7585,24 @@
       "question_id": "q12_three_hop",
       "category": "three_hop",
       "budget": 128,
-      "complete_hit": false,
-      "evidence_f1": 0.8571428571428571,
+      "complete_hit": true,
+      "evidence_f1": 1.0,
       "selected_ids": [
-        "p06",
+        "p07",
         "p08",
         "p19",
         "p31"
       ],
-      "token_used": 115,
-      "missing_required_units": [
-        "printout"
-      ],
+      "token_used": 113,
+      "missing_required_units": [],
       "selected_distractors": [],
-      "failure_cause": "scoring_failure",
+      "failure_cause": "none",
       "top_candidates": [
         {
           "id": "p07",
           "tokens": 27,
           "individual_score": 1.6744562566280368,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": true,
           "is_distractor": false
         },
@@ -7615,7 +7618,7 @@
           "id": "p06",
           "tokens": 29,
           "individual_score": 1.9119691411654154,
-          "selected": true,
+          "selected": false,
           "is_required_alternative": true,
           "is_distractor": false
         },
@@ -7728,7 +7731,6 @@
             "p19"
           ],
           "alternatives_selected": [
-            "p06",
             "p19"
           ]
         },
@@ -7740,7 +7742,9 @@
           "alternatives_in_prefilter": [
             "p07"
           ],
-          "alternatives_selected": []
+          "alternatives_selected": [
+            "p07"
+          ]
         },
         {
           "name": "binder",
@@ -7979,12 +7983,13 @@
       "category": "three_hop",
       "budget": 512,
       "complete_hit": true,
-      "evidence_f1": 0.7000000000000001,
+      "evidence_f1": 0.6363636363636364,
       "selected_ids": [
         "p06",
         "p07",
         "p08",
         "p11",
+        "p12",
         "p19",
         "p20",
         "p24",
@@ -7993,9 +7998,10 @@
         "p32",
         "p33",
         "p34",
-        "p37"
+        "p37",
+        "p39"
       ],
-      "token_used": 380,
+      "token_used": 435,
       "missing_required_units": [],
       "selected_distractors": [
         "p33",
@@ -8079,7 +8085,7 @@
           "id": "p39",
           "tokens": 28,
           "individual_score": -0.8072149366140365,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -8119,7 +8125,7 @@
           "id": "p12",
           "tokens": 27,
           "individual_score": -0.9446523278951645,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         }
@@ -8187,12 +8193,13 @@
       "category": "three_hop",
       "budget": 1024,
       "complete_hit": true,
-      "evidence_f1": 0.7000000000000001,
+      "evidence_f1": 0.6363636363636364,
       "selected_ids": [
         "p06",
         "p07",
         "p08",
         "p11",
+        "p12",
         "p19",
         "p20",
         "p24",
@@ -8201,9 +8208,10 @@
         "p32",
         "p33",
         "p34",
-        "p37"
+        "p37",
+        "p39"
       ],
-      "token_used": 380,
+      "token_used": 435,
       "missing_required_units": [],
       "selected_distractors": [
         "p33",
@@ -8287,7 +8295,7 @@
           "id": "p39",
           "tokens": 28,
           "individual_score": -0.7798711866140365,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -8327,7 +8335,7 @@
           "id": "p12",
           "tokens": 27,
           "individual_score": -0.9182851403951645,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         }
@@ -11201,9 +11209,10 @@
         "c13",
         "c15",
         "c16",
+        "c21",
         "c24"
       ],
-      "token_used": 178,
+      "token_used": 205,
       "missing_required_units": [
         "student_access",
         "annex_alias"
@@ -11321,7 +11330,7 @@
           "id": "c21",
           "tokens": 27,
           "individual_score": -0.1686507910490035,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -16665,20 +16674,19 @@
       "question_id": "c_q09_two_hop",
       "category": "two_hop",
       "budget": 256,
-      "complete_hit": false,
-      "evidence_f1": 0.7058823529411765,
+      "complete_hit": true,
+      "evidence_f1": 0.888888888888889,
       "selected_ids": [
         "c33",
         "c34",
+        "c35",
         "c36",
         "c37"
       ],
-      "token_used": 116,
-      "missing_required_units": [
-        "reviewer_location"
-      ],
+      "token_used": 146,
+      "missing_required_units": [],
       "selected_distractors": [],
-      "failure_cause": "scoring_failure",
+      "failure_cause": "none",
       "top_candidates": [
         {
           "id": "c33",
@@ -16788,7 +16796,7 @@
           "id": "c35",
           "tokens": 30,
           "individual_score": -0.15542934536933894,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": true,
           "is_distractor": false
         },
@@ -16834,7 +16842,9 @@
           "alternatives_in_prefilter": [
             "c35"
           ],
-          "alternatives_selected": []
+          "alternatives_selected": [
+            "c35"
+          ]
         }
       ]
     },
@@ -19718,7 +19728,7 @@
       "category": "three_hop",
       "budget": 512,
       "complete_hit": true,
-      "evidence_f1": 0.7272727272727273,
+      "evidence_f1": 0.6666666666666666,
       "selected_ids": [
         "c20",
         "c33",
@@ -19726,9 +19736,10 @@
         "c35",
         "c36",
         "c37",
+        "c38",
         "c40"
       ],
-      "token_used": 208,
+      "token_used": 238,
       "missing_required_units": [],
       "selected_distractors": [],
       "failure_cause": "none",
@@ -19809,7 +19820,7 @@
           "id": "c38",
           "tokens": 30,
           "individual_score": -0.3451968878507614,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -19899,7 +19910,7 @@
       "category": "three_hop",
       "budget": 1024,
       "complete_hit": true,
-      "evidence_f1": 0.7272727272727273,
+      "evidence_f1": 0.6666666666666666,
       "selected_ids": [
         "c20",
         "c33",
@@ -19907,9 +19918,10 @@
         "c35",
         "c36",
         "c37",
+        "c38",
         "c40"
       ],
-      "token_used": 208,
+      "token_used": 238,
       "missing_required_units": [],
       "selected_distractors": [],
       "failure_cause": "none",
@@ -19990,7 +20002,7 @@
           "id": "c38",
           "tokens": 30,
           "individual_score": -0.3159000128507614,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -21168,7 +21180,7 @@
       "category": "three_hop",
       "budget": 512,
       "complete_hit": true,
-      "evidence_f1": 0.6666666666666666,
+      "evidence_f1": 0.5714285714285715,
       "selected_ids": [
         "c17",
         "c18",
@@ -21177,9 +21189,11 @@
         "c29",
         "c30",
         "c31",
-        "c32"
+        "c32",
+        "c37",
+        "c40"
       ],
-      "token_used": 236,
+      "token_used": 295,
       "missing_required_units": [],
       "selected_distractors": [],
       "failure_cause": "none",
@@ -21268,7 +21282,7 @@
           "id": "c37",
           "tokens": 28,
           "individual_score": -0.3859268143773079,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -21284,7 +21298,7 @@
           "id": "c40",
           "tokens": 31,
           "individual_score": -0.4373553542154176,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -21350,7 +21364,7 @@
       "category": "three_hop",
       "budget": 1024,
       "complete_hit": true,
-      "evidence_f1": 0.6666666666666666,
+      "evidence_f1": 0.5714285714285715,
       "selected_ids": [
         "c17",
         "c18",
@@ -21359,9 +21373,11 @@
         "c29",
         "c30",
         "c31",
-        "c32"
+        "c32",
+        "c37",
+        "c40"
       ],
-      "token_used": 236,
+      "token_used": 295,
       "missing_required_units": [],
       "selected_distractors": [],
       "failure_cause": "none",
@@ -21450,7 +21466,7 @@
           "id": "c37",
           "tokens": 28,
           "individual_score": -0.3585830643773079,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },
@@ -21466,7 +21482,7 @@
           "id": "c40",
           "tokens": 31,
           "individual_score": -0.4070819167154176,
-          "selected": false,
+          "selected": true,
           "is_required_alternative": false,
           "is_distractor": false
         },

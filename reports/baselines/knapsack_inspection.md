@@ -29,10 +29,10 @@ Selected distractors: `['p21', 'p35']`
 Score breakdown:
 
 - individual: `9.578`
-- pair synergy: `2.742`
+- pair synergy: `2.923`
 - triple synergy: `0.000`
 - redundancy penalty: `1.128`
-- total: `11.193`
+- total: `11.374`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -67,10 +67,10 @@ Selected distractors: `['p21', 'p35']`
 Score breakdown:
 
 - individual: `10.672`
-- pair synergy: `8.716`
+- pair synergy: `9.085`
 - triple synergy: `1.964`
 - redundancy penalty: `2.253`
-- total: `19.099`
+- total: `19.469`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -105,10 +105,10 @@ Selected distractors: `['p21', 'p35']`
 Score breakdown:
 
 - individual: `10.799`
-- pair synergy: `16.217`
+- pair synergy: `16.806`
 - triple synergy: `6.429`
 - redundancy penalty: `3.461`
-- total: `29.984`
+- total: `30.573`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -143,10 +143,10 @@ Selected distractors: `['p21', 'p35']`
 Score breakdown:
 
 - individual: `11.149`
-- pair synergy: `16.217`
+- pair synergy: `16.806`
 - triple synergy: `6.429`
 - redundancy penalty: `3.461`
-- total: `30.334`
+- total: `30.923`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -181,10 +181,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `12.602`
-- pair synergy: `2.998`
+- pair synergy: `3.192`
 - triple synergy: `0.000`
 - redundancy penalty: `1.533`
-- total: `14.067`
+- total: `14.261`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -219,10 +219,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `14.608`
-- pair synergy: `11.192`
+- pair synergy: `11.653`
 - triple synergy: `3.542`
 - redundancy penalty: `3.026`
-- total: `26.316`
+- total: `26.777`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -257,10 +257,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `15.872`
-- pair synergy: `17.107`
+- pair synergy: `17.782`
 - triple synergy: `6.458`
 - redundancy penalty: `4.201`
-- total: `35.236`
+- total: `35.911`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -295,10 +295,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `16.189`
-- pair synergy: `17.107`
+- pair synergy: `17.782`
 - triple synergy: `6.458`
 - redundancy penalty: `4.201`
-- total: `35.553`
+- total: `36.229`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -333,10 +333,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `9.432`
-- pair synergy: `2.710`
+- pair synergy: `2.888`
 - triple synergy: `0.000`
 - redundancy penalty: `1.142`
-- total: `11.000`
+- total: `11.178`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -371,10 +371,10 @@ Selected distractors: `['p33']`
 Score breakdown:
 
 - individual: `10.921`
-- pair synergy: `9.132`
+- pair synergy: `9.488`
 - triple synergy: `1.429`
 - redundancy penalty: `2.126`
-- total: `19.355`
+- total: `19.711`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -409,10 +409,10 @@ Selected distractors: `['p17', 'p33']`
 Score breakdown:
 
 - individual: `11.629`
-- pair synergy: `15.462`
+- pair synergy: `16.203`
 - triple synergy: `2.143`
 - redundancy penalty: `4.340`
-- total: `24.894`
+- total: `25.635`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -447,10 +447,10 @@ Selected distractors: `['p17', 'p33']`
 Score breakdown:
 
 - individual: `11.974`
-- pair synergy: `15.462`
+- pair synergy: `16.203`
 - triple synergy: `2.143`
 - redundancy penalty: `4.340`
-- total: `25.239`
+- total: `25.979`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -485,10 +485,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `13.062`
-- pair synergy: `3.261`
+- pair synergy: `3.486`
 - triple synergy: `0.000`
 - redundancy penalty: `1.448`
-- total: `14.875`
+- total: `15.099`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -523,10 +523,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `15.258`
-- pair synergy: `7.736`
+- pair synergy: `8.238`
 - triple synergy: `0.000`
 - redundancy penalty: `3.026`
-- total: `19.968`
+- total: `20.470`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -561,10 +561,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `15.542`
-- pair synergy: `9.096`
+- pair synergy: `9.711`
 - triple synergy: `0.000`
 - redundancy penalty: `3.745`
-- total: `20.893`
+- total: `21.508`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -599,10 +599,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `15.798`
-- pair synergy: `9.096`
+- pair synergy: `9.711`
 - triple synergy: `0.000`
 - redundancy penalty: `3.745`
-- total: `21.149`
+- total: `21.764`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -637,10 +637,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `14.636`
-- pair synergy: `3.677`
+- pair synergy: `3.900`
 - triple synergy: `0.000`
 - redundancy penalty: `1.348`
-- total: `16.965`
+- total: `17.188`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -675,10 +675,10 @@ Selected distractors: `['p20']`
 Score breakdown:
 
 - individual: `19.149`
-- pair synergy: `9.246`
+- pair synergy: `9.809`
 - triple synergy: `0.000`
 - redundancy penalty: `3.452`
-- total: `24.943`
+- total: `25.505`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -713,10 +713,10 @@ Selected distractors: `['p20']`
 Score breakdown:
 
 - individual: `18.494`
-- pair synergy: `12.015`
+- pair synergy: `12.808`
 - triple synergy: `0.000`
 - redundancy penalty: `4.703`
-- total: `25.807`
+- total: `26.600`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -742,19 +742,19 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 
 Question: Who reviews the amber maintenance ledger?
 
-Selected: `['p04', 'p11', 'p12', 'p20', 'p22', 'p24', 'p27', 'p29', 'p30', 'p37', 'p39']`
-Tokens: `319/1024`
-F1: `0.533` Required recall: `1.000`
+Selected: `['p04', 'p10', 'p11', 'p12', 'p20', 'p22', 'p24', 'p27', 'p29', 'p30', 'p37', 'p39']`
+Tokens: `348/1024`
+F1: `0.500` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `['p20']`
 
 Score breakdown:
 
-- individual: `18.805`
-- pair synergy: `12.015`
+- individual: `18.269`
+- pair synergy: `13.820`
 - triple synergy: `0.000`
-- redundancy penalty: `4.703`
-- total: `26.118`
+- redundancy penalty: `5.159`
+- total: `26.930`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -769,7 +769,7 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 | `p22` | selected | 0.612 | 30 | The electrical team reviews right-harness corrosion alerts, not left-harness insulation rubs. |
 | `p24` | selected, required | 0.077 | 29 | Dev Rao signs the release sheet after the structural team entry appears. |
 | `p30` | selected, optional | -0.135 | 28 | Dev Rao is not responsible for catering, hydraulic seal approval, or Orion calibration. |
-| `p10` | - | -0.536 | 29 | When the aft temperature warning appears, left harness inspection is assigned to structural. |
+| `p10` | selected | -0.536 | 29 | When the aft temperature warning appears, left harness inspection is assigned to structural. |
 | `p04` | selected | -0.413 | 29 | Cage D opens only after the secure tool room records Mira Patel's approval code. |
 | `p27` | selected | -0.484 | 27 | The secure tool room records approval codes for restricted cages. |
 | `p32` | - | -0.488 | 30 | The rollout coordinator checks that the sensor cart has arrived before calibration begins. |
@@ -789,10 +789,10 @@ Selected distractors: `['p26']`
 Score breakdown:
 
 - individual: `13.660`
-- pair synergy: `4.617`
+- pair synergy: `4.811`
 - triple synergy: `0.000`
 - redundancy penalty: `1.533`
-- total: `16.744`
+- total: `16.938`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -827,10 +827,10 @@ Selected distractors: `['p14', 'p26']`
 Score breakdown:
 
 - individual: `18.260`
-- pair synergy: `14.679`
+- pair synergy: `15.331`
 - triple synergy: `0.536`
 - redundancy penalty: `4.049`
-- total: `29.426`
+- total: `30.077`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -865,10 +865,10 @@ Selected distractors: `['p14', 'p26']`
 Score breakdown:
 
 - individual: `18.331`
-- pair synergy: `16.179`
+- pair synergy: `16.956`
 - triple synergy: `0.536`
 - redundancy penalty: `4.719`
-- total: `30.326`
+- total: `31.103`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -903,10 +903,10 @@ Selected distractors: `['p14', 'p26']`
 Score breakdown:
 
 - individual: `18.589`
-- pair synergy: `16.179`
+- pair synergy: `16.956`
 - triple synergy: `0.536`
 - redundancy penalty: `4.719`
-- total: `30.584`
+- total: `31.361`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -941,10 +941,10 @@ Selected distractors: `['p26']`
 Score breakdown:
 
 - individual: `10.050`
-- pair synergy: `3.731`
+- pair synergy: `3.926`
 - triple synergy: `0.000`
 - redundancy penalty: `1.533`
-- total: `12.249`
+- total: `12.443`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -979,10 +979,10 @@ Selected distractors: `['p26']`
 Score breakdown:
 
 - individual: `14.194`
-- pair synergy: `13.652`
+- pair synergy: `14.207`
 - triple synergy: `2.750`
 - redundancy penalty: `3.499`
-- total: `27.097`
+- total: `27.651`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1017,10 +1017,10 @@ Selected distractors: `['p26']`
 Score breakdown:
 
 - individual: `15.554`
-- pair synergy: `20.187`
+- pair synergy: `21.003`
 - triple synergy: `7.125`
 - redundancy penalty: `4.931`
-- total: `37.935`
+- total: `38.751`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1055,10 +1055,10 @@ Selected distractors: `['p26']`
 Score breakdown:
 
 - individual: `15.868`
-- pair synergy: `20.187`
+- pair synergy: `21.003`
 - triple synergy: `7.125`
 - redundancy penalty: `4.931`
-- total: `38.250`
+- total: `39.065`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1093,10 +1093,10 @@ Selected distractors: `['p33']`
 Score breakdown:
 
 - individual: `11.374`
-- pair synergy: `2.943`
+- pair synergy: `3.126`
 - triple synergy: `0.000`
 - redundancy penalty: `1.098`
-- total: `13.220`
+- total: `13.403`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1131,10 +1131,10 @@ Selected distractors: `['p33']`
 Score breakdown:
 
 - individual: `15.461`
-- pair synergy: `8.554`
+- pair synergy: `9.058`
 - triple synergy: `0.000`
 - redundancy penalty: `3.122`
-- total: `20.893`
+- total: `21.397`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1169,10 +1169,10 @@ Selected distractors: `['p33', 'p34']`
 Score breakdown:
 
 - individual: `16.035`
-- pair synergy: `12.249`
+- pair synergy: `12.978`
 - triple synergy: `0.000`
 - redundancy penalty: `4.375`
-- total: `23.909`
+- total: `24.639`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1198,19 +1198,19 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 
 Question: What document is needed for Hangar 2 staging during winter calibration?
 
-Selected: `['p05', 'p06', 'p07', 'p08', 'p17', 'p19', 'p30', 'p31', 'p32', 'p33', 'p34']`
-Tokens: `322/1024`
-F1: `0.625` Required recall: `1.000`
+Selected: `['p05', 'p06', 'p07', 'p08', 'p17', 'p18', 'p19', 'p30', 'p31', 'p32', 'p33', 'p34']`
+Tokens: `352/1024`
+F1: `0.588` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `['p33', 'p34']`
 
 Score breakdown:
 
-- individual: `16.350`
-- pair synergy: `12.249`
+- individual: `16.090`
+- pair synergy: `13.474`
 - triple synergy: `0.000`
-- redundancy penalty: `4.375`
-- total: `24.224`
+- redundancy penalty: `4.605`
+- total: `24.959`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1227,7 +1227,7 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 | `p30` | selected | 0.284 | 28 | Dev Rao is not responsible for catering, hydraulic seal approval, or Orion calibration. |
 | `p17` | selected | 0.095 | 33 | A contractor guide lists 07:15 as a calibration start time, but it applies to Orion. |
 | `p34` | selected, distractor | -0.164 | 31 | Binder Green contains fueling checklists and does not contain battery health printouts. |
-| `p18` | - | -0.259 | 30 | The sensor cart carries tablet mounts and a red charging cable under its tray. |
+| `p18` | selected | -0.259 | 30 | The sensor cart carries tablet mounts and a red charging cable under its tray. |
 | `p11` | - | -0.443 | 28 | Structural inspections must be logged in the amber maintenance ledger before release. |
 | `p38` | - | -0.512 | 27 | The aft temperature warning should not be routed to the electrical corrosion queue. |
 | `p01` | - | -0.529 | 27 | The Atlas night support desk moved to Bay 7 after the January ventilation review. |
@@ -1245,10 +1245,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `9.021`
-- pair synergy: `2.812`
+- pair synergy: `3.046`
 - triple synergy: `0.000`
 - redundancy penalty: `1.777`
-- total: `10.056`
+- total: `10.290`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -1274,19 +1274,19 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 
 Question: Which team should handle the usual cause of the aft temperature warning?
 
-Selected: `['p09', 'p10', 'p22', 'p24', 'p31', 'p36', 'p38']`
-Tokens: `204/256`
-F1: `0.833` Required recall: `1.000`
+Selected: `['p09', 'p10', 'p22', 'p24', 'p31', 'p36', 'p38', 'p39']`
+Tokens: `232/256`
+F1: `0.769` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `[]`
 
 Score breakdown:
 
-- individual: `10.431`
-- pair synergy: `7.880`
+- individual: `10.095`
+- pair synergy: `8.966`
 - triple synergy: `0.000`
-- redundancy penalty: `2.799`
-- total: `15.512`
+- redundancy penalty: `3.130`
+- total: `15.931`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -1302,7 +1302,7 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 | `p22` | selected, optional | 0.781 | 30 | The electrical team reviews right-harness corrosion alerts, not left-harness insulation rubs. |
 | `p07` | - | -0.893 | 27 | Hangar 2 staging requires the previous evening battery health printout. |
 | `p31` | selected | -0.104 | 29 | The ground power team owns the battery health printout process for Atlas staging. |
-| `p39` | - | -0.336 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
+| `p39` | selected | -0.336 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
 | `p33` | - | -0.628 | 30 | Hangar 3 accepts overnight staging only for paint-shop air filters, not Atlas calibration carts. |
 | `p37` | - | -1.078 | 31 | A clerk may shelve the amber ledger beside fuel records after Dev Rao reviews it. |
 | `p12` | - | -0.967 | 27 | Shift controller Dev Rao reviews the amber maintenance ledger. |
@@ -1321,10 +1321,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.549`
-- pair synergy: `8.507`
+- pair synergy: `8.966`
 - triple synergy: `0.000`
 - redundancy penalty: `3.130`
-- total: `15.925`
+- total: `16.384`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -1359,10 +1359,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.775`
-- pair synergy: `8.507`
+- pair synergy: `8.966`
 - triple synergy: `0.000`
 - redundancy penalty: `3.130`
-- total: `16.152`
+- total: `16.611`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -1397,10 +1397,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `5.694`
-- pair synergy: `4.310`
+- pair synergy: `4.503`
 - triple synergy: `0.208`
 - redundancy penalty: `1.145`
-- total: `9.067`
+- total: `9.260`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -1435,10 +1435,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `9.695`
-- pair synergy: `13.263`
+- pair synergy: `13.785`
 - triple synergy: `2.083`
 - redundancy penalty: `3.234`
-- total: `21.807`
+- total: `22.329`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -1473,10 +1473,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `12.326`
-- pair synergy: `22.263`
+- pair synergy: `23.229`
 - triple synergy: `5.000`
 - redundancy penalty: `6.232`
-- total: `33.357`
+- total: `34.324`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -1511,10 +1511,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `12.694`
-- pair synergy: `22.263`
+- pair synergy: `23.229`
 - triple synergy: `5.000`
 - redundancy penalty: `6.232`
-- total: `33.725`
+- total: `34.692`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -1549,10 +1549,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.745`
-- pair synergy: `4.067`
+- pair synergy: `4.240`
 - triple synergy: `0.179`
 - redundancy penalty: `1.001`
-- total: `13.990`
+- total: `14.162`
 
 Improvement hint: Scoring issue; required evidence was available but not valuable enough under current utility.
 
@@ -1587,10 +1587,10 @@ Selected distractors: `['p14']`
 Score breakdown:
 
 - individual: `14.304`
-- pair synergy: `11.973`
+- pair synergy: `12.507`
 - triple synergy: `2.054`
 - redundancy penalty: `2.958`
-- total: `25.373`
+- total: `25.906`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1616,19 +1616,19 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 
 Question: Which restricted location becomes accessible after Mira Patel approves the urgent replacement and the tool room records the code?
 
-Selected: `['p02', 'p03', 'p04', 'p11', 'p12', 'p14', 'p20', 'p23', 'p24', 'p25', 'p26', 'p27', 'p37', 'p40']`
-Tokens: `409/512`
-F1: `0.600` Required recall: `1.000`
+Selected: `['p02', 'p03', 'p04', 'p11', 'p12', 'p14', 'p20', 'p23', 'p24', 'p25', 'p26', 'p27', 'p37', 'p39', 'p40']`
+Tokens: `437/512`
+F1: `0.571` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `['p14', 'p26']`
 
 Score breakdown:
 
-- individual: `13.222`
-- pair synergy: `23.251`
+- individual: `12.442`
+- pair synergy: `26.062`
 - triple synergy: `7.946`
-- redundancy penalty: `6.727`
-- total: `37.693`
+- redundancy penalty: `7.620`
+- total: `38.831`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1639,7 +1639,7 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 | `p27` | selected, required | 2.723 | 27 | The secure tool room records approval codes for restricted cages. |
 | `p40` | selected, optional | 2.261 | 29 | Urgent replacement requests are marked red before they reach Mira Patel for approval. |
 | `p14` | selected, distractor | 1.218 | 32 | A parts summary mentions Mira Patel and Cage D but says she approves hydraulic seals. |
-| `p39` | - | -0.780 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
+| `p39` | selected | -0.780 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
 | `p23` | selected, optional | 1.324 | 30 | Torque kits are tracked by the secure tool room but are not stored in Cage D. |
 | `p11` | selected | -0.471 | 28 | Structural inspections must be logged in the amber maintenance ledger before release. |
 | `p37` | selected | 0.407 | 31 | A clerk may shelve the amber ledger beside fuel records after Dev Rao reviews it. |
@@ -1654,19 +1654,19 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 
 Question: Which restricted location becomes accessible after Mira Patel approves the urgent replacement and the tool room records the code?
 
-Selected: `['p02', 'p03', 'p04', 'p11', 'p12', 'p14', 'p20', 'p23', 'p24', 'p25', 'p26', 'p27', 'p37', 'p40']`
-Tokens: `409/1024`
-F1: `0.600` Required recall: `1.000`
+Selected: `['p02', 'p03', 'p04', 'p11', 'p12', 'p14', 'p20', 'p23', 'p24', 'p25', 'p26', 'p27', 'p37', 'p39', 'p40']`
+Tokens: `437/1024`
+F1: `0.571` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `['p14', 'p26']`
 
 Score breakdown:
 
-- individual: `13.621`
-- pair synergy: `23.251`
+- individual: `12.869`
+- pair synergy: `26.062`
 - triple synergy: `7.946`
-- redundancy penalty: `6.727`
-- total: `38.092`
+- redundancy penalty: `7.620`
+- total: `39.257`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1677,7 +1677,7 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 | `p27` | selected, required | 2.749 | 27 | The secure tool room records approval codes for restricted cages. |
 | `p40` | selected, optional | 2.289 | 29 | Urgent replacement requests are marked red before they reach Mira Patel for approval. |
 | `p14` | selected, distractor | 1.249 | 32 | A parts summary mentions Mira Patel and Cage D but says she approves hydraulic seals. |
-| `p39` | - | -0.753 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
+| `p39` | selected | -0.753 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
 | `p23` | selected, optional | 1.353 | 30 | Torque kits are tracked by the secure tool room but are not stored in Cage D. |
 | `p11` | selected | -0.444 | 28 | Structural inspections must be logged in the amber maintenance ledger before release. |
 | `p37` | selected | 0.437 | 31 | A clerk may shelve the amber ledger beside fuel records after Dev Rao reviews it. |
@@ -1688,31 +1688,31 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 | `p12` | selected | -0.760 | 27 | Shift controller Dev Rao reviews the amber maintenance ledger. |
 | `p20` | selected | -0.149 | 30 | A spare binder shelf label near the fuel records cabinet also says amber. |
 
-### FAIL content_01_aero_support / q12_three_hop / budget 128
+### PASS content_01_aero_support / q12_three_hop / budget 128
 
 Question: Which team files the binder needed for the document required by Hangar 2 staging?
 
-Selected: `['p06', 'p08', 'p19', 'p31']`
-Tokens: `115/128`
-F1: `0.857` Required recall: `0.750`
-Missing required units: `['printout']`
+Selected: `['p07', 'p08', 'p19', 'p31']`
+Tokens: `113/128`
+F1: `1.000` Required recall: `1.000`
+Missing required units: `[]`
 Selected distractors: `[]`
 
 Score breakdown:
 
-- individual: `7.272`
-- pair synergy: `2.743`
+- individual: `7.035`
+- pair synergy: `3.682`
 - triple synergy: `0.278`
-- redundancy penalty: `0.759`
-- total: `9.534`
+- redundancy penalty: `1.294`
+- total: `9.701`
 
-Improvement hint: Scoring issue; required evidence was available but not valuable enough under current utility.
+Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
 | id | flags | importance | tokens | text |
 |---|---|---:|---:|---|
-| `p07` | required | 1.674 | 27 | Hangar 2 staging requires the previous evening battery health printout. |
+| `p07` | selected, required | 1.674 | 27 | Hangar 2 staging requires the previous evening battery health printout. |
 | `p19` | selected, required | 2.490 | 29 | Hangar 2 has limited power during winter calibration, so staging must be early. |
-| `p06` | selected, required | 1.912 | 29 | The sensor cart must be staged beside Hangar 2 during winter calibration. |
+| `p06` | required | 1.912 | 29 | The sensor cart must be staged beside Hangar 2 during winter calibration. |
 | `p28` | required | 0.283 | 29 | Ground power files Binder Blue after the battery cart is returned. |
 | `p31` | selected, required | 1.400 | 29 | The ground power team owns the battery health printout process for Atlas staging. |
 | `p33` | distractor | 0.882 | 30 | Hangar 3 accepts overnight staging only for paint-shop air filters, not Atlas calibration carts. |
@@ -1739,10 +1739,10 @@ Selected distractors: `['p33', 'p34']`
 Score breakdown:
 
 - individual: `11.201`
-- pair synergy: `12.767`
+- pair synergy: `13.349`
 - triple synergy: `2.222`
 - redundancy penalty: `3.570`
-- total: `22.621`
+- total: `23.203`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1768,19 +1768,19 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 
 Question: Which team files the binder needed for the document required by Hangar 2 staging?
 
-Selected: `['p06', 'p07', 'p08', 'p11', 'p19', 'p20', 'p24', 'p28', 'p31', 'p32', 'p33', 'p34', 'p37']`
-Tokens: `380/512`
-F1: `0.700` Required recall: `1.000`
+Selected: `['p06', 'p07', 'p08', 'p11', 'p12', 'p19', 'p20', 'p24', 'p28', 'p31', 'p32', 'p33', 'p34', 'p37', 'p39']`
+Tokens: `435/512`
+F1: `0.636` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `['p33', 'p34']`
 
 Score breakdown:
 
-- individual: `10.044`
-- pair synergy: `19.129`
+- individual: `8.293`
+- pair synergy: `23.602`
 - triple synergy: `5.278`
-- redundancy penalty: `5.211`
-- total: `29.240`
+- redundancy penalty: `6.980`
+- total: `30.192`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1795,30 +1795,30 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 | `p24` | selected | -0.323 | 29 | Dev Rao signs the release sheet after the structural team entry appears. |
 | `p08` | selected, required | 1.634 | 28 | The previous evening battery health printout is filed in Binder Blue. |
 | `p34` | selected, distractor | 0.365 | 31 | Binder Green contains fueling checklists and does not contain battery health printouts. |
-| `p39` | - | -0.807 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
+| `p39` | selected | -0.807 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
 | `p32` | selected, optional | 0.116 | 30 | The rollout coordinator checks that the sensor cart has arrived before calibration begins. |
 | `p37` | selected | -0.558 | 31 | A clerk may shelve the amber ledger beside fuel records after Dev Rao reviews it. |
 | `p20` | selected | -0.353 | 30 | A spare binder shelf label near the fuel records cabinet also says amber. |
 | `p11` | selected | -0.492 | 28 | Structural inspections must be logged in the amber maintenance ledger before release. |
-| `p12` | - | -0.945 | 27 | Shift controller Dev Rao reviews the amber maintenance ledger. |
+| `p12` | selected | -0.945 | 27 | Shift controller Dev Rao reviews the amber maintenance ledger. |
 
 ### PASS content_01_aero_support / q12_three_hop / budget 1024
 
 Question: Which team files the binder needed for the document required by Hangar 2 staging?
 
-Selected: `['p06', 'p07', 'p08', 'p11', 'p19', 'p20', 'p24', 'p28', 'p31', 'p32', 'p33', 'p34', 'p37']`
-Tokens: `380/1024`
-F1: `0.700` Required recall: `1.000`
+Selected: `['p06', 'p07', 'p08', 'p11', 'p12', 'p19', 'p20', 'p24', 'p28', 'p31', 'p32', 'p33', 'p34', 'p37', 'p39']`
+Tokens: `435/1024`
+F1: `0.636` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `['p33', 'p34']`
 
 Score breakdown:
 
-- individual: `10.415`
-- pair synergy: `19.129`
+- individual: `8.717`
+- pair synergy: `23.602`
 - triple synergy: `5.278`
-- redundancy penalty: `5.211`
-- total: `29.611`
+- redundancy penalty: `6.980`
+- total: `30.617`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1833,12 +1833,12 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 | `p24` | selected | -0.295 | 29 | Dev Rao signs the release sheet after the structural team entry appears. |
 | `p08` | selected, required | 1.662 | 28 | The previous evening battery health printout is filed in Binder Blue. |
 | `p34` | selected, distractor | 0.395 | 31 | Binder Green contains fueling checklists and does not contain battery health printouts. |
-| `p39` | - | -0.780 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
+| `p39` | selected | -0.780 | 28 | Release paperwork is held until the amber ledger contains the structural inspection entry. |
 | `p32` | selected, optional | 0.145 | 30 | The rollout coordinator checks that the sensor cart has arrived before calibration begins. |
 | `p37` | selected | -0.527 | 31 | A clerk may shelve the amber ledger beside fuel records after Dev Rao reviews it. |
 | `p20` | selected | -0.323 | 30 | A spare binder shelf label near the fuel records cabinet also says amber. |
 | `p11` | selected | -0.465 | 28 | Structural inspections must be logged in the amber maintenance ledger before release. |
-| `p12` | - | -0.918 | 27 | Shift controller Dev Rao reviews the amber maintenance ledger. |
+| `p12` | selected | -0.918 | 27 | Shift controller Dev Rao reviews the amber maintenance ledger. |
 
 ### FAIL content_01_aero_support / q13_three_hop / budget 128
 
@@ -1853,10 +1853,10 @@ Selected distractors: `['p22']`
 Score breakdown:
 
 - individual: `6.112`
-- pair synergy: `3.758`
+- pair synergy: `3.980`
 - triple synergy: `0.000`
 - redundancy penalty: `1.704`
-- total: `8.165`
+- total: `8.388`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1891,10 +1891,10 @@ Selected distractors: `['p22']`
 Score breakdown:
 
 - individual: `10.153`
-- pair synergy: `12.007`
+- pair synergy: `12.523`
 - triple synergy: `1.818`
 - redundancy penalty: `3.434`
-- total: `20.544`
+- total: `21.060`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1929,10 +1929,10 @@ Selected distractors: `['p22', 'p29']`
 Score breakdown:
 
 - individual: `10.520`
-- pair synergy: `24.492`
+- pair synergy: `25.623`
 - triple synergy: `7.727`
 - redundancy penalty: `7.181`
-- total: `35.558`
+- total: `36.690`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -1967,10 +1967,10 @@ Selected distractors: `['p22', 'p29']`
 Score breakdown:
 
 - individual: `10.946`
-- pair synergy: `24.492`
+- pair synergy: `25.623`
 - triple synergy: `7.727`
 - redundancy penalty: `7.181`
-- total: `35.984`
+- total: `37.115`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2005,10 +2005,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `9.727`
-- pair synergy: `3.591`
+- pair synergy: `3.769`
 - triple synergy: `0.114`
 - redundancy penalty: `1.210`
-- total: `12.222`
+- total: `12.400`
 
 Improvement hint: Scoring issue; required evidence was available but not valuable enough under current utility.
 
@@ -2043,10 +2043,10 @@ Selected distractors: `['p33']`
 Score breakdown:
 
 - individual: `13.657`
-- pair synergy: `14.026`
+- pair synergy: `14.559`
 - triple synergy: `5.682`
 - redundancy penalty: `3.281`
-- total: `30.084`
+- total: `30.617`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2081,10 +2081,10 @@ Selected distractors: `['p17', 'p33', 'p34']`
 Score breakdown:
 
 - individual: `15.142`
-- pair synergy: `29.087`
+- pair synergy: `30.072`
 - triple synergy: `23.068`
 - redundancy penalty: `5.834`
-- total: `61.463`
+- total: `62.448`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2119,10 +2119,10 @@ Selected distractors: `['p17', 'p33', 'p34']`
 Score breakdown:
 
 - individual: `15.567`
-- pair synergy: `29.087`
+- pair synergy: `30.072`
 - triple synergy: `23.068`
 - redundancy penalty: `5.834`
-- total: `61.888`
+- total: `62.873`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2157,10 +2157,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `8.209`
-- pair synergy: `3.533`
+- pair synergy: `3.678`
 - triple synergy: `0.000`
 - redundancy penalty: `1.077`
-- total: `10.665`
+- total: `10.809`
 
 Improvement hint: Scoring issue; required evidence was available but not valuable enough under current utility.
 
@@ -2195,10 +2195,10 @@ Selected distractors: `['p22']`
 Score breakdown:
 
 - individual: `11.841`
-- pair synergy: `10.856`
+- pair synergy: `11.344`
 - triple synergy: `1.375`
 - redundancy penalty: `3.300`
-- total: `20.773`
+- total: `21.260`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2233,10 +2233,10 @@ Selected distractors: `['p22', 'p29']`
 Score breakdown:
 
 - individual: `11.598`
-- pair synergy: `25.210`
+- pair synergy: `26.294`
 - triple synergy: `10.500`
 - redundancy penalty: `6.900`
-- total: `40.408`
+- total: `41.492`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2271,10 +2271,10 @@ Selected distractors: `['p22', 'p29']`
 Score breakdown:
 
 - individual: `12.023`
-- pair synergy: `25.210`
+- pair synergy: `26.294`
 - triple synergy: `10.500`
 - redundancy penalty: `6.900`
-- total: `40.833`
+- total: `41.917`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2309,10 +2309,10 @@ Selected distractors: `['c04']`
 Score breakdown:
 
 - individual: `4.309`
-- pair synergy: `1.381`
+- pair synergy: `1.468`
 - triple synergy: `0.000`
 - redundancy penalty: `0.506`
-- total: `5.184`
+- total: `5.271`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2347,10 +2347,10 @@ Selected distractors: `['c04']`
 Score breakdown:
 
 - individual: `5.175`
-- pair synergy: `2.214`
+- pair synergy: `2.371`
 - triple synergy: `0.000`
 - redundancy penalty: `0.956`
-- total: `6.434`
+- total: `6.590`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2376,19 +2376,19 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 
 Question: Where should a visiting student fix a badge denial?
 
-Selected: `['c03', 'c04', 'c13', 'c15', 'c16', 'c24']`
-Tokens: `178/512`
+Selected: `['c03', 'c04', 'c13', 'c15', 'c16', 'c21', 'c24']`
+Tokens: `205/512`
 F1: `0.000` Required recall: `0.000`
 Missing required units: `['student_access', 'annex_alias']`
 Selected distractors: `['c04']`
 
 Score breakdown:
 
-- individual: `5.523`
-- pair synergy: `2.214`
+- individual: `5.354`
+- pair synergy: `2.631`
 - triple synergy: `0.000`
-- redundancy penalty: `0.956`
-- total: `6.781`
+- redundancy penalty: `1.036`
+- total: `6.949`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2407,7 +2407,7 @@ Improvement hint: Add wrong-context or contradiction-aware features; a distracto
 | `c13` | selected | 0.446 | 27 | Courier envelopes marked slate are routed to diagnostic imaging. |
 | `c06` | - | -0.900 | 28 | Orange ledger initials are supplied by the recovery charge nurse. |
 | `c02` | required | -0.862 | 29 | The learning office is called the North Annex counter in weekend notes. |
-| `c21` | - | -0.169 | 27 | Expired wristbands are replaced at the intake island. |
+| `c21` | selected | -0.169 | 27 | Expired wristbands are replaced at the intake island. |
 | `c35` | - | -0.931 | 30 | Mateo Ruiz works from the small office behind registration. |
 
 ### FAIL content_02_clinic_access / c_q01_direct / budget 1024
@@ -2423,10 +2423,10 @@ Selected distractors: `['c04']`
 Score breakdown:
 
 - individual: `5.554`
-- pair synergy: `2.454`
+- pair synergy: `2.631`
 - triple synergy: `0.000`
 - redundancy penalty: `1.036`
-- total: `6.972`
+- total: `7.149`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2461,10 +2461,10 @@ Selected distractors: `['c08']`
 Score breakdown:
 
 - individual: `7.470`
-- pair synergy: `3.436`
+- pair synergy: `3.555`
 - triple synergy: `0.500`
 - redundancy penalty: `1.094`
-- total: `10.311`
+- total: `10.431`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2499,10 +2499,10 @@ Selected distractors: `['c08']`
 Score breakdown:
 
 - individual: `8.044`
-- pair synergy: `3.836`
+- pair synergy: `3.989`
 - triple synergy: `0.500`
 - redundancy penalty: `1.281`
-- total: `11.099`
+- total: `11.252`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2537,10 +2537,10 @@ Selected distractors: `['c08']`
 Score breakdown:
 
 - individual: `8.326`
-- pair synergy: `3.836`
+- pair synergy: `3.989`
 - triple synergy: `0.500`
 - redundancy penalty: `1.281`
-- total: `11.380`
+- total: `11.533`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2575,10 +2575,10 @@ Selected distractors: `['c08']`
 Score breakdown:
 
 - individual: `8.466`
-- pair synergy: `3.836`
+- pair synergy: `3.989`
 - triple synergy: `0.500`
 - redundancy penalty: `1.281`
-- total: `11.520`
+- total: `11.673`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -2613,10 +2613,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `5.898`
-- pair synergy: `2.324`
+- pair synergy: `2.446`
 - triple synergy: `0.000`
 - redundancy penalty: `0.678`
-- total: `7.544`
+- total: `7.666`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -2651,10 +2651,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `7.052`
-- pair synergy: `7.583`
+- pair synergy: `7.858`
 - triple synergy: `1.964`
 - redundancy penalty: `1.524`
-- total: `15.076`
+- total: `15.351`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -2689,10 +2689,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `7.451`
-- pair synergy: `9.427`
+- pair synergy: `9.784`
 - triple synergy: `2.500`
 - redundancy penalty: `1.998`
-- total: `17.380`
+- total: `17.737`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -2727,10 +2727,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `7.736`
-- pair synergy: `9.427`
+- pair synergy: `9.784`
 - triple synergy: `2.500`
 - redundancy penalty: `1.998`
-- total: `17.665`
+- total: `18.022`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -2765,10 +2765,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.188`
-- pair synergy: `4.573`
+- pair synergy: `4.760`
 - triple synergy: `0.000`
 - redundancy penalty: `1.277`
-- total: `13.484`
+- total: `13.670`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -2803,10 +2803,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.653`
-- pair synergy: `4.573`
+- pair synergy: `4.760`
 - triple synergy: `0.000`
 - redundancy penalty: `1.277`
-- total: `13.949`
+- total: `14.135`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -2841,10 +2841,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.885`
-- pair synergy: `4.573`
+- pair synergy: `4.760`
 - triple synergy: `0.000`
 - redundancy penalty: `1.277`
-- total: `14.181`
+- total: `14.368`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -2879,10 +2879,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `11.001`
-- pair synergy: `4.573`
+- pair synergy: `4.760`
 - triple synergy: `0.000`
 - redundancy penalty: `1.277`
-- total: `14.297`
+- total: `14.484`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -2917,10 +2917,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.067`
-- pair synergy: `1.560`
+- pair synergy: `1.690`
 - triple synergy: `0.000`
 - redundancy penalty: `0.874`
-- total: `10.753`
+- total: `10.883`
 
 Improvement hint: Tight-budget tradeoff; improve importance ranking so required evidence beats optional/filler chunks.
 
@@ -2955,10 +2955,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `11.835`
-- pair synergy: `4.945`
+- pair synergy: `5.290`
 - triple synergy: `0.000`
 - redundancy penalty: `2.207`
-- total: `14.572`
+- total: `14.918`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -2993,10 +2993,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `12.243`
-- pair synergy: `4.945`
+- pair synergy: `5.290`
 - triple synergy: `0.000`
 - redundancy penalty: `2.207`
-- total: `14.981`
+- total: `15.326`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3031,10 +3031,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `12.447`
-- pair synergy: `4.945`
+- pair synergy: `5.290`
 - triple synergy: `0.000`
 - redundancy penalty: `2.207`
-- total: `15.185`
+- total: `15.530`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3069,10 +3069,10 @@ Selected distractors: `['c24']`
 Score breakdown:
 
 - individual: `6.017`
-- pair synergy: `2.041`
+- pair synergy: `2.164`
 - triple synergy: `0.000`
 - redundancy penalty: `0.659`
-- total: `7.399`
+- total: `7.522`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -3107,10 +3107,10 @@ Selected distractors: `['c24']`
 Score breakdown:
 
 - individual: `6.470`
-- pair synergy: `2.041`
+- pair synergy: `2.164`
 - triple synergy: `0.000`
 - redundancy penalty: `0.659`
-- total: `7.852`
+- total: `7.975`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -3145,10 +3145,10 @@ Selected distractors: `['c24']`
 Score breakdown:
 
 - individual: `6.697`
-- pair synergy: `2.041`
+- pair synergy: `2.164`
 - triple synergy: `0.000`
 - redundancy penalty: `0.659`
-- total: `8.079`
+- total: `8.201`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -3183,10 +3183,10 @@ Selected distractors: `['c24']`
 Score breakdown:
 
 - individual: `6.810`
-- pair synergy: `2.041`
+- pair synergy: `2.164`
 - triple synergy: `0.000`
 - redundancy penalty: `0.659`
-- total: `8.192`
+- total: `8.315`
 
 Improvement hint: Add wrong-context or contradiction-aware features; a distractor beat required evidence.
 
@@ -3221,10 +3221,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `12.081`
-- pair synergy: `3.271`
+- pair synergy: `3.461`
 - triple synergy: `0.156`
 - redundancy penalty: `1.247`
-- total: `14.262`
+- total: `14.451`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3259,10 +3259,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `12.494`
-- pair synergy: `3.614`
+- pair synergy: `3.832`
 - triple synergy: `0.156`
 - redundancy penalty: `1.420`
-- total: `14.844`
+- total: `15.062`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3297,10 +3297,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `12.779`
-- pair synergy: `3.614`
+- pair synergy: `3.832`
 - triple synergy: `0.156`
 - redundancy penalty: `1.420`
-- total: `15.129`
+- total: `15.347`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3335,10 +3335,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `12.921`
-- pair synergy: `3.614`
+- pair synergy: `3.832`
 - triple synergy: `0.156`
 - redundancy penalty: `1.420`
-- total: `15.272`
+- total: `15.490`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3373,10 +3373,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `7.742`
-- pair synergy: `2.695`
+- pair synergy: `2.837`
 - triple synergy: `0.000`
 - redundancy penalty: `1.050`
-- total: `9.388`
+- total: `9.529`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3411,10 +3411,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `6.730`
-- pair synergy: `7.945`
+- pair synergy: `8.149`
 - triple synergy: `2.500`
 - redundancy penalty: `1.315`
-- total: `15.861`
+- total: `16.064`
 
 Improvement hint: Tight-budget tradeoff; improve importance ranking so required evidence beats optional/filler chunks.
 
@@ -3449,10 +3449,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `7.861`
-- pair synergy: `12.451`
+- pair synergy: `12.864`
 - triple synergy: `3.750`
 - redundancy penalty: `2.541`
-- total: `21.520`
+- total: `21.933`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3487,10 +3487,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `8.201`
-- pair synergy: `12.451`
+- pair synergy: `12.864`
 - triple synergy: `3.750`
 - redundancy penalty: `2.541`
-- total: `21.860`
+- total: `22.273`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3525,10 +3525,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `6.633`
-- pair synergy: `1.579`
+- pair synergy: `1.710`
 - triple synergy: `0.000`
 - redundancy penalty: `0.939`
-- total: `7.272`
+- total: `7.404`
 
 Improvement hint: Tight-budget tradeoff; improve importance ranking so required evidence beats optional/filler chunks.
 
@@ -3550,25 +3550,25 @@ Improvement hint: Tight-budget tradeoff; improve importance ranking so required 
 | `c35` | required | -0.273 | 30 | Mateo Ruiz works from the small office behind registration. |
 | `c21` | - | -0.321 | 27 | Expired wristbands are replaced at the intake island. |
 
-### FAIL content_02_clinic_access / c_q09_two_hop / budget 256
+### PASS content_02_clinic_access / c_q09_two_hop / budget 256
 
 Question: Where does the bronze chart insurance reviewer work?
 
-Selected: `['c33', 'c34', 'c36', 'c37']`
-Tokens: `116/256`
-F1: `0.706` Required recall: `0.667`
-Missing required units: `['reviewer_location']`
+Selected: `['c33', 'c34', 'c35', 'c36', 'c37']`
+Tokens: `146/256`
+F1: `0.889` Required recall: `1.000`
+Missing required units: `[]`
 Selected distractors: `[]`
 
 Score breakdown:
 
-- individual: `7.086`
-- pair synergy: `1.579`
+- individual: `6.930`
+- pair synergy: `2.035`
 - triple synergy: `0.000`
-- redundancy penalty: `0.939`
-- total: `7.725`
+- redundancy penalty: `1.100`
+- total: `7.866`
 
-Improvement hint: Scoring issue; required evidence was available but not valuable enough under current utility.
+Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
 | id | flags | importance | tokens | text |
 |---|---|---:|---:|---|
@@ -3585,7 +3585,7 @@ Improvement hint: Scoring issue; required evidence was available but not valuabl
 | `c37` | selected | 0.095 | 28 | The pearl sticker means language assistance is requested. |
 | `c06` | - | -0.890 | 28 | Orange ledger initials are supplied by the recovery charge nurse. |
 | `c02` | - | -0.897 | 29 | The learning office is called the North Annex counter in weekend notes. |
-| `c35` | required | -0.155 | 30 | Mateo Ruiz works from the small office behind registration. |
+| `c35` | selected, required | -0.155 | 30 | Mateo Ruiz works from the small office behind registration. |
 | `c21` | - | -0.215 | 27 | Expired wristbands are replaced at the intake island. |
 
 ### PASS content_02_clinic_access / c_q09_two_hop / budget 512
@@ -3601,10 +3601,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `7.216`
-- pair synergy: `1.879`
+- pair synergy: `2.035`
 - triple synergy: `0.000`
 - redundancy penalty: `1.100`
-- total: `7.994`
+- total: `8.151`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3639,10 +3639,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `7.358`
-- pair synergy: `1.879`
+- pair synergy: `2.035`
 - triple synergy: `0.000`
 - redundancy penalty: `1.100`
-- total: `8.137`
+- total: `8.294`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3677,10 +3677,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `8.294`
-- pair synergy: `2.438`
+- pair synergy: `2.586`
 - triple synergy: `0.000`
 - redundancy penalty: `0.834`
-- total: `9.898`
+- total: `10.045`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3715,10 +3715,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `9.489`
-- pair synergy: `3.676`
+- pair synergy: `3.871`
 - triple synergy: `0.208`
 - redundancy penalty: `1.109`
-- total: `12.264`
+- total: `12.459`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3753,10 +3753,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `9.774`
-- pair synergy: `3.676`
+- pair synergy: `3.871`
 - triple synergy: `0.208`
 - redundancy penalty: `1.109`
-- total: `12.549`
+- total: `12.744`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3791,10 +3791,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `9.916`
-- pair synergy: `3.676`
+- pair synergy: `3.871`
 - triple synergy: `0.208`
 - redundancy penalty: `1.109`
-- total: `12.692`
+- total: `12.887`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3829,10 +3829,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `6.022`
-- pair synergy: `3.244`
+- pair synergy: `3.367`
 - triple synergy: `0.139`
 - redundancy penalty: `0.678`
-- total: `8.728`
+- total: `8.850`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3867,10 +3867,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `6.522`
-- pair synergy: `7.368`
+- pair synergy: `7.686`
 - triple synergy: `0.139`
 - redundancy penalty: `1.771`
-- total: `12.258`
+- total: `12.576`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3905,10 +3905,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `6.977`
-- pair synergy: `7.368`
+- pair synergy: `7.686`
 - triple synergy: `0.139`
 - redundancy penalty: `1.771`
-- total: `12.713`
+- total: `13.031`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3943,10 +3943,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `7.205`
-- pair synergy: `7.368`
+- pair synergy: `7.686`
 - triple synergy: `0.139`
 - redundancy penalty: `1.771`
-- total: `12.941`
+- total: `13.259`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -3981,10 +3981,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `9.907`
-- pair synergy: `3.351`
+- pair synergy: `3.538`
 - triple synergy: `0.000`
 - redundancy penalty: `1.277`
-- total: `11.981`
+- total: `12.168`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4019,10 +4019,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.106`
-- pair synergy: `4.996`
+- pair synergy: `5.227`
 - triple synergy: `0.278`
 - redundancy penalty: `1.535`
-- total: `13.845`
+- total: `14.076`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4057,10 +4057,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.458`
-- pair synergy: `4.996`
+- pair synergy: `5.227`
 - triple synergy: `0.278`
 - redundancy penalty: `1.535`
-- total: `14.197`
+- total: `14.428`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4095,10 +4095,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.634`
-- pair synergy: `4.996`
+- pair synergy: `5.227`
 - triple synergy: `0.278`
 - redundancy penalty: `1.535`
-- total: `14.372`
+- total: `14.603`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4133,10 +4133,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `8.569`
-- pair synergy: `2.245`
+- pair synergy: `2.377`
 - triple synergy: `0.000`
 - redundancy penalty: `0.939`
-- total: `9.875`
+- total: `10.007`
 
 Improvement hint: Tight-budget tradeoff; improve importance ranking so required evidence beats optional/filler chunks.
 
@@ -4171,10 +4171,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `8.844`
-- pair synergy: `5.800`
+- pair synergy: `6.033`
 - triple synergy: `0.833`
 - redundancy penalty: `1.496`
-- total: `13.981`
+- total: `14.214`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4200,19 +4200,19 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 
 Question: Where is the reviewer for a bronze insurance chart sticker located?
 
-Selected: `['c20', 'c33', 'c34', 'c35', 'c36', 'c37', 'c40']`
-Tokens: `208/512`
-F1: `0.727` Required recall: `1.000`
+Selected: `['c20', 'c33', 'c34', 'c35', 'c36', 'c37', 'c38', 'c40']`
+Tokens: `238/512`
+F1: `0.667` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `[]`
 
 Score breakdown:
 
-- individual: `9.250`
-- pair synergy: `5.800`
+- individual: `8.905`
+- pair synergy: `6.683`
 - triple synergy: `0.833`
-- redundancy penalty: `1.496`
-- total: `14.387`
+- redundancy penalty: `1.796`
+- total: `14.626`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4227,7 +4227,7 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 | `c40` | selected | 0.299 | 31 | Pearl sticker language help roster requests go to financial counseling at registration. |
 | `c17` | - | -0.467 | 29 | The red discharge packet means the patient needs transport paperwork. |
 | `c18` | - | -0.876 | 29 | Transport paperwork is completed by the mobility coordinator. |
-| `c38` | - | -0.345 | 30 | Language assistance is booked by the cultural services desk. |
+| `c38` | selected | -0.345 | 30 | Language assistance is booked by the cultural services desk. |
 | `c35` | selected, required | -0.107 | 30 | Mateo Ruiz works from the small office behind registration. |
 | `c21` | - | -0.828 | 27 | Expired wristbands are replaced at the intake island. |
 | `c04` | - | -0.930 | 31 | A badge denial for visiting students should be fixed at reception by the visitor badge desk. |
@@ -4238,19 +4238,19 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 
 Question: Where is the reviewer for a bronze insurance chart sticker located?
 
-Selected: `['c20', 'c33', 'c34', 'c35', 'c36', 'c37', 'c40']`
-Tokens: `208/1024`
-F1: `0.727` Required recall: `1.000`
+Selected: `['c20', 'c33', 'c34', 'c35', 'c36', 'c37', 'c38', 'c40']`
+Tokens: `238/1024`
+F1: `0.667` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `[]`
 
 Score breakdown:
 
-- individual: `9.453`
-- pair synergy: `5.800`
+- individual: `9.137`
+- pair synergy: `6.683`
 - triple synergy: `0.833`
-- redundancy penalty: `1.496`
-- total: `14.591`
+- redundancy penalty: `1.796`
+- total: `14.858`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4265,7 +4265,7 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 | `c40` | selected | 0.330 | 31 | Pearl sticker language help roster requests go to financial counseling at registration. |
 | `c17` | - | -0.439 | 29 | The red discharge packet means the patient needs transport paperwork. |
 | `c18` | - | -0.848 | 29 | Transport paperwork is completed by the mobility coordinator. |
-| `c38` | - | -0.316 | 30 | Language assistance is booked by the cultural services desk. |
+| `c38` | selected | -0.316 | 30 | Language assistance is booked by the cultural services desk. |
 | `c35` | selected, required | -0.078 | 30 | Mateo Ruiz works from the small office behind registration. |
 | `c21` | - | -0.801 | 27 | Expired wristbands are replaced at the intake island. |
 | `c04` | - | -0.900 | 31 | A badge denial for visiting students should be fixed at reception by the visitor badge desk. |
@@ -4285,10 +4285,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.198`
-- pair synergy: `3.871`
+- pair synergy: `4.061`
 - triple synergy: `0.250`
 - redundancy penalty: `1.247`
-- total: `13.073`
+- total: `13.262`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4323,10 +4323,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.425`
-- pair synergy: `7.841`
+- pair synergy: `8.162`
 - triple synergy: `1.250`
 - redundancy penalty: `1.964`
-- total: `17.552`
+- total: `17.872`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4361,10 +4361,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `10.863`
-- pair synergy: `9.827`
+- pair synergy: `10.263`
 - triple synergy: `1.500`
 - redundancy penalty: `2.606`
-- total: `19.584`
+- total: `20.019`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4399,10 +4399,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `11.149`
-- pair synergy: `9.827`
+- pair synergy: `10.263`
 - triple synergy: `1.500`
 - redundancy penalty: `2.606`
-- total: `19.870`
+- total: `20.305`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4437,10 +4437,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `6.561`
-- pair synergy: `1.695`
+- pair synergy: `1.837`
 - triple synergy: `0.000`
 - redundancy penalty: `1.050`
-- total: `7.206`
+- total: `7.347`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4475,10 +4475,10 @@ Selected distractors: `[]`
 Score breakdown:
 
 - individual: `7.727`
-- pair synergy: `5.274`
+- pair synergy: `5.571`
 - triple synergy: `0.000`
 - redundancy penalty: `2.064`
-- total: `10.937`
+- total: `11.234`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4504,19 +4504,19 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 
 Question: Which person collects the coded batch for lavender tray samples?
 
-Selected: `['c17', 'c18', 'c20', 'c28', 'c29', 'c30', 'c31', 'c32']`
-Tokens: `236/512`
-F1: `0.667` Required recall: `1.000`
+Selected: `['c17', 'c18', 'c20', 'c28', 'c29', 'c30', 'c31', 'c32', 'c37', 'c40']`
+Tokens: `295/512`
+F1: `0.571` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `[]`
 
 Score breakdown:
 
-- individual: `8.187`
-- pair synergy: `5.274`
+- individual: `7.364`
+- pair synergy: `6.984`
 - triple synergy: `0.000`
-- redundancy penalty: `2.064`
-- total: `11.398`
+- redundancy penalty: `2.636`
+- total: `11.712`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4532,9 +4532,9 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 | `c17` | selected | 0.796 | 29 | The red discharge packet means the patient needs transport paperwork. |
 | `c26` | - | -0.906 | 30 | Telehealth follow-up slots are opened by the remote-care scheduler. |
 | `c18` | selected | 0.358 | 29 | Transport paperwork is completed by the mobility coordinator. |
-| `c37` | - | -0.386 | 28 | The pearl sticker means language assistance is requested. |
+| `c37` | selected | -0.386 | 28 | The pearl sticker means language assistance is requested. |
 | `c27` | - | -0.461 | 29 | Remote-care scheduling uses the amber queue after noon. |
-| `c40` | - | -0.437 | 31 | Pearl sticker language help roster requests go to financial counseling at registration. |
+| `c40` | selected | -0.437 | 31 | Pearl sticker language help roster requests go to financial counseling at registration. |
 | `c16` | - | -0.799 | 31 | Slate courier envelopes before night audit should be signed at the blood desk. |
 | `c05` | - | -0.523 | 27 | The sedation cabinet releases keys after the orange ledger is initialed. |
 
@@ -4542,19 +4542,19 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 
 Question: Which person collects the coded batch for lavender tray samples?
 
-Selected: `['c17', 'c18', 'c20', 'c28', 'c29', 'c30', 'c31', 'c32']`
-Tokens: `236/1024`
-F1: `0.667` Required recall: `1.000`
+Selected: `['c17', 'c18', 'c20', 'c28', 'c29', 'c30', 'c31', 'c32', 'c37', 'c40']`
+Tokens: `295/1024`
+F1: `0.571` Required recall: `1.000`
 Missing required units: `[]`
 Selected distractors: `[]`
 
 Score breakdown:
 
-- individual: `8.418`
-- pair synergy: `5.274`
+- individual: `7.652`
+- pair synergy: `6.984`
 - triple synergy: `0.000`
-- redundancy penalty: `2.064`
-- total: `11.629`
+- redundancy penalty: `2.636`
+- total: `12.000`
 
 Improvement hint: Successful selection; inspect extra chunks only if precision or token cost becomes the priority.
 
@@ -4570,8 +4570,8 @@ Improvement hint: Successful selection; inspect extra chunks only if precision o
 | `c17` | selected | 0.824 | 29 | The red discharge packet means the patient needs transport paperwork. |
 | `c26` | - | -0.877 | 30 | Telehealth follow-up slots are opened by the remote-care scheduler. |
 | `c18` | selected | 0.387 | 29 | Transport paperwork is completed by the mobility coordinator. |
-| `c37` | - | -0.359 | 28 | The pearl sticker means language assistance is requested. |
+| `c37` | selected | -0.359 | 28 | The pearl sticker means language assistance is requested. |
 | `c27` | - | -0.432 | 29 | Remote-care scheduling uses the amber queue after noon. |
-| `c40` | - | -0.407 | 31 | Pearl sticker language help roster requests go to financial counseling at registration. |
+| `c40` | selected | -0.407 | 31 | Pearl sticker language help roster requests go to financial counseling at registration. |
 | `c16` | - | -0.768 | 31 | Slate courier envelopes before night audit should be signed at the blood desk. |
 | `c05` | - | -0.497 | 27 | The sedation cabinet releases keys after the orange ledger is initialed. |

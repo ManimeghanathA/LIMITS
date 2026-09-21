@@ -45,15 +45,15 @@ Current baseline summary:
 | `budget_fill` | 0.143 | 0.400 | 0.487 | 0.267 | 0.956 | 0.508 |
 | `keyword_overlap` | 0.471 | 0.717 | 0.880 | 0.821 | 0.953 | 0.517 |
 | `random` | 0.169 | 0.233 | 0.463 | 0.379 | 0.950 | 0.400 |
-| `feature_knapsack` | 0.713 | 0.867 | 0.935 | 0.850 | 0.632 | 0.617 |
+| `feature_knapsack` | 0.710 | 0.883 | 0.940 | 0.850 | 0.638 | 0.617 |
 
-This benchmark now uses one canonical knapsack implementation: a fixed MiniLM embedding backend plus sparse lexical features, exact subset search, redundancy penalty, and explicit pair/triple interaction terms. The embedding backend is `sentence-transformers/all-MiniLM-L6-v2`; there is no lexical fallback because this is a benchmark, not a convenience demo.
+This benchmark now uses one canonical knapsack implementation: a fixed MiniLM embedding backend plus sparse lexical features, exact subset search, redundancy penalty, and explicit pair/triple interaction terms. The current tuning moderately strengthens paragraph-chain linkage because the remaining misses are mostly final-hop evidence scoring failures, not candidate-pool failures. The embedding backend is `sentence-transformers/all-MiniLM-L6-v2`; there is no lexical fallback because this is a benchmark, not a convenience demo.
 
 The first failure analysis shows:
 
 ```text
-feature_knapsack complete cases: 104/120
-missing required evidence cases: 16/120
+feature_knapsack complete cases: 106/120
+missing required evidence cases: 14/120
 cases with selected distractors: 50/120
 main weak category: three_hop
 ```
@@ -61,7 +61,7 @@ main weak category: three_hop
 The current knapsack debug report splits incomplete cases by likely cause:
 
 ```text
-scoring_failure: 9
+scoring_failure: 7
 distractor_failure: 7
 ```
 
@@ -124,7 +124,7 @@ The strategy is:
      ```text
      pair_synergy =
        2.0 * query_complementarity_gain
-       + 1.2 * sparse_paragraph_link
+       + 1.3 * sparse_paragraph_link
      ```
    - Dense pair linkage is supported in the code but currently weighted as `0.0` because measured tuning showed it encouraged context bloat and more distractor selection.
 

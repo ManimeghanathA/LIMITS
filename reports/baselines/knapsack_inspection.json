@@ -22,10 +22,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 9.57809925539927,
-      "pair_synergy_sum": 2.742337662337662,
+      "pair_synergy_sum": 2.9232467532467536,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.127833872783563,
-      "total_score": 11.192603044953367
+      "total_score": 11.37351213586246
     },
     "candidate_rows": [
       {
@@ -207,11 +207,11 @@
       "p35"
     ],
     "score_breakdown": {
-      "individual_sum": 10.671678412902407,
-      "pair_synergy_sum": 8.716017316017316,
+      "individual_sum": 10.671678412902406,
+      "pair_synergy_sum": 9.085209235209236,
       "triple_synergy_sum": 1.9642857142857146,
       "redundancy_penalty": 2.252595706344739,
-      "total_score": 19.0993857368607
+      "total_score": 19.46857765605262
     },
     "candidate_rows": [
       {
@@ -398,10 +398,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 10.799468903412004,
-      "pair_synergy_sum": 16.216543456543462,
+      "pair_synergy_sum": 16.80601731601733,
       "triple_synergy_sum": 6.428571428571431,
       "redundancy_penalty": 3.460674936420536,
-      "total_score": 29.983908852106364
+      "total_score": 30.573382711580226
     },
     "candidate_rows": [
       {
@@ -588,10 +588,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 11.149078278412004,
-      "pair_synergy_sum": 16.216543456543462,
+      "pair_synergy_sum": 16.80601731601733,
       "triple_synergy_sum": 6.428571428571431,
       "redundancy_penalty": 3.460674936420536,
-      "total_score": 30.333518227106364
+      "total_score": 30.922992086580226
     },
     "candidate_rows": [
       {
@@ -766,11 +766,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 12.601577731115478,
-      "pair_synergy_sum": 2.998095238095238,
+      "individual_sum": 12.60157773111548,
+      "pair_synergy_sum": 3.192380952380952,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.5330240763786458,
-      "total_score": 14.06664889283207
+      "total_score": 14.260934607117786
     },
     "candidate_rows": [
       {
@@ -950,10 +950,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 14.608483646384308,
-      "pair_synergy_sum": 11.19206127206127,
+      "pair_synergy_sum": 11.652510822510823,
       "triple_synergy_sum": 3.5416666666666687,
       "redundancy_penalty": 3.0258684031045515,
-      "total_score": 26.316343182007692
+      "total_score": 26.776792732457245
     },
     "candidate_rows": [
       {
@@ -1135,11 +1135,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 15.871863623176305,
-      "pair_synergy_sum": 17.106533466533467,
+      "individual_sum": 15.871863623176306,
+      "pair_synergy_sum": 17.782077922077928,
       "triple_synergy_sum": 6.458333333333332,
       "redundancy_penalty": 4.20105277251089,
-      "total_score": 35.23567765053221
+      "total_score": 35.91122210607668
     },
     "candidate_rows": [
       {
@@ -1321,11 +1321,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 16.189246435676303,
-      "pair_synergy_sum": 17.106533466533467,
+      "individual_sum": 16.189246435676306,
+      "pair_synergy_sum": 17.782077922077928,
       "triple_synergy_sum": 6.458333333333332,
       "redundancy_penalty": 4.20105277251089,
-      "total_score": 35.55306046303221
+      "total_score": 36.22860491857668
     },
     "candidate_rows": [
       {
@@ -1500,11 +1500,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 9.431714862159321,
-      "pair_synergy_sum": 2.70961038961039,
+      "individual_sum": 9.43171486215932,
+      "pair_synergy_sum": 2.8877922077922076,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.141517857142857,
-      "total_score": 10.999807394626854
+      "total_score": 11.17798921280867
     },
     "candidate_rows": [
       {
@@ -1686,10 +1686,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 10.920639133098579,
-      "pair_synergy_sum": 9.13168831168831,
+      "pair_synergy_sum": 9.487900432900434,
       "triple_synergy_sum": 1.4285714285714288,
       "redundancy_penalty": 2.1262848635917857,
-      "total_score": 19.354614009766536
+      "total_score": 19.71082613097866
     },
     "candidate_rows": [
       {
@@ -1875,11 +1875,11 @@
       "p33"
     ],
     "score_breakdown": {
-      "individual_sum": 11.629234302114872,
-      "pair_synergy_sum": 15.461731601731609,
+      "individual_sum": 11.629234302114874,
+      "pair_synergy_sum": 16.202590187590193,
       "triple_synergy_sum": 2.1428571428571432,
       "redundancy_penalty": 4.340045885136873,
-      "total_score": 24.89377716156675
+      "total_score": 25.634635747425335
     },
     "candidate_rows": [
       {
@@ -2065,11 +2065,11 @@
       "p33"
     ],
     "score_breakdown": {
-      "individual_sum": 11.973960864614872,
-      "pair_synergy_sum": 15.461731601731609,
+      "individual_sum": 11.973960864614874,
+      "pair_synergy_sum": 16.202590187590193,
       "triple_synergy_sum": 2.1428571428571432,
       "redundancy_penalty": 4.340045885136873,
-      "total_score": 25.23850372406675
+      "total_score": 25.979362309925335
     },
     "candidate_rows": [
       {
@@ -2245,10 +2245,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 13.06186764949844,
-      "pair_synergy_sum": 3.261428571428571,
+      "pair_synergy_sum": 3.485595238095238,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.4481085526315791,
-      "total_score": 14.875187668295434
+      "total_score": 15.099354334962099
     },
     "candidate_rows": [
       {
@@ -2428,10 +2428,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 15.25825240739754,
-      "pair_synergy_sum": 7.735800865800867,
+      "pair_synergy_sum": 8.237593795093796,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 3.025855621528828,
-      "total_score": 19.96819765166958
+      "total_score": 20.46999058096251
     },
     "candidate_rows": [
       {
@@ -2611,11 +2611,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 15.542120804673148,
-      "pair_synergy_sum": 9.095800865800868,
+      "individual_sum": 15.542120804673146,
+      "pair_synergy_sum": 9.710927128427125,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 3.744856289978026,
-      "total_score": 20.89306538049599
+      "total_score": 21.508191643122245
     },
     "candidate_rows": [
       {
@@ -2795,11 +2795,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 15.797980179673148,
-      "pair_synergy_sum": 9.095800865800868,
+      "individual_sum": 15.797980179673146,
+      "pair_synergy_sum": 9.710927128427125,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 3.744856289978026,
-      "total_score": 21.14892475549599
+      "total_score": 21.764051018122245
     },
     "candidate_rows": [
       {
@@ -2975,10 +2975,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 14.635946464538574,
-      "pair_synergy_sum": 3.6766666666666663,
+      "pair_synergy_sum": 3.899722222222222,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.348061560150376,
-      "total_score": 16.964551571054862
+      "total_score": 17.18760712661042
     },
     "candidate_rows": [
       {
@@ -3159,11 +3159,11 @@
       "p20"
     ],
     "score_breakdown": {
-      "individual_sum": 19.14864465738788,
-      "pair_synergy_sum": 9.246363636363638,
+      "individual_sum": 19.148644657387877,
+      "pair_synergy_sum": 9.808560606060608,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 3.4519312049271624,
-      "total_score": 24.943077088824353
+      "total_score": 25.505274058521323
     },
     "candidate_rows": [
       {
@@ -3347,11 +3347,11 @@
       "p20"
     ],
     "score_breakdown": {
-      "individual_sum": 18.493858288928415,
-      "pair_synergy_sum": 12.015454545454542,
+      "individual_sum": 18.49385828892841,
+      "pair_synergy_sum": 12.808409090909096,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 4.702737168044675,
-      "total_score": 25.806575666338283
+      "total_score": 26.599530211792835
     },
     "candidate_rows": [
       {
@@ -3514,10 +3514,11 @@
     "question": "Who reviews the amber maintenance ledger?",
     "budget": 1024,
     "complete_hit": true,
-    "evidence_f1": 0.5333333333333333,
+    "evidence_f1": 0.5,
     "required_recall": 1.0,
     "selected_ids": [
       "p04",
+      "p10",
       "p11",
       "p12",
       "p20",
@@ -3529,17 +3530,17 @@
       "p37",
       "p39"
     ],
-    "token_used": 319,
+    "token_used": 348,
     "missing_required_units": [],
     "selected_distractors": [
       "p20"
     ],
     "score_breakdown": {
-      "individual_sum": 18.805381726428415,
-      "pair_synergy_sum": 12.015454545454542,
+      "individual_sum": 18.269023359273415,
+      "pair_synergy_sum": 13.81952020202021,
       "triple_synergy_sum": 0,
-      "redundancy_penalty": 4.702737168044675,
-      "total_score": 26.118099103838283
+      "redundancy_penalty": 5.158619520985852,
+      "total_score": 26.929924040307775
     },
     "candidate_rows": [
       {
@@ -3636,7 +3637,7 @@
         "id": "p10",
         "tokens": 29,
         "importance_score": -0.5363583671549956,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -3716,11 +3717,11 @@
       "p26"
     ],
     "score_breakdown": {
-      "individual_sum": 13.65988283412797,
-      "pair_synergy_sum": 4.617142857142857,
+      "individual_sum": 13.659882834127972,
+      "pair_synergy_sum": 4.811428571428571,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.5330240763786462,
-      "total_score": 16.744001614892184
+      "total_score": 16.938287329177896
     },
     "candidate_rows": [
       {
@@ -3903,10 +3904,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 18.259902779119358,
-      "pair_synergy_sum": 14.678841158841161,
+      "pair_synergy_sum": 15.330649350649352,
       "triple_synergy_sum": 0.5357142857142858,
       "redundancy_penalty": 4.048930566913284,
-      "total_score": 29.425527656761517
+      "total_score": 30.07733584856971
     },
     "candidate_rows": [
       {
@@ -4090,10 +4091,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 18.331147400396212,
-      "pair_synergy_sum": 16.178841158841163,
+      "pair_synergy_sum": 16.955649350649352,
       "triple_synergy_sum": 0.5357142857142858,
       "redundancy_penalty": 4.719426890442695,
-      "total_score": 30.32627595450896
+      "total_score": 31.103084146317155
     },
     "candidate_rows": [
       {
@@ -4277,10 +4278,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 18.588959900396212,
-      "pair_synergy_sum": 16.178841158841163,
+      "pair_synergy_sum": 16.955649350649352,
       "triple_synergy_sum": 0.5357142857142858,
       "redundancy_penalty": 4.719426890442695,
-      "total_score": 30.58408845450896
+      "total_score": 31.360896646317155
     },
     "candidate_rows": [
       {
@@ -4460,10 +4461,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 10.050405193013805,
-      "pair_synergy_sum": 3.7314285714285713,
+      "pair_synergy_sum": 3.9257142857142853,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.5330240763786462,
-      "total_score": 12.24880968806373
+      "total_score": 12.443095402349444
     },
     "candidate_rows": [
       {
@@ -4644,11 +4645,11 @@
       "p26"
     ],
     "score_breakdown": {
-      "individual_sum": 14.193953774088905,
-      "pair_synergy_sum": 13.652174492174495,
+      "individual_sum": 14.193953774088907,
+      "pair_synergy_sum": 14.206522366522373,
       "triple_synergy_sum": 2.7499999999999996,
       "redundancy_penalty": 3.4994536136605867,
-      "total_score": 27.09667465260281
+      "total_score": 27.651022526950694
     },
     "candidate_rows": [
       {
@@ -4833,10 +4834,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 15.553551521542527,
-      "pair_synergy_sum": 20.187339327339323,
+      "pair_synergy_sum": 21.002950937950942,
       "triple_synergy_sum": 7.124999999999999,
       "redundancy_penalty": 4.930780273901342,
-      "total_score": 37.935110574980506
+      "total_score": 38.75072218559213
     },
     "candidate_rows": [
       {
@@ -5021,10 +5022,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 15.868004646542527,
-      "pair_synergy_sum": 20.187339327339323,
+      "pair_synergy_sum": 21.002950937950942,
       "triple_synergy_sum": 7.124999999999999,
       "redundancy_penalty": 4.930780273901342,
-      "total_score": 38.249563699980506
+      "total_score": 39.06517531059213
     },
     "candidate_rows": [
       {
@@ -5202,10 +5203,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 11.374482303857802,
-      "pair_synergy_sum": 2.9433333333333334,
+      "pair_synergy_sum": 3.1261111111111113,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.0978826560268375,
-      "total_score": 13.219932981164298
+      "total_score": 13.402710758942074
     },
     "candidate_rows": [
       {
@@ -5386,11 +5387,11 @@
       "p33"
     ],
     "score_breakdown": {
-      "individual_sum": 15.460747962196669,
-      "pair_synergy_sum": 8.553939393939395,
+      "individual_sum": 15.460747962196667,
+      "pair_synergy_sum": 9.058434343434342,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 3.1218362839206826,
-      "total_score": 20.892851072215382
+      "total_score": 21.397346021710327
     },
     "candidate_rows": [
       {
@@ -5575,11 +5576,11 @@
       "p34"
     ],
     "score_breakdown": {
-      "individual_sum": 16.035230855643754,
-      "pair_synergy_sum": 12.248787878787875,
+      "individual_sum": 16.03523085564375,
+      "pair_synergy_sum": 12.97785353535354,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 4.374527309285478,
-      "total_score": 23.90949142514615
+      "total_score": 24.638557081711816
     },
     "candidate_rows": [
       {
@@ -5742,7 +5743,7 @@
     "question": "What document is needed for Hangar 2 staging during winter calibration?",
     "budget": 1024,
     "complete_hit": true,
-    "evidence_f1": 0.625,
+    "evidence_f1": 0.5882352941176471,
     "required_recall": 1.0,
     "selected_ids": [
       "p05",
@@ -5750,6 +5751,7 @@
       "p07",
       "p08",
       "p17",
+      "p18",
       "p19",
       "p30",
       "p31",
@@ -5757,18 +5759,18 @@
       "p33",
       "p34"
     ],
-    "token_used": 322,
+    "token_used": 352,
     "missing_required_units": [],
     "selected_distractors": [
       "p33",
       "p34"
     ],
     "score_breakdown": {
-      "individual_sum": 16.349683980643754,
-      "pair_synergy_sum": 12.248787878787875,
+      "individual_sum": 16.09041174054146,
+      "pair_synergy_sum": 13.474217171717177,
       "triple_synergy_sum": 0,
-      "redundancy_penalty": 4.374527309285478,
-      "total_score": 24.22394455014615
+      "redundancy_penalty": 4.605448361917057,
+      "total_score": 24.95918055034158
     },
     "candidate_rows": [
       {
@@ -5885,7 +5887,7 @@
         "id": "p18",
         "tokens": 30,
         "importance_score": -0.259272240102291,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -5944,10 +5946,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 9.020683238000581,
-      "pair_synergy_sum": 2.812121212121212,
+      "pair_synergy_sum": 3.0464646464646465,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.77706035393719,
-      "total_score": 10.055744096184604
+      "total_score": 10.290087530528039
     },
     "candidate_rows": [
       {
@@ -6110,7 +6112,7 @@
     "question": "Which team should handle the usual cause of the aft temperature warning?",
     "budget": 256,
     "complete_hit": true,
-    "evidence_f1": 0.8333333333333333,
+    "evidence_f1": 0.7692307692307693,
     "required_recall": 1.0,
     "selected_ids": [
       "p09",
@@ -6119,17 +6121,18 @@
       "p24",
       "p31",
       "p36",
-      "p38"
+      "p38",
+      "p39"
     ],
-    "token_used": 204,
+    "token_used": 232,
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 10.431110614131798,
-      "pair_synergy_sum": 7.879999999999999,
+      "individual_sum": 10.09544596283725,
+      "pair_synergy_sum": 8.965555555555557,
       "triple_synergy_sum": 0,
-      "redundancy_penalty": 2.799249097855811,
-      "total_score": 15.511861516275989
+      "redundancy_penalty": 3.130131450796987,
+      "total_score": 15.93087006759582
     },
     "candidate_rows": [
       {
@@ -6236,7 +6239,7 @@
         "id": "p39",
         "tokens": 28,
         "importance_score": -0.33566465129454937,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -6308,11 +6311,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 10.548570962837248,
-      "pair_synergy_sum": 8.506666666666664,
+      "individual_sum": 10.54857096283725,
+      "pair_synergy_sum": 8.965555555555557,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 3.130131450796987,
-      "total_score": 15.925106178706926
+      "total_score": 16.38399506759582
     },
     "candidate_rows": [
       {
@@ -6491,11 +6494,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 10.775133462837248,
-      "pair_synergy_sum": 8.506666666666664,
+      "individual_sum": 10.77513346283725,
+      "pair_synergy_sum": 8.965555555555557,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 3.130131450796987,
-      "total_score": 16.151668678706926
+      "total_score": 16.61055756759582
     },
     "candidate_rows": [
       {
@@ -6671,10 +6674,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 5.6935936242342,
-      "pair_synergy_sum": 4.3100000000000005,
+      "pair_synergy_sum": 4.5025,
       "triple_synergy_sum": 0.2083333333333333,
       "redundancy_penalty": 1.1449109907120743,
-      "total_score": 9.067015966855461
+      "total_score": 9.259515966855462
     },
     "candidate_rows": [
       {
@@ -6853,11 +6856,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 9.694562456011772,
-      "pair_synergy_sum": 13.26333333333333,
+      "individual_sum": 9.694562456011774,
+      "pair_synergy_sum": 13.78527777777778,
       "triple_synergy_sum": 2.083333333333333,
       "redundancy_penalty": 3.2342086587628676,
-      "total_score": 21.807020463915567
+      "total_score": 22.328964908360017
     },
     "candidate_rows": [
       {
@@ -7041,11 +7044,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 12.326032368342082,
-      "pair_synergy_sum": 22.263030303030295,
+      "individual_sum": 12.326032368342084,
+      "pair_synergy_sum": 23.22939393939394,
       "triple_synergy_sum": 5.0,
       "redundancy_penalty": 6.231784497602153,
-      "total_score": 33.357278173770226
+      "total_score": 34.32364181013388
     },
     "candidate_rows": [
       {
@@ -7229,11 +7232,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 12.694196430842082,
-      "pair_synergy_sum": 22.263030303030295,
+      "individual_sum": 12.694196430842084,
+      "pair_synergy_sum": 23.22939393939394,
       "triple_synergy_sum": 5.0,
       "redundancy_penalty": 6.231784497602153,
-      "total_score": 33.725442236270226
+      "total_score": 34.69180587263388
     },
     "candidate_rows": [
       {
@@ -7411,10 +7414,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.744848083598272,
-      "pair_synergy_sum": 4.067272727272727,
+      "pair_synergy_sum": 4.239545454545455,
       "triple_synergy_sum": 0.1785714285714285,
       "redundancy_penalty": 1.0006266711229945,
-      "total_score": 13.990065568319435
+      "total_score": 14.162338295592162
     },
     "candidate_rows": [
       {
@@ -7595,11 +7598,11 @@
       "p14"
     ],
     "score_breakdown": {
-      "individual_sum": 14.30403079977045,
-      "pair_synergy_sum": 11.973126873126875,
+      "individual_sum": 14.304030799770452,
+      "pair_synergy_sum": 12.506601731601732,
       "triple_synergy_sum": 2.053571428571429,
       "redundancy_penalty": 2.9577614075586554,
-      "total_score": 25.3729676939101
+      "total_score": 25.90644255238496
     },
     "candidate_rows": [
       {
@@ -7762,7 +7765,7 @@
     "question": "Which restricted location becomes accessible after Mira Patel approves the urgent replacement and the tool room records the code?",
     "budget": 512,
     "complete_hit": true,
-    "evidence_f1": 0.6,
+    "evidence_f1": 0.5714285714285715,
     "required_recall": 1.0,
     "selected_ids": [
       "p02",
@@ -7778,20 +7781,21 @@
       "p26",
       "p27",
       "p37",
+      "p39",
       "p40"
     ],
-    "token_used": 409,
+    "token_used": 437,
     "missing_required_units": [],
     "selected_distractors": [
       "p14",
       "p26"
     ],
     "score_breakdown": {
-      "individual_sum": 13.221917425923218,
-      "pair_synergy_sum": 23.25143856143855,
+      "individual_sum": 12.441970368556847,
+      "pair_synergy_sum": 26.0623124098124,
       "triple_synergy_sum": 7.946428571428579,
-      "redundancy_penalty": 6.7268615576734305,
-      "total_score": 37.69292300111692
+      "redundancy_penalty": 7.620103739742647,
+      "total_score": 38.830607610055175
     },
     "candidate_rows": [
       {
@@ -7848,7 +7852,7 @@
         "id": "p39",
         "tokens": 28,
         "importance_score": -0.7799470573663712,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -7954,7 +7958,7 @@
     "question": "Which restricted location becomes accessible after Mira Patel approves the urgent replacement and the tool room records the code?",
     "budget": 1024,
     "complete_hit": true,
-    "evidence_f1": 0.6,
+    "evidence_f1": 0.5714285714285715,
     "required_recall": 1.0,
     "selected_ids": [
       "p02",
@@ -7970,20 +7974,21 @@
       "p26",
       "p27",
       "p37",
+      "p39",
       "p40"
     ],
-    "token_used": 409,
+    "token_used": 437,
     "missing_required_units": [],
     "selected_distractors": [
       "p14",
       "p26"
     ],
     "score_breakdown": {
-      "individual_sum": 13.621331488423218,
-      "pair_synergy_sum": 23.25143856143855,
+      "individual_sum": 12.868728181056847,
+      "pair_synergy_sum": 26.0623124098124,
       "triple_synergy_sum": 7.946428571428579,
-      "redundancy_penalty": 6.7268615576734305,
-      "total_score": 38.09233706361692
+      "redundancy_penalty": 7.620103739742647,
+      "total_score": 39.257365422555175
     },
     "candidate_rows": [
       {
@@ -8040,7 +8045,7 @@
         "id": "p39",
         "tokens": 28,
         "importance_score": -0.7526033073663712,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -8145,33 +8150,31 @@
     "category": "three_hop",
     "question": "Which team files the binder needed for the document required by Hangar 2 staging?",
     "budget": 128,
-    "complete_hit": false,
-    "evidence_f1": 0.8571428571428571,
-    "required_recall": 0.75,
+    "complete_hit": true,
+    "evidence_f1": 1.0,
+    "required_recall": 1.0,
     "selected_ids": [
-      "p06",
+      "p07",
       "p08",
       "p19",
       "p31"
     ],
-    "token_used": 115,
-    "missing_required_units": [
-      "printout"
-    ],
+    "token_used": 113,
+    "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 7.2721133649349206,
-      "pair_synergy_sum": 2.743333333333333,
+      "individual_sum": 7.034600480397543,
+      "pair_synergy_sum": 3.6822222222222223,
       "triple_synergy_sum": 0.2777777777777779,
-      "redundancy_penalty": 0.7593750000000001,
-      "total_score": 9.533849476046031
+      "redundancy_penalty": 1.29375,
+      "total_score": 9.700850480397545
     },
     "candidate_rows": [
       {
         "id": "p07",
         "tokens": 27,
         "importance_score": 1.6744562566280368,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": true,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -8191,7 +8194,7 @@
         "id": "p06",
         "tokens": 29,
         "importance_score": 1.9119691411654154,
-        "selected": true,
+        "selected": false,
         "is_required_alternative": true,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -8318,7 +8321,7 @@
         "text": "Structural inspections must be logged in the amber maintenance ledger before release."
       }
     ],
-    "improvement_hint": "Scoring issue; required evidence was available but not valuable enough under current utility."
+    "improvement_hint": "Successful selection; inspect extra chunks only if precision or token cost becomes the priority."
   },
   {
     "content_id": "content_01_aero_support",
@@ -8347,10 +8350,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 11.201405854026476,
-      "pair_synergy_sum": 12.766868686868685,
+      "pair_synergy_sum": 13.349292929292933,
       "triple_synergy_sum": 2.222222222222222,
       "redundancy_penalty": 3.5695743350908073,
-      "total_score": 22.620922428026574
+      "total_score": 23.203346670450824
     },
     "candidate_rows": [
       {
@@ -8513,13 +8516,14 @@
     "question": "Which team files the binder needed for the document required by Hangar 2 staging?",
     "budget": 512,
     "complete_hit": true,
-    "evidence_f1": 0.7000000000000001,
+    "evidence_f1": 0.6363636363636364,
     "required_recall": 1.0,
     "selected_ids": [
       "p06",
       "p07",
       "p08",
       "p11",
+      "p12",
       "p19",
       "p20",
       "p24",
@@ -8528,20 +8532,21 @@
       "p32",
       "p33",
       "p34",
-      "p37"
+      "p37",
+      "p39"
     ],
-    "token_used": 380,
+    "token_used": 435,
     "missing_required_units": [],
     "selected_distractors": [
       "p33",
       "p34"
     ],
     "score_breakdown": {
-      "individual_sum": 10.044397720197836,
-      "pair_synergy_sum": 19.12939393939392,
+      "individual_sum": 8.292530455688635,
+      "pair_synergy_sum": 23.601565656565658,
       "triple_synergy_sum": 5.277777777777781,
-      "redundancy_penalty": 5.211443253710886,
-      "total_score": 29.24012618365865
+      "redundancy_penalty": 6.980131864351531,
+      "total_score": 30.191742025680544
     },
     "candidate_rows": [
       {
@@ -8638,7 +8643,7 @@
         "id": "p39",
         "tokens": 28,
         "importance_score": -0.8072149366140365,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -8688,7 +8693,7 @@
         "id": "p12",
         "tokens": 27,
         "importance_score": -0.9446523278951645,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -8704,13 +8709,14 @@
     "question": "Which team files the binder needed for the document required by Hangar 2 staging?",
     "budget": 1024,
     "complete_hit": true,
-    "evidence_f1": 0.7000000000000001,
+    "evidence_f1": 0.6363636363636364,
     "required_recall": 1.0,
     "selected_ids": [
       "p06",
       "p07",
       "p08",
       "p11",
+      "p12",
       "p19",
       "p20",
       "p24",
@@ -8719,20 +8725,21 @@
       "p32",
       "p33",
       "p34",
-      "p37"
+      "p37",
+      "p39"
     ],
-    "token_used": 380,
+    "token_used": 435,
     "missing_required_units": [],
     "selected_distractors": [
       "p33",
       "p34"
     ],
     "score_breakdown": {
-      "individual_sum": 10.415491470197836,
-      "pair_synergy_sum": 19.12939393939392,
+      "individual_sum": 8.717335143188635,
+      "pair_synergy_sum": 23.601565656565658,
       "triple_synergy_sum": 5.277777777777781,
-      "redundancy_penalty": 5.211443253710886,
-      "total_score": 29.61121993365865
+      "redundancy_penalty": 6.980131864351531,
+      "total_score": 30.616546713180536
     },
     "candidate_rows": [
       {
@@ -8829,7 +8836,7 @@
         "id": "p39",
         "tokens": 28,
         "importance_score": -0.7798711866140365,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -8879,7 +8886,7 @@
         "id": "p12",
         "tokens": 27,
         "importance_score": -0.9182851403951645,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -8913,10 +8920,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 6.112165103807594,
-      "pair_synergy_sum": 3.7575757575757573,
+      "pair_synergy_sum": 3.9797979797979797,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.7043768068341385,
-      "total_score": 8.165364054549212
+      "total_score": 8.387586276771435
     },
     "candidate_rows": [
       {
@@ -9100,10 +9107,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 10.153250149976126,
-      "pair_synergy_sum": 12.007272727272726,
+      "pair_synergy_sum": 12.523030303030303,
       "triple_synergy_sum": 1.8181818181818172,
       "redundancy_penalty": 3.4344315141237534,
-      "total_score": 20.544273181306913
+      "total_score": 21.06003075706449
     },
     "candidate_rows": [
       {
@@ -9293,10 +9300,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 10.520439632440155,
-      "pair_synergy_sum": 24.49151515151516,
+      "pair_synergy_sum": 25.623383838383873,
       "triple_synergy_sum": 7.727272727272718,
       "redundancy_penalty": 7.181484665140566,
-      "total_score": 35.55774284608747
+      "total_score": 36.689611532956185
     },
     "candidate_rows": [
       {
@@ -9486,10 +9493,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 10.946220882440155,
-      "pair_synergy_sum": 24.49151515151516,
+      "pair_synergy_sum": 25.623383838383873,
       "triple_synergy_sum": 7.727272727272718,
       "redundancy_penalty": 7.181484665140566,
-      "total_score": 35.98352409608747
+      "total_score": 37.115392782956185
     },
     "candidate_rows": [
       {
@@ -9667,10 +9674,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 9.727466252717104,
-      "pair_synergy_sum": 3.591212121212121,
+      "pair_synergy_sum": 3.7692676767676767,
       "triple_synergy_sum": 0.11363636363636367,
       "redundancy_penalty": 1.2104779411764706,
-      "total_score": 12.221836796389116
+      "total_score": 12.399892351944672
     },
     "candidate_rows": [
       {
@@ -9852,11 +9859,11 @@
       "p33"
     ],
     "score_breakdown": {
-      "individual_sum": 13.65683519637043,
-      "pair_synergy_sum": 14.02636363636363,
+      "individual_sum": 13.656835196370427,
+      "pair_synergy_sum": 14.558863636363633,
       "triple_synergy_sum": 5.68181818181818,
       "redundancy_penalty": 3.280890189573853,
-      "total_score": 30.084126824978384
+      "total_score": 30.616626824978383
     },
     "candidate_rows": [
       {
@@ -10047,10 +10054,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 15.14197561287067,
-      "pair_synergy_sum": 29.08727272727276,
+      "pair_synergy_sum": 30.071818181818227,
       "triple_synergy_sum": 23.06818181818177,
       "redundancy_penalty": 5.8342626059160905,
-      "total_score": 61.46316755240911
+      "total_score": 62.44771300695458
     },
     "candidate_rows": [
       {
@@ -10241,10 +10248,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 15.56678030037067,
-      "pair_synergy_sum": 29.08727272727276,
+      "pair_synergy_sum": 30.071818181818227,
       "triple_synergy_sum": 23.06818181818177,
       "redundancy_penalty": 5.8342626059160905,
-      "total_score": 61.88797223990911
+      "total_score": 62.87251769445458
     },
     "candidate_rows": [
       {
@@ -10422,10 +10429,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 8.208922308683395,
-      "pair_synergy_sum": 3.5333333333333328,
+      "pair_synergy_sum": 3.677777777777777,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.07730204519354,
-      "total_score": 10.664953596823189
+      "total_score": 10.809398041267631
     },
     "candidate_rows": [
       {
@@ -10606,11 +10613,11 @@
       "p22"
     ],
     "score_breakdown": {
-      "individual_sum": 11.8414422552694,
-      "pair_synergy_sum": 10.855757575757572,
+      "individual_sum": 11.841442255269397,
+      "pair_synergy_sum": 11.34373737373737,
       "triple_synergy_sum": 1.375,
       "redundancy_penalty": 3.29968886706493,
-      "total_score": 20.77251096396204
+      "total_score": 21.26049076194184
     },
     "candidate_rows": [
       {
@@ -10800,10 +10807,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 11.598258318097303,
-      "pair_synergy_sum": 25.20969696969694,
+      "pair_synergy_sum": 26.293838383838363,
       "triple_synergy_sum": 10.5,
       "redundancy_penalty": 6.899779413870096,
-      "total_score": 40.40817587392415
+      "total_score": 41.492317288065564
     },
     "candidate_rows": [
       {
@@ -10992,11 +10999,11 @@
       "p29"
     ],
     "score_breakdown": {
-      "individual_sum": 12.023063005597303,
-      "pair_synergy_sum": 25.20969696969694,
+      "individual_sum": 12.023063005597304,
+      "pair_synergy_sum": 26.293838383838363,
       "triple_synergy_sum": 10.5,
       "redundancy_penalty": 6.899779413870096,
-      "total_score": 40.83298056142415
+      "total_score": 41.91712197556558
     },
     "candidate_rows": [
       {
@@ -11177,10 +11184,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 4.3088087056009545,
-      "pair_synergy_sum": 1.380952380952381,
+      "pair_synergy_sum": 1.4682539682539684,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.5057773109243697,
-      "total_score": 5.183983775628966
+      "total_score": 5.271285362930553
     },
     "candidate_rows": [
       {
@@ -11363,10 +11370,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 5.175065658383426,
-      "pair_synergy_sum": 2.214285714285714,
+      "pair_synergy_sum": 2.371031746031746,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.9557773109243697,
-      "total_score": 6.433574061744769
+      "total_score": 6.590320093490803
     },
     "candidate_rows": [
       {
@@ -11537,9 +11544,10 @@
       "c13",
       "c15",
       "c16",
+      "c21",
       "c24"
     ],
-    "token_used": 178,
+    "token_used": 205,
     "missing_required_units": [
       "student_access",
       "annex_alias"
@@ -11548,11 +11556,11 @@
       "c04"
     ],
     "score_breakdown": {
-      "individual_sum": 5.522721908383426,
-      "pair_synergy_sum": 2.214285714285714,
+      "individual_sum": 5.354071117334422,
+      "pair_synergy_sum": 2.631031746031746,
       "triple_synergy_sum": 0,
-      "redundancy_penalty": 0.9557773109243697,
-      "total_score": 6.781230311744769
+      "redundancy_penalty": 1.0361344537815125,
+      "total_score": 6.948968409584656
     },
     "candidate_rows": [
       {
@@ -11689,7 +11697,7 @@
         "id": "c21",
         "tokens": 27,
         "importance_score": -0.1686507910490035,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -11736,10 +11744,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 5.554266429834422,
-      "pair_synergy_sum": 2.454285714285714,
+      "pair_synergy_sum": 2.631031746031746,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.0361344537815125,
-      "total_score": 6.972417690338624
+      "total_score": 7.149163722084657
     },
     "candidate_rows": [
       {
@@ -11916,11 +11924,11 @@
       "c08"
     ],
     "score_breakdown": {
-      "individual_sum": 7.469536333211831,
-      "pair_synergy_sum": 3.4357142857142864,
+      "individual_sum": 7.46953633321183,
+      "pair_synergy_sum": 3.5553571428571433,
       "triple_synergy_sum": 0.4999999999999999,
       "redundancy_penalty": 1.0939632452667116,
-      "total_score": 10.311287373659406
+      "total_score": 10.430930230802261
     },
     "candidate_rows": [
       {
@@ -12098,11 +12106,11 @@
       "c08"
     ],
     "score_breakdown": {
-      "individual_sum": 8.044327404030732,
-      "pair_synergy_sum": 3.8357142857142863,
+      "individual_sum": 8.04432740403073,
+      "pair_synergy_sum": 3.9886904761904765,
       "triple_synergy_sum": 0.4999999999999999,
       "redundancy_penalty": 1.2814632452667116,
-      "total_score": 11.098578444478305
+      "total_score": 11.251554634954493
     },
     "candidate_rows": [
       {
@@ -12280,11 +12288,11 @@
       "c08"
     ],
     "score_breakdown": {
-      "individual_sum": 8.325577404030732,
-      "pair_synergy_sum": 3.8357142857142863,
+      "individual_sum": 8.32557740403073,
+      "pair_synergy_sum": 3.9886904761904765,
       "triple_synergy_sum": 0.4999999999999999,
       "redundancy_penalty": 1.2814632452667116,
-      "total_score": 11.379828444478305
+      "total_score": 11.532804634954493
     },
     "candidate_rows": [
       {
@@ -12462,11 +12470,11 @@
       "c08"
     ],
     "score_breakdown": {
-      "individual_sum": 8.466202404030732,
-      "pair_synergy_sum": 3.8357142857142863,
+      "individual_sum": 8.46620240403073,
+      "pair_synergy_sum": 3.9886904761904765,
       "triple_synergy_sum": 0.4999999999999999,
       "redundancy_penalty": 1.2814632452667116,
-      "total_score": 11.520453444478305
+      "total_score": 11.673429634954493
     },
     "candidate_rows": [
       {
@@ -12642,10 +12650,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 5.898325604342279,
-      "pair_synergy_sum": 2.3238095238095235,
+      "pair_synergy_sum": 2.4460317460317462,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.6779553167420814,
-      "total_score": 7.5441798114097205
+      "total_score": 7.666402033631944
     },
     "candidate_rows": [
       {
@@ -12825,10 +12833,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 7.052209096543846,
-      "pair_synergy_sum": 7.583333333333334,
+      "pair_synergy_sum": 7.858134920634918,
       "triple_synergy_sum": 1.9642857142857146,
       "redundancy_penalty": 1.5238457073112646,
-      "total_score": 15.07598243685163
+      "total_score": 15.350784024153215
     },
     "candidate_rows": [
       {
@@ -13009,11 +13017,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 7.450535347667478,
-      "pair_synergy_sum": 9.427142857142861,
+      "individual_sum": 7.450535347667477,
+      "pair_synergy_sum": 9.784166666666666,
       "triple_synergy_sum": 2.5,
       "redundancy_penalty": 1.9981629342020213,
-      "total_score": 17.37951527060832
+      "total_score": 17.736539080132122
     },
     "candidate_rows": [
       {
@@ -13194,11 +13202,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 7.735691597667478,
-      "pair_synergy_sum": 9.427142857142861,
+      "individual_sum": 7.735691597667477,
+      "pair_synergy_sum": 9.784166666666666,
       "triple_synergy_sum": 2.5,
       "redundancy_penalty": 1.9981629342020213,
-      "total_score": 17.66467152060832
+      "total_score": 18.021695330132122
     },
     "candidate_rows": [
       {
@@ -13374,10 +13382,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.187739395811446,
-      "pair_synergy_sum": 4.573333333333333,
+      "pair_synergy_sum": 4.76,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.277354085654425,
-      "total_score": 13.483718643490354
+      "total_score": 13.670385310157021
     },
     "candidate_rows": [
       {
@@ -13553,10 +13561,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.652583145811446,
-      "pair_synergy_sum": 4.573333333333333,
+      "pair_synergy_sum": 4.76,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.277354085654425,
-      "total_score": 13.948562393490354
+      "total_score": 14.135229060157021
     },
     "candidate_rows": [
       {
@@ -13732,10 +13740,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.885005020811446,
-      "pair_synergy_sum": 4.573333333333333,
+      "pair_synergy_sum": 4.76,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.277354085654425,
-      "total_score": 14.180984268490354
+      "total_score": 14.367650935157021
     },
     "candidate_rows": [
       {
@@ -13911,10 +13919,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 11.001215958311446,
-      "pair_synergy_sum": 4.573333333333333,
+      "pair_synergy_sum": 4.76,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.277354085654425,
-      "total_score": 14.297195205990354
+      "total_score": 14.483861872657021
     },
     "candidate_rows": [
       {
@@ -14092,10 +14100,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.066911518148014,
-      "pair_synergy_sum": 1.56,
+      "pair_synergy_sum": 1.69,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.8740768338498714,
-      "total_score": 10.752834684298143
+      "total_score": 10.882834684298142
     },
     "candidate_rows": [
       {
@@ -14274,10 +14282,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 11.834814317595391,
-      "pair_synergy_sum": 4.944761904761904,
+      "pair_synergy_sum": 5.29015873015873,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 2.207110572498439,
-      "total_score": 14.572465649858856
+      "total_score": 14.917862475255681
     },
     "candidate_rows": [
       {
@@ -14456,10 +14464,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 12.243017442595391,
-      "pair_synergy_sum": 4.944761904761904,
+      "pair_synergy_sum": 5.29015873015873,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 2.207110572498439,
-      "total_score": 14.980668774858856
+      "total_score": 15.326065600255681
     },
     "candidate_rows": [
       {
@@ -14637,11 +14645,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 12.447119005095391,
-      "pair_synergy_sum": 4.944761904761904,
+      "individual_sum": 12.447119005095395,
+      "pair_synergy_sum": 5.29015873015873,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 2.207110572498439,
-      "total_score": 15.184770337358856
+      "total_score": 15.530167162755685
     },
     "candidate_rows": [
       {
@@ -14819,10 +14827,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 6.016818637081555,
-      "pair_synergy_sum": 2.0414285714285714,
+      "pair_synergy_sum": 2.1639285714285714,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.6590336134453781,
-      "total_score": 7.399213595064748
+      "total_score": 7.521713595064749
     },
     "candidate_rows": [
       {
@@ -15000,10 +15008,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 6.469943637081555,
-      "pair_synergy_sum": 2.0414285714285714,
+      "pair_synergy_sum": 2.1639285714285714,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.6590336134453781,
-      "total_score": 7.852338595064748
+      "total_score": 7.974838595064749
     },
     "candidate_rows": [
       {
@@ -15181,10 +15189,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 6.696506137081555,
-      "pair_synergy_sum": 2.0414285714285714,
+      "pair_synergy_sum": 2.1639285714285714,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.6590336134453781,
-      "total_score": 8.078901095064747
+      "total_score": 8.201401095064748
     },
     "candidate_rows": [
       {
@@ -15362,10 +15370,10 @@
     ],
     "score_breakdown": {
       "individual_sum": 6.809787387081555,
-      "pair_synergy_sum": 2.0414285714285714,
+      "pair_synergy_sum": 2.1639285714285714,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.6590336134453781,
-      "total_score": 8.192182345064747
+      "total_score": 8.314682345064748
     },
     "candidate_rows": [
       {
@@ -15541,10 +15549,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 12.08088827048029,
-      "pair_synergy_sum": 3.2714285714285714,
+      "pair_synergy_sum": 3.4607142857142863,
       "triple_synergy_sum": 0.15625,
       "redundancy_penalty": 1.2470374980470638,
-      "total_score": 14.261529343861799
+      "total_score": 14.450815058147512
     },
     "candidate_rows": [
       {
@@ -15720,11 +15728,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 12.493764553538389,
-      "pair_synergy_sum": 3.6142857142857143,
+      "individual_sum": 12.493764553538387,
+      "pair_synergy_sum": 3.8321428571428577,
       "triple_synergy_sum": 0.15625,
       "redundancy_penalty": 1.4201144211239867,
-      "total_score": 14.844185846700118
+      "total_score": 15.06204298955726
     },
     "candidate_rows": [
       {
@@ -15901,10 +15909,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 12.778920803538389,
-      "pair_synergy_sum": 3.6142857142857143,
+      "pair_synergy_sum": 3.8321428571428577,
       "triple_synergy_sum": 0.15625,
       "redundancy_penalty": 1.4201144211239867,
-      "total_score": 15.129342096700118
+      "total_score": 15.34719923955726
     },
     "candidate_rows": [
       {
@@ -16081,10 +16089,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 12.921498928538389,
-      "pair_synergy_sum": 3.6142857142857143,
+      "pair_synergy_sum": 3.8321428571428577,
       "triple_synergy_sum": 0.15625,
       "redundancy_penalty": 1.4201144211239867,
-      "total_score": 15.271920221700118
+      "total_score": 15.48977736455726
     },
     "candidate_rows": [
       {
@@ -16260,10 +16268,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 7.7424191069035295,
-      "pair_synergy_sum": 2.6952380952380945,
+      "pair_synergy_sum": 2.836507936507936,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.0500769910066068,
-      "total_score": 9.387580211135017
+      "total_score": 9.528850052404858
     },
     "candidate_rows": [
       {
@@ -16444,11 +16452,11 @@
     ],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 6.729927163464683,
-      "pair_synergy_sum": 7.945238095238096,
+      "individual_sum": 6.729927163464682,
+      "pair_synergy_sum": 8.149007936507937,
       "triple_synergy_sum": 2.5,
       "redundancy_penalty": 1.3145133576585306,
-      "total_score": 15.86065190104425
+      "total_score": 16.06442174231409
     },
     "candidate_rows": [
       {
@@ -16631,11 +16639,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 7.860764414142995,
-      "pair_synergy_sum": 12.450952380952385,
+      "individual_sum": 7.860764414142992,
+      "pair_synergy_sum": 12.863531746031745,
       "triple_synergy_sum": 3.75,
       "redundancy_penalty": 2.5413717933404962,
-      "total_score": 21.520345001754883
+      "total_score": 21.932924366834243
     },
     "candidate_rows": [
       {
@@ -16818,11 +16826,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 8.200608164142995,
-      "pair_synergy_sum": 12.450952380952385,
+      "individual_sum": 8.200608164142993,
+      "pair_synergy_sum": 12.863531746031745,
       "triple_synergy_sum": 3.75,
       "redundancy_penalty": 2.5413717933404962,
-      "total_score": 21.860188751754883
+      "total_score": 22.272768116834243
     },
     "candidate_rows": [
       {
@@ -17000,10 +17008,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 6.63269739661898,
-      "pair_synergy_sum": 1.5785714285714283,
+      "pair_synergy_sum": 1.7101190476190478,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.9389501740517734,
-      "total_score": 7.272318651138636
+      "total_score": 7.403866270186254
     },
     "candidate_rows": [
       {
@@ -17165,26 +17173,25 @@
     "category": "two_hop",
     "question": "Where does the bronze chart insurance reviewer work?",
     "budget": 256,
-    "complete_hit": false,
-    "evidence_f1": 0.7058823529411765,
-    "required_recall": 0.6666666666666666,
+    "complete_hit": true,
+    "evidence_f1": 0.888888888888889,
+    "required_recall": 1.0,
     "selected_ids": [
       "c33",
       "c34",
+      "c35",
       "c36",
       "c37"
     ],
-    "token_used": 116,
-    "missing_required_units": [
-      "reviewer_location"
-    ],
+    "token_used": 146,
+    "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 7.085822396618979,
-      "pair_synergy_sum": 1.5785714285714283,
+      "individual_sum": 6.93039305124964,
+      "pair_synergy_sum": 2.0351190476190477,
       "triple_synergy_sum": 0,
-      "redundancy_penalty": 0.9389501740517734,
-      "total_score": 7.725443651138634
+      "redundancy_penalty": 1.099664459766059,
+      "total_score": 7.865847639102629
     },
     "candidate_rows": [
       {
@@ -17321,7 +17328,7 @@
         "id": "c35",
         "tokens": 30,
         "importance_score": -0.15542934536933894,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": true,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -17338,7 +17345,7 @@
         "text": "Expired wristbands are replaced at the intake island."
       }
     ],
-    "improvement_hint": "Scoring issue; required evidence was available but not valuable enough under current utility."
+    "improvement_hint": "Successful selection; inspect extra chunks only if precision or token cost becomes the priority."
   },
   {
     "content_id": "content_02_clinic_access",
@@ -17361,10 +17368,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 7.21554930124964,
-      "pair_synergy_sum": 1.8785714285714283,
+      "pair_synergy_sum": 2.0351190476190477,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.099664459766059,
-      "total_score": 7.994456270055009
+      "total_score": 8.151003889102629
     },
     "candidate_rows": [
       {
@@ -17541,10 +17548,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 7.35812742624964,
-      "pair_synergy_sum": 1.8785714285714283,
+      "pair_synergy_sum": 2.0351190476190477,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.099664459766059,
-      "total_score": 8.137034395055009
+      "total_score": 8.293582014102629
     },
     "candidate_rows": [
       {
@@ -17720,10 +17727,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 8.294125321507455,
-      "pair_synergy_sum": 2.438095238095238,
+      "pair_synergy_sum": 2.5857142857142854,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.8344733391608392,
-      "total_score": 9.897747220441854
+      "total_score": 10.045366268060901
     },
     "candidate_rows": [
       {
@@ -17899,11 +17906,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 9.488638952374458,
-      "pair_synergy_sum": 3.6761904761904765,
+      "individual_sum": 9.488638952374457,
+      "pair_synergy_sum": 3.871428571428572,
       "triple_synergy_sum": 0.20833333333333337,
       "redundancy_penalty": 1.1093312937062936,
-      "total_score": 12.263831468191976
+      "total_score": 12.459069563430068
     },
     "candidate_rows": [
       {
@@ -18079,11 +18086,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 9.773795202374458,
-      "pair_synergy_sum": 3.6761904761904765,
+      "individual_sum": 9.773795202374457,
+      "pair_synergy_sum": 3.871428571428572,
       "triple_synergy_sum": 0.20833333333333337,
       "redundancy_penalty": 1.1093312937062936,
-      "total_score": 12.548987718191976
+      "total_score": 12.744225813430068
     },
     "candidate_rows": [
       {
@@ -18259,11 +18266,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 9.916373327374458,
-      "pair_synergy_sum": 3.6761904761904765,
+      "individual_sum": 9.916373327374457,
+      "pair_synergy_sum": 3.871428571428572,
       "triple_synergy_sum": 0.20833333333333337,
       "redundancy_penalty": 1.1093312937062936,
-      "total_score": 12.691565843191976
+      "total_score": 12.886803938430068
     },
     "candidate_rows": [
       {
@@ -18438,11 +18445,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 6.022459907971678,
-      "pair_synergy_sum": 3.244444444444445,
+      "individual_sum": 6.022459907971677,
+      "pair_synergy_sum": 3.3666666666666667,
       "triple_synergy_sum": 0.1388888888888888,
       "redundancy_penalty": 0.6779553167420814,
-      "total_score": 8.72783792456293
+      "total_score": 8.85006014678515
     },
     "candidate_rows": [
       {
@@ -18622,10 +18629,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 6.5223176350905785,
-      "pair_synergy_sum": 7.368412698412704,
+      "pair_synergy_sum": 7.686150793650794,
       "triple_synergy_sum": 0.1388888888888888,
       "redundancy_penalty": 1.7712721778995,
-      "total_score": 12.258347044492671
+      "total_score": 12.576085139730763
     },
     "candidate_rows": [
       {
@@ -18805,10 +18812,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 6.9773957600905785,
-      "pair_synergy_sum": 7.368412698412704,
+      "pair_synergy_sum": 7.686150793650794,
       "triple_synergy_sum": 0.1388888888888888,
       "redundancy_penalty": 1.7712721778995,
-      "total_score": 12.713425169492671
+      "total_score": 13.031163264730763
     },
     "candidate_rows": [
       {
@@ -18988,10 +18995,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 7.2049348225905785,
-      "pair_synergy_sum": 7.368412698412704,
+      "pair_synergy_sum": 7.686150793650794,
       "triple_synergy_sum": 0.1388888888888888,
       "redundancy_penalty": 1.7712721778995,
-      "total_score": 12.940964231992671
+      "total_score": 13.258702327230763
     },
     "candidate_rows": [
       {
@@ -19167,10 +19174,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 9.907433316821145,
-      "pair_synergy_sum": 3.351111111111111,
+      "pair_synergy_sum": 3.537777777777778,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.2773540856544248,
-      "total_score": 11.98119034227783
+      "total_score": 12.167857008944498
     },
     "candidate_rows": [
       {
@@ -19348,10 +19355,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.106356866373902,
-      "pair_synergy_sum": 4.995555555555557,
+      "pair_synergy_sum": 5.2266666666666675,
       "triple_synergy_sum": 0.27777777777777785,
       "redundancy_penalty": 1.5347070268308958,
-      "total_score": 13.844983172876342
+      "total_score": 14.076094283987453
     },
     "candidate_rows": [
       {
@@ -19529,10 +19536,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.457919366373902,
-      "pair_synergy_sum": 4.995555555555557,
+      "pair_synergy_sum": 5.2266666666666675,
       "triple_synergy_sum": 0.27777777777777785,
       "redundancy_penalty": 1.5347070268308958,
-      "total_score": 14.196545672876342
+      "total_score": 14.427656783987453
     },
     "candidate_rows": [
       {
@@ -19710,10 +19717,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.633700616373902,
-      "pair_synergy_sum": 4.995555555555557,
+      "pair_synergy_sum": 5.2266666666666675,
       "triple_synergy_sum": 0.27777777777777785,
       "redundancy_penalty": 1.5347070268308958,
-      "total_score": 14.372326922876342
+      "total_score": 14.603438033987453
     },
     "candidate_rows": [
       {
@@ -19891,10 +19898,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 8.56901088271822,
-      "pair_synergy_sum": 2.245238095238095,
+      "pair_synergy_sum": 2.3767857142857145,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 0.9389501740517734,
-      "total_score": 9.875298803904542
+      "total_score": 10.006846422952162
     },
     "candidate_rows": [
       {
@@ -20073,10 +20080,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 8.843580540376049,
-      "pair_synergy_sum": 5.799999999999999,
+      "pair_synergy_sum": 6.033333333333333,
       "triple_synergy_sum": 0.8333333333333336,
       "redundancy_penalty": 1.4957688149696788,
-      "total_score": 13.981145058739703
+      "total_score": 14.214478392073037
     },
     "candidate_rows": [
       {
@@ -20239,7 +20246,7 @@
     "question": "Where is the reviewer for a bronze insurance chart sticker located?",
     "budget": 512,
     "complete_hit": true,
-    "evidence_f1": 0.7272727272727273,
+    "evidence_f1": 0.6666666666666666,
     "required_recall": 1.0,
     "selected_ids": [
       "c20",
@@ -20248,17 +20255,18 @@
       "c35",
       "c36",
       "c37",
+      "c38",
       "c40"
     ],
-    "token_used": 208,
+    "token_used": 238,
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 9.249830540376049,
-      "pair_synergy_sum": 5.799999999999999,
+      "individual_sum": 8.904633652525288,
+      "pair_synergy_sum": 6.683333333333334,
       "triple_synergy_sum": 0.8333333333333336,
-      "redundancy_penalty": 1.4957688149696788,
-      "total_score": 14.387395058739703
+      "redundancy_penalty": 1.795768814969679,
+      "total_score": 14.625531504222273
     },
     "candidate_rows": [
       {
@@ -20355,7 +20363,7 @@
         "id": "c38",
         "tokens": 30,
         "importance_score": -0.3451968878507614,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -20421,7 +20429,7 @@
     "question": "Where is the reviewer for a bronze insurance chart sticker located?",
     "budget": 1024,
     "complete_hit": true,
-    "evidence_f1": 0.7272727272727273,
+    "evidence_f1": 0.6666666666666666,
     "required_recall": 1.0,
     "selected_ids": [
       "c20",
@@ -20430,17 +20438,18 @@
       "c35",
       "c36",
       "c37",
+      "c38",
       "c40"
     ],
-    "token_used": 208,
+    "token_used": 238,
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 9.452955540376049,
-      "pair_synergy_sum": 5.799999999999999,
+      "individual_sum": 9.137055527525288,
+      "pair_synergy_sum": 6.683333333333334,
       "triple_synergy_sum": 0.8333333333333336,
-      "redundancy_penalty": 1.4957688149696788,
-      "total_score": 14.590520058739703
+      "redundancy_penalty": 1.795768814969679,
+      "total_score": 14.857953379222273
     },
     "candidate_rows": [
       {
@@ -20537,7 +20546,7 @@
         "id": "c38",
         "tokens": 30,
         "importance_score": -0.3159000128507614,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -20615,11 +20624,11 @@
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 10.19843021546091,
-      "pair_synergy_sum": 3.871428571428571,
+      "individual_sum": 10.198430215460911,
+      "pair_synergy_sum": 4.060714285714285,
       "triple_synergy_sum": 0.2500000000000002,
       "redundancy_penalty": 1.2470374980470635,
-      "total_score": 13.072821288842416
+      "total_score": 13.262107003128133
     },
     "candidate_rows": [
       {
@@ -20799,10 +20808,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.42455817375864,
-      "pair_synergy_sum": 7.841428571428576,
+      "pair_synergy_sum": 8.161547619047619,
       "triple_synergy_sum": 1.2500000000000002,
       "redundancy_penalty": 1.9637654392235344,
-      "total_score": 17.552221305963684
+      "total_score": 17.87234035358272
     },
     "candidate_rows": [
       {
@@ -20984,10 +20993,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 10.86255859243018,
-      "pair_synergy_sum": 9.82714285714286,
+      "pair_synergy_sum": 10.262738095238094,
       "triple_synergy_sum": 1.5000000000000002,
       "redundancy_penalty": 2.6059793592044826,
-      "total_score": 19.583722090368557
+      "total_score": 20.019317328463792
     },
     "candidate_rows": [
       {
@@ -21169,10 +21178,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 11.14869140493018,
-      "pair_synergy_sum": 9.82714285714286,
+      "pair_synergy_sum": 10.262738095238094,
       "triple_synergy_sum": 1.5000000000000002,
       "redundancy_penalty": 2.6059793592044826,
-      "total_score": 19.869854902868557
+      "total_score": 20.305450140963792
     },
     "candidate_rows": [
       {
@@ -21348,10 +21357,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 6.561042831483341,
-      "pair_synergy_sum": 1.695238095238095,
+      "pair_synergy_sum": 1.8365079365079364,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 1.0500769910066068,
-      "total_score": 7.206203935714829
+      "total_score": 7.347473776984671
     },
     "candidate_rows": [
       {
@@ -21531,10 +21540,10 @@
     "selected_distractors": [],
     "score_breakdown": {
       "individual_sum": 7.726545551986922,
-      "pair_synergy_sum": 5.274285714285714,
+      "pair_synergy_sum": 5.570952380952379,
       "triple_synergy_sum": 0,
       "redundancy_penalty": 2.0637214940294104,
-      "total_score": 10.937109772243225
+      "total_score": 11.23377643890989
     },
     "candidate_rows": [
       {
@@ -21697,7 +21706,7 @@
     "question": "Which person collects the coded batch for lavender tray samples?",
     "budget": 512,
     "complete_hit": true,
-    "evidence_f1": 0.6666666666666666,
+    "evidence_f1": 0.5714285714285715,
     "required_recall": 1.0,
     "selected_ids": [
       "c17",
@@ -21707,17 +21716,19 @@
       "c29",
       "c30",
       "c31",
-      "c32"
+      "c32",
+      "c37",
+      "c40"
     ],
-    "token_used": 236,
+    "token_used": 295,
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 8.187483051986922,
-      "pair_synergy_sum": 5.274285714285714,
+      "individual_sum": 7.364200883394195,
+      "pair_synergy_sum": 6.984444444444444,
       "triple_synergy_sum": 0,
-      "redundancy_penalty": 2.0637214940294104,
-      "total_score": 11.398047272243225
+      "redundancy_penalty": 2.636437840183257,
+      "total_score": 11.712207487655382
     },
     "candidate_rows": [
       {
@@ -21824,7 +21835,7 @@
         "id": "c37",
         "tokens": 28,
         "importance_score": -0.3859268143773079,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -21844,7 +21855,7 @@
         "id": "c40",
         "tokens": 31,
         "importance_score": -0.4373553542154176,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -21880,7 +21891,7 @@
     "question": "Which person collects the coded batch for lavender tray samples?",
     "budget": 1024,
     "complete_hit": true,
-    "evidence_f1": 0.6666666666666666,
+    "evidence_f1": 0.5714285714285715,
     "required_recall": 1.0,
     "selected_ids": [
       "c17",
@@ -21890,17 +21901,19 @@
       "c29",
       "c30",
       "c31",
-      "c32"
+      "c32",
+      "c37",
+      "c40"
     ],
-    "token_used": 236,
+    "token_used": 295,
     "missing_required_units": [],
     "selected_distractors": [],
     "score_breakdown": {
-      "individual_sum": 8.417951801986922,
-      "pair_synergy_sum": 5.274285714285714,
+      "individual_sum": 7.652286820894195,
+      "pair_synergy_sum": 6.984444444444444,
       "triple_synergy_sum": 0,
-      "redundancy_penalty": 2.0637214940294104,
-      "total_score": 11.628516022243225
+      "redundancy_penalty": 2.636437840183257,
+      "total_score": 12.000293425155382
     },
     "candidate_rows": [
       {
@@ -22007,7 +22020,7 @@
         "id": "c37",
         "tokens": 28,
         "importance_score": -0.3585830643773079,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
@@ -22027,7 +22040,7 @@
         "id": "c40",
         "tokens": 31,
         "importance_score": -0.4070819167154176,
-        "selected": false,
+        "selected": true,
         "is_required_alternative": false,
         "is_optional_alternative": false,
         "is_distractor": false,
