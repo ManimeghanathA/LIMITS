@@ -34,6 +34,8 @@ reports/baselines/failure_analysis.json
 reports/baselines/failure_analysis.md
 reports/baselines/knapsack_debug.json
 reports/baselines/knapsack_debug.md
+reports/baselines/knapsack_inspection.json
+reports/baselines/knapsack_inspection.md
 ```
 
 Current baseline summary:
@@ -64,6 +66,121 @@ distractor_failure: 5
 ```
 
 Content 02 is intentionally harder and anti-lexical. It uses paraphrased evidence, low query-overlap required chunks, and high query-overlap distractors. The current knapsack now uses seed-linked candidate expansion and paragraph-link pair synergy, so low-overlap bridge chunks can enter the optimizer and connected evidence chains receive value. The remaining improvement phase should focus on wrong-context/distractor handling and the hardest 128-token tradeoffs.
+
+## How The Knapsack Works
+
+The feature knapsack is not allowed to look at ground truth during selection. It receives:
+
+```text
+query
+candidate paragraphs
+token budget
+```
+
+It returns:
+
+```text
+selected paragraph ids where total tokens <= budget
+```
+
+The current implementation is in:
+
+```text
+src/knapsack_features.py
+src/utility.py
+src/oracle.py
+```
+
+The strategy is:
+
+1. **Tokenize the query and paragraphs**
+   - Lowercase text.
+   - Extract alphanumeric terms.
+   - Remove small stopwords such as `the`, `is`, `of`, `where`, and `which`.
+
+2. **Compute lexical query importance**
+   - For each paragraph:
+     ```text
+     coverage = query_terms_in_paragraph / query_terms
+     term_hits = number of query terms found
+
+     lexical_score =
+       3.0 * coverage
+       + 0.15 * term_hits
+     ```
+   - This finds paragraphs that directly mention the question words.
+
+3. **Choose lexical seed paragraphs**
+   - Rank all paragraphs by lexical score.
+   - Keep the strongest few as seed evidence candidates.
+
+4. **Recover bridge evidence using seed linkage**
+   - Some necessary paragraphs do not use the same words as the query.
+   - So each paragraph also gets credit if it shares meaningful terms with a strong seed:
+     ```text
+     seed_link =
+       max shared_terms(paragraph, seed)
+       / min(paragraph_terms, seed_terms)
+
+     individual_importance =
+       lexical_score
+       + 3.0 * seed_link
+       - 0.8 selection_penalty
+     ```
+   - This is why a chunk like “Code M-14 batches are collected by Sima Chen” can be selected even if the query does not directly say “Sima Chen”.
+
+5. **Keep a small candidate pool**
+   - Exact subset optimization over all 40 paragraphs is expensive.
+   - So the selector keeps 10 candidates:
+     - lexical seeds first,
+     - then the best seed-linked candidates.
+
+6. **Build the utility function**
+   - The optimizer scores a selected subset `S` as:
+     ```text
+     U(S) =
+       sum individual_importance
+       + sum pair_synergy
+       + sum triple_synergy
+       - 0.75 * sum redundancy_penalty
+     ```
+
+7. **Pair synergy**
+   - A pair gets value if it covers more query terms together than alone.
+   - A pair also gets value if the two paragraphs are linked to each other:
+     ```text
+     pair_synergy =
+       2.0 * query_complementarity_gain
+       + 1.2 * paragraph_link
+     ```
+   - This helps multi-hop chains where one paragraph points to another.
+
+8. **Triple synergy**
+   - A triple gets value if three paragraphs together cover more query terms than the best pair.
+   - This is our explicit third-order synergy approximation.
+
+9. **Redundancy penalty**
+   - Similar paragraphs are penalized using Jaccard overlap.
+   - This discourages selecting repeated evidence.
+
+10. **Exact subset search**
+   - After the top-10 candidate pool is built, the optimizer tries every feasible subset.
+   - It rejects subsets whose total token count exceeds the budget.
+   - It chooses the subset with the highest utility.
+   - Tie-breaking prefers:
+     ```text
+     higher score
+     lower token usage
+     stable sorted ids
+     ```
+
+This means the knapsack is currently a **transparent exact optimizer over a reduced candidate pool**. The hard part is not the subset search; the hard part is estimating paragraph importance accurately without cheating.
+
+The new inspection report explains every question-budget decision:
+
+```text
+reports/baselines/knapsack_inspection.md
+```
 
 ## Current Project Direction
 
@@ -172,6 +289,7 @@ src/
   evaluator.py      method-agnostic selection evaluator and RL reward signal
   knapsack_debug.py failure-cause diagnostics for the feature knapsack
   knapsack_features.py public feature builder and feature-based knapsack selector
+  knapsack_inspector.py per-question score and candidate inspection report
   optimizer.py      current exact interaction optimizer wrapper
   oracle.py         exhaustive exact oracle for small candidate pools
   selectors.py      simple baseline selectors
@@ -182,6 +300,7 @@ scripts/
   run_baseline_benchmark.py
   run_failure_analysis.py
   run_knapsack_debug.py
+  run_knapsack_inspection.py
 
 tests/
   test_benchmark.py
@@ -190,6 +309,7 @@ tests/
   test_dataset_summary.py
   test_evaluator.py
   test_knapsack_debug.py
+  test_knapsack_inspector.py
   test_selectors.py
   test_contracts.py
   test_evidence.py
@@ -205,7 +325,7 @@ The full test suite currently passes:
 
 ```text
 python -m pytest -q
-78 passed
+81 passed
 ```
 
 ## Next Tasks

@@ -63,8 +63,8 @@ reports/baselines/knapsack_debug.md
 Among incomplete knapsack selections, the current breakdown is:
 
 ```text
-scoring_failure: 14
-distractor_failure: 10
+scoring_failure: 11
+distractor_failure: 5
 ```
 
 The current debug report has no prefilter failures, which means the next serious improvement is scoring quality inside the reduced candidate pool and wrong-context/distractor handling.
@@ -293,6 +293,28 @@ Use this command to regenerate the knapsack diagnostic report:
 ```text
 python scripts/run_knapsack_debug.py
 ```
+
+Use this command to regenerate the full question-by-question inspection report:
+
+```text
+python scripts/run_knapsack_inspection.py
+```
+
+The inspection report is stored at:
+
+```text
+reports/baselines/knapsack_inspection.md
+```
+
+It shows, for every question and budget:
+
+- selected paragraph ids,
+- missing required evidence units,
+- selected distractors,
+- candidate-pool rows,
+- individual importance score per candidate,
+- selected subset score breakdown,
+- and a suggested improvement direction.
 
 The report classifies each incomplete selection into:
 
